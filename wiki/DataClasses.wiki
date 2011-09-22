@@ -40,7 +40,6 @@ some of these (types, kinds) of data can be related through common _dimensions_ 
 || to resources || through data provision || taxonomic coverage || spatial layer metadata || 
 || to spatial || through location descriptions or coordinates, predictive analysis, environmental classification || with species' distributions || by environmental layer grouping, e.g. median rainfall & max rainfall => 'rainfall'  || 
 
-although there are a number of intersections and in some cases a large number of relationships at each, the discrete list of these relationships is more manageable especially when they are generalised...
+although there are a number of intersections and in some cases a large number of relationships at each, the common list of these relationships is more manageable especially when they are generalised...
 
 https://sites.google.com/site/atlaslivingoz/ala-data/classes/dataclassessimplified.jpg?attredirects=0
-
