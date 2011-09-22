@@ -35,12 +35,12 @@ the sub-systems may be aware of many logical classes of data:
 === classes of data relate to each other ===
 some of these (types, kinds) of data can be related through common _dimensions_ (or aspects, facets, natural keys, ...):
 || *Relate...* || observations || profile data || spatial layers ||
-|| to observations || through preparations, derivation, digitisation, biological relationships, collectors, collection events, statistical analysis || taxonomy || location desc./coordinates, environmental classification || 
+|| to observations || through preparations, derivation, digitisation, biological relationships, collectors, collection events, statistical analysis || identification, associations (explicit or inferred) || location desc./coordinates, environmental classification || 
 || to profile || through taxonomy, inference || taxonomy, biological interactions || taxonomy ||  
 || to resources || through data provision || taxonomic coverage || spatial layer metadata || 
 || to spatial || through location descriptions or coordinates, species distributions, predictive analysis || with species' distributions || by environmental layer grouping, e.g. median rainfall & max rainfall => 'rainfall'  || 
 
-although there are a number of intersections and in some cases a large number of relationships at each, the common list of these relationships is more manageable especially when they are normalised...
+although there is a number of potential relationships at all intersections, there are common aspects that allow for the relationship to exist; when they are normalised we find ourselves with a list of possible dimensions, common to the kinds of data relevant to biodiversity:
 
 https://sites.google.com/site/atlaslivingoz/ala-data/classes/dataclassessimplified.jpg
 
