@@ -1,0 +1,43 @@
+#summary what kinds of data can be found in the Atlas?
+
+= Introduction =
+
+=== aspects common to biodiversity data: ===
+  # what (taxonomy)
+  # when (temporal)
+  # where (spatial)
+  # who (collectors)
+  # _(and sometimes why)_
+
+=== sub-systems of the atlas, where data _surface_ ===
+i.e. appear, or are made accessible :
+  # biocache
+  # spatial portal
+  # biodiversity information explorer (bie)
+  # collectory
+  # morphbank
+  # _... not an exhaustive list_
+
+=== different kinds of data ===
+the sub-systems may be aware of many logical classes of data:
+  # species' observation data (what+when+where+who)
+  # species' profile data (what+who, what+where, what+why)
+  # resource descriptions (who, what)
+  # spatial (environmental) data (where)
+
+|| || observations || profile data || resources || spatial ||
+|| biocache || 1 || || || 2 || 
+|| spatial portal || 3 || || || 4 || 
+|| morphbank || 5 || 6 || || || 
+|| bie || || 7 || || 8 || 
+|| collectory || || || 9 || || 
+
+=== classes of data relate to each other ===
+some of these (types, kinds) of data can be related through common _dimensions_ (or aspects, facets, natural keys, ...):
+|| *Relate...* || observations || profile data || spatial layers ||
+|| to observations || through preparations, derivation, digitisation, biological relationships, collectors, collection events, statistical analysis || taxonomy || location desc./coordinates || 
+|| to profile || through taxonomy, derivation || taxonomy, biological interactions || taxonomy ||  
+|| to resources || through data provision || taxonomic coverage || spatial layer metadata || 
+|| to spatial || through location descriptions or coordinates, predictive analysis, environmental classification || with species' distributions || by classification of like environmental layers, e.g. median rainfall & max rainfall => 'rainfall'  || 
+
+= Details =
