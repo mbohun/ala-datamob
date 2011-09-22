@@ -43,3 +43,7 @@ some of these (types, kinds) of data can be related through common _dimensions_ 
 although there are a number of intersections and in some cases a large number of relationships at each, the common list of these relationships is more manageable especially when they are generalised...
 
 https://sites.google.com/site/atlaslivingoz/ala-data/classes/dataclassessimplified.jpg?attredirects=0
+
+naturally, that wouldn't be complex enough! so we'll throw in a few more specifics as well...
+
+https://sites.google.com/site/atlaslivingoz/ala-data/classes/dataclasses.jpg?attredirects=0
