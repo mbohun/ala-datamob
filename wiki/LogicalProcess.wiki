@@ -1,5 +1,13 @@
 #summary a generic, logical process for data mobilisation
 
-= Details =
-
+= Introduction =
 <img src="http://ala-datamob.googlecode.com/svn/wiki/01%20Data%20mobilisation.jpg" width="719" height="116">
+
+= 01. planning =
+<img src="http://ala-datamob.googlecode.com/svn/wiki/01/0101%20DM%20planning.jpg">
+
+= 02. implementing =
+<img src="http://ala-datamob.googlecode.com/svn/wiki/01/0102%20DM%20generic%20implementation.jpg.jpg">
+
+= 03. reviewing =
+<img src="http://ala-datamob.googlecode.com/svn/wiki/01/0103%20DM%20outcomes.jpg">
