@@ -1,10 +1,5 @@
-#summary One-sentence summary of this page.
-
-= Introduction =
-
-Add your content here.
-
+#summary a generic, logical process for data mobilisation
 
 = Details =
 
-[http://ala-datamob.googlecode.com/svn/trunk/Data%20mobilisation.jpg http://ala-datamob.googlecode.com/svn/trunk/Data%20mobilisation.jpg] 719px × 116px
+<img src="http://ala-datamob.googlecode.com/svn/wiki/01%20Data%20mobilisation.jpg" width="719" height="116">
