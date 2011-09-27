@@ -8,6 +8,8 @@ setting goals & constraints
 
 <img src="http://ala-datamob.googlecode.com/svn/wiki/0101%20DM%20planning.jpg">
 
+[https://docs.google.com/uc?id=0ByNWJFdh4pHZZGQ3Mzk5NmQtODcwNi00MDc2LTk2NDUtZjMyOTRlNTBhZTkx&export=download&hl=en_US https://lh5.googleusercontent.com/wW6wjBj3W-rqd_Ds4MclNtZPQ-f-34nlJ0u4amH5q7ObJRlOdWg2mSh2XYLNhEtMzWozbe5BJ4WqvRodxrAF0cpDpWSnrV2OInA=s512]
+
 == 02. implementing ==
 
 <img src="http://ala-datamob.googlecode.com/svn/wiki/01/0102%20DM%20generic%20implementation.jpg">
