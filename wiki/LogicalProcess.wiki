@@ -8,7 +8,7 @@ setting goals & constraints
 
 <img src="http://ala-datamob.googlecode.com/svn/wiki/0101%20DM%20planning.jpg">
 
-[https://docs.google.com/leaf?id=0ByNWJFdh4pHZZGQ3Mzk5NmQtODcwNi00MDc2LTk2NDUtZjMyOTRlNTBhZTkx&sort=name&layout=list&num=50 https://lh5.googleusercontent.com/wW6wjBj3W-rqd_Ds4MclNtZPQ-f-34nlJ0u4amH5q7ObJRlOdWg2mSh2XYLNhEtMzWozbe5BJ4WqvRodxrAF0cpDpWSnrV2OInA=s512?file=dm%20process.png]
+[https://docs.google.com/leaf?id=0ByNWJFdh4pHZZGQ3Mzk5NmQtODcwNi00MDc2LTk2NDUtZjMyOTRlNTBhZTkx&sort=name&layout=list&num=50 dm process revision.201105]
 
 == 02. implementing ==
 
