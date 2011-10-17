@@ -8,6 +8,17 @@ setting goals & constraints
 
 <img src="http://ala-datamob.googlecode.com/svn/wiki/0101%20DM%20planning.jpg">
 
+a generic data mobilisation process:
+  # 1. sample of / complete existing data export
+  # 2.1 completeness analysis first pass
+  # 2.2 completeness iteration(s) with data provider
+  # 2.3 future enhancements in completeness
+  # 2.1 content analysis first pass
+  # 2.2 recommendations for data standard compliance
+  # 2.1 existing transport method analysis
+  # 2.2 testing for fuller automation (ie, access to upload.ala.org.au, batch jobs & sample scripts for operating system envioronment, etc)
+  # 2.3 recommendation(s) or implementation(s) of batch-upload
+
 [https://docs.google.com/leaf?id=0ByNWJFdh4pHZZGQ3Mzk5NmQtODcwNi00MDc2LTk2NDUtZjMyOTRlNTBhZTkx&sort=name&layout=list&num=50 dm process revision.201105]
 
 == 02. implementing ==
