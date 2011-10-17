@@ -10,9 +10,9 @@ setting goals & constraints
 
 a generic data mobilisation process:
   # 1. sample of / complete existing data export
-  # 2.1 completeness analysis first pass
-  # 2.2 completeness iteration(s) with data provider
-  # 2.3 future enhancements in completeness
+  #  # 2.1 completeness analysis first pass
+  #  # 2.2 completeness iteration(s) with data provider
+  #  # 2.3 future enhancements in completeness
   # 2.1 content analysis first pass
   # 2.2 recommendations for data standard compliance
   # 2.1 existing transport method analysis
