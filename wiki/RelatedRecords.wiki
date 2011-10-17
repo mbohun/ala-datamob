@@ -1,0 +1,37 @@
+#summary related records proposal
+
+{{{
+Data mobilisation: related records proposal
+1	SUMMARY	1
+1.1	SPECIFIC RELEVANCE TO DIFFERENT BIODIVERSITY DOMAINS	2
+2	URNS AS RECORD IDENTIFIERS	3
+2.1	LSIDS	3
+2.1.1	Structure of, pattern rules	3
+2.1.2	Basis of record contained within LSID	3
+2.1.3	Historical mappings to earlier patterns	3
+2.2	LSID RESPONDER (URN RESOLUTION)	3
+2.2.1	Intended behaviour	3
+2.2.2	Output	3
+2.2.3	Multiple matches to a LSID	3
+3	RELATIONSHIPS BETWEEN RECORDS	4
+3.1	CORE (PRIMARY) AND DERIVED (SECONDARY) COLLECTION DATA	4
+3.1.1	The principal record	4
+3.1.2	The parent record	4
+3.2	PREPARATIONS VERSUS BASIS OF RECORD	4
+3.3	USAGE SCENARIOS AND EXAMPLE DATA	4
+4	RELATIONSHIP MINING SUB-SYSTEM (THE RELATOR)	8
+4.1	VISION AND DESCRIPTION	8
+4.2	EXISTING FUNCTIONALITY	8
+}}}
+
+== Summary ==
+This document is a draft proposal for handling relationships between data records.
+
+  # Each record that is to be shared must have a consistent, predictable unique identifier. The record will most likely represent a collection item, but may also represent other related entities, such as the collector, a location or a site visit;
+  # This identifier is to be set by the data custodian, in accordance with a pattern agreed to by the relevant institutional group (i.e. informatics peak body);
+  # If the record represents data that is derived from other data (e.g. a specimen's image, or dna sequence) then this relationship should be stored in the collection management system, and communicated within the record as well;
+  # Depending on the data-standard being used to share information, these identifiers will be stored in consistent and agreed terms (i.e. field names) so these relationships can be found programmatically;
+  # The Atlas will provide a web service that:
+    * responds to resource identifiers with links to the resource itself,
+    * responds to the sub-parts of an identifier with best-guess identifier(s) based on current (and historical) patterns used by the relevant institutional group,
+    * and potentially, offer the identifiers of related records as part of the response.
