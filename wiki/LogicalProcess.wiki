@@ -20,6 +20,9 @@ setting goals & constraints
 
 <img src="http://ala-datamob.googlecode.com/svn/wiki/0101%20DM%20planning.jpg">
 
+<img src="https://docs.google.com/leaf?id=0ByNWJFdh4pHZZmJmNjg1NmItZjM4Zi00NTM5LTk2ODMtMDkzNjU5Nzk2ODY1&hl=en_US">
+[https://docs.google.com/leaf?id=0ByNWJFdh4pHZZmJmNjg1NmItZjM4Zi00NTM5LTk2ODMtMDkzNjU5Nzk2ODY1&hl=en_US dm considerations.20110928]
+
 [https://docs.google.com/leaf?id=0ByNWJFdh4pHZZGQ3Mzk5NmQtODcwNi00MDc2LTk2NDUtZjMyOTRlNTBhZTkx&sort=name&layout=list&num=50 dm process revision.201105]
 
 == 02. implementing ==
