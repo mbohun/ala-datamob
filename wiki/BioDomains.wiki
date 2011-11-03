@@ -1,5 +1,3 @@
 #summary Groups within biodiversity informatics
 
-== Herbaria ==
-
-[HISCOM]
+== [HerbariaDM Herbaria data mobilisation] ==
