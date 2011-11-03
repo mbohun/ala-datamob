@@ -1,0 +1,5 @@
+#summary Groups within biodiversity informatics
+
+== Herbaria ==
+
+[HISCOM]
