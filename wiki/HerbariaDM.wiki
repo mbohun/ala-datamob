@@ -13,8 +13,16 @@
       * 5. make available a second, less complex data transfer option for data providers with lesser capability or more restricted infrastructure ('simple-hispid5' csv);
       * 6. generate bi-directional mapping software that can be used to convert simple-hispid5 to hispid5-xml;
 
-  * link to early discussions about proposal
-    * salient points from the back-and-forth between reviewers and the author
+  * [http://goo.gl/RtyyS AVH dm and aggregation position paper] - a google doc that delves further into the specifics (+ technical details) of data aggregation for Australia's Virtual Herbarium (AVH) system
+    * Preface
+      * The aim of this paper is to outline the requirements and issues for data mobilisation so that HISCOM can reach a decision on a strategy for future data mobilisation and aggregation. This paper is a straw man, i.e. a brainstormed simple proposal intended to generate discussion of its disadvantages and to provoke the generation of new and better proposals.
+    * Recommendations
+      * HISCOM to endorse the two-step aggregation model advocated by ALA, using  MEL as the aggregation point for the coming few months. This will enable the AVH portal to go live as soon as possible and allow us to debug the data providers and do the necessary quality checks on the provided data.
+      * HISCOM/CHAH to request ALA to work on the model with a single data aggregation point in the ALA cloud. This solution must be in place and properly tested by the end of the current ALA funding
+      * HISCOM to develop a protocol for data that does not comply with standard vocabularies
+      * HISCOM to endorse BioCASe, TAPIR as well as simpler transfer methods.
+      * HISCOM to review HISPID5, particularly the HISPID vocabularies.
+      * HISCOM to require data custodians to assign permanent identifiers to the provided records, following TDWG recommendations (http://www.tdwg.org/standards/150).
 
-  * [http://goo.gl/RtyyS AVH dm and aggregation position paper]
-    * google doc that delves further into the specifics (+ technical details) of data aggregation for Australia's Virtual Herbarium (AVH) system
+  * [HerbariaDMNotes Discussions about these proposals]
+    * salient points from the back-and-forth between reviewers and the author
