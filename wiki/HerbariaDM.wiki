@@ -25,4 +25,4 @@
       * HISCOM to require data custodians to assign permanent identifiers to the provided records, following TDWG recommendations (http://www.tdwg.org/standards/150).
 
   * [HerbariaDMNotes Discussions about these proposals]
-    * salient points from the back-and-forth between reviewers and the author
+    * salient points from any discussions arising out of these proposals
