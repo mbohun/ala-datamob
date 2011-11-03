@@ -1,0 +1,20 @@
+#summary Herbaria data mobilisation root
+
+== Welcome to the Herbaria data mobilisation pages ==
+
+  * [http://goo.gl/VY2Qe Herbaria data mobilisation proposal] - (summary follows)
+    * This document is a draft proposal for data mobilisation into the atlas of herbaria data:
+      * 1. let RBG Victoria continue to manage the aggregation of BioCASe data providers
+      * 2. RBGVic to push an export to the ALA daily in simple-hispid5 format, containing changed records (delta), plus a full listing of record identifiers only (to communicate any deletions)
+    * In addition to this, some work to improve the quality of data within the group and the wider community:
+      * 3. generate a completeness model for hispid5 – a planning tool that allows any organisation using the hispid5 standard to analyse quality completeness; [http://code.google.com/p/ala-dataquality/wiki/CompletenessModel]
+      * 4. use the completeness model to review the existing HISPID-5 BioCASe mappings of the CHAH partners;
+    * Finally, some work to help organisations within the community to share data:
+      * 5. make available a second, less complex data transfer option for data providers with lesser capability or more restricted infrastructure ('simple-hispid5' csv);
+      * 6. generate bi-directional mapping software that can be used to convert simple-hispid5 to hispid5-xml;
+
+  * link to early discussions about proposal
+    * salient points from the back-and-forth between reviewers and the author
+
+  * [http://goo.gl/RtyyS AVH dm and aggregation position paper]
+    * google doc that delves further into the specifics (+ technical details) of data aggregation for Australia's Virtual Herbarium (AVH) system
