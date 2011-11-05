@@ -1,0 +1,19 @@
+#summary patterns for identifying relationships between records
+
+== Scenarios ==
+
+A standing assumption: these are patterns in the source data; the goal is to ensure the data standards support communicating these relationships if the source data capture them.
+
+ # Specimen record holds metadata on multiple preparations
+ # Specimen record is a single preparation
+ # One or more preparations relate to one or more specimens through a cross-reference table (_note: this situation has not been encountered - if this is your data, give us a yell! thanks..._)
+ # Any of the above three, but 'specimen' is already a constituent part (_piece, relationship, derivation_) of another
+ # A 'collection item' being a generalisation of the more specific (specimen) in any of the above scenarios
+ # Any collection item, from which one or more observations (sightings) are evident - these observations may not necessarily have a determination (taxon)
+ # Any collection item representing another in a many to one relationship; eg:
+   * a photo of a drawer full of specimens
+   * a photo of a flock of birds
+   * a digitisation of a sound-reel, having many recordings, each recording a discrete site visit, each recording capturing one or more taxa
+ # ...
+
+  
