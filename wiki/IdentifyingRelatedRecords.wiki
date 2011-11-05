@@ -14,6 +14,6 @@ A standing assumption: these are patterns in the source data; the goal is to ens
    * a photo of a drawer full of specimens
    * a photo of a flock of birds
    * a digitisation of a sound-reel, having many recordings, each recording a discrete site visit, each recording capturing one or more taxa
- # ...
+ # DNA and one (or more) sequence(s
 
   
