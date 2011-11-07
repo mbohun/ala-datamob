@@ -1,13 +1,22 @@
-#summary give me the code!
+#summary ... give me the code!
 
-== Implementations released under mozilla public licence ==
+== DM implementations (to be) released under mozilla public licence ==
  # Australian Museum
    * texpress backend database to emu collection management system
  # South Australian Museum
    * texpress backend database to emu collection management system
  # Austalian National Wildlife Collection
- # 
+   * sql-server backend database to bespoke collection management system
+ # ...
 
 == Status of the partner institutes ==
 
 <iframe width='500' height='300' frameborder='0' src='https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AiNWJFdh4pHZdFlCY20wbnBVdUZoZk5mS1lUU0Nzb3c&single=true&gid=4&range=A1%3AT33&output=html&widget=true'></iframe>
+
+== Other functional prototypes, interesting algorithms, etc... ==
+ * afd names denormalising algorithm -> morphbank load (pentaho, awk)
+ * nnp postgis search of g.a. gazeteer (pgsql, postgis functions)
+ * scanning free-text for controlled vocabularies (pentaho, montylingua)
+ * populating a key-value (columnar) postgres table from a tabular source-file (postgresql, awk) for value-distribution analysis and pattern finding (using datacleaner)
+ * scanning taxonomy hierarchies for multiple parents (postgresql, awk)
+ * ...
