@@ -11,7 +11,7 @@
 
 == Status of the partner institutes ==
 
-<iframe width='500' height='300' frameborder='0' src='https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AiNWJFdh4pHZdFlCY20wbnBVdUZoZk5mS1lUU0Nzb3c&single=true&gid=4&range=A1%3AT33&output=html&widget=true'></iframe>
+[http://goo.gl/F25de Status pages http://goo.gl/F25de]
 
 == Other functional prototypes, interesting algorithms, etc... ==
  * afd names denormalising algorithm -> morphbank load (pentaho, awk)
