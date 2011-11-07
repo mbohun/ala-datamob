@@ -19,4 +19,5 @@
  * scanning free-text for controlled vocabularies (pentaho, montylingua)
  * populating a key-value (columnar) postgres table from a tabular source-file (postgresql, awk) for value-distribution analysis and pattern finding (using datacleaner)
  * scanning taxonomy hierarchies for multiple parents (postgresql, awk)
+ * analysing a google-doc spreadsheet using their webservice api (pentaho, javascript)
  * ...
