@@ -1,22 +1,43 @@
-===Welcome to the Atlas of Living Australia's data mobilisation portal.===
+==Welcome to the Atlas of Living Australia's data mobilisation portal.==
 
-Here you will find resources to help you share your data with everyone using the ALA, along with any code that we have developed, or others have shared with us, to do this.
+Here you will find resources to help you share your data with everyone using the ALA along with any tools or code that we have developed, or others have shared with us, to do this.
 
-Where an institution curates their data in systems within their boundaries and as part of their own processes, they may then wish to share their data with the public through the ALA, or take advantage of some of the Atlas' systems to perform data analysis.
 
-This organisation then hosts system code that automates (or makes repeatable) the translation of these data into a standard form (_e.g. [DataStandards DarwinCore]_); this process pushes data to the Atlas periodically, or somehow makes them available for harvest on demand. *Data mobilisation* (DM) is the term we use to describe this concept.
+===Data mobilisation...===
+Where an institution curates their data in systems as part of their own processes, they may then wish to share their data with the public through the ALA, or take advantage of some of the Atlas' systems to perform data analysis.
+
+This organisation then hosts system code that automates (or makes repeatable) the translation of these data into a standard form (_e.g. [DataStandards DarwinCore] or [DataStandards HISPID]_); this process pushes data to the Atlas periodically, or somehow makes them available for harvest on demand. *Data mobilisation* (DM) is the term we use to describe this concept.
 
 DM is distinct from the more [http://www.ala.org.au/share/ manual, adhoc methods of sharing data], or sharing data by default when using an Atlas [http://www.ala.org.au/tools-services/ sub-system for data management].
 
+
+===Conceptual menu...===
 This site is loosely arranged around the following concepts:
   * [DataClasses Classes of data and how they surface in the Atlas]
   * [LogicalProcess A logical, more abstract DM process]
+  * [BioDomains Domains in biodiversity] - arbitrary boxing of groups (either core data-gathering or supplementary _aka derived,secondary,satellite,..._ data-generating)
+  * [DataStandards Domain-specific data standards]
   * [Implementations Specific implementations of DM] (coupled to their source systems)
-  * [DataStandards DM data standards]
-  * [http://code.google.com/p/ala-dataquality/wiki/CompletenessModelDwC DM completeness] (fitness for use, quality at source, ...)
-  * [RelatedRecords Identifying relationships] (derived collection items, inferred records, ...)
+  * [http://code.google.com/p/ala-dataquality/wiki/CompletenessModel DM completeness] - external link - (fitness for use, quality at source, ...)
+  * [IdentifyingRelatedRecords Identifying relationships] (derived collection items, inferred records, ...) [RelatedRecords and communicating those relationships]
 
-... if you have any specific questions, please do not hesitate to contact us using the following (in order of preference):
+
+===...or by artefact type===
+In case you know exactly what you're looking for:
+  * [TypeSourceCode Source code] (implementations sorted by technology)
+  * [TypeAlgorithms Algorithms] (more strictly defined; machine logic)
+  * [TypeProcesses Analyses] (planning; thinking; learning)
+  * [TypeProcesses Processes] (planning; thinking; learning)
+
+
+===Take a copy of everything at once...===
+You can synchronise all content in this wiki through the svn tree, found here: [http://code.google.com/p/ala-datamob/source/browse/wiki http://code.google.com/p/ala-datamob/source/browse/wiki]
+
+
+===Contact us...===
+it's early days for this wiki; in time, things might evolve from a scantily clad jumble of notes - feel free to make comments through the wiki interface or directly... 
+
+if you have any questions, please do not hesitate to contact us using the following (in order of preference):
   * +61 2 6246 4503
   * [mailto:data_management@ala.org.au?subject=data%20mobilisation data_management@ala.org.au]
   * +61 2 6246 4463
