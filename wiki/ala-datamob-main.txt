@@ -32,17 +32,16 @@ In case you know exactly what you're looking for:
 
 
 ===Hand over everything at once...===
-You can see all content (wiki, source-code, ...) through the googe: [http://code.google.com/p/ala-datamob/source/browse/#svn http://code.google.com/p/ala-datamob/source/browse/#svn];
+You can see all content (wiki, source-code, ...) through the googe: [http://code.google.com/p/ala-datamob/source/browse/#svn http://code.google.com/p/ala-datamob/source/browse/#svn]; the wiki only is found here: [http://code.google.com/p/ala-datamob/source/browse/#svn%2Fwiki http://code.google.com/p/ala-datamob/source/browse/#svn%2Fwiki]
 
-The wiki only is found here: [http://code.google.com/p/ala-datamob/source/browse/#svn%2Fwiki http://code.google.com/p/ala-datamob/source/browse/#svn%2Fwiki]
-
-In addition to the above, you can take a local snapshot of all the content (except completeness models) by using the following svn url: [https://ala-datamob.googlecode.com/svn] (more info is here: [http://code.google.com/p/ala-datamob/source/checkout]); if you need a good windows svn client, i recommend [http://tortoisesvn.net/ tortoise svn - http://tortoisesvn.net/]
+In addition to the above, you can take a local copy of all the content (except the DM completeness section) by using the following svn url: 
+  * [https://ala-datamob.googlecode.com/svn] (_note:_ if you are use tortoise svn then use this as the 'url of repository' when you 'svn checkout' - the absence of credentials gives you read-only access)
+  * if you need a good windows svn client, i recommend [http://tortoisesvn.net/ tortoise svn - http://tortoisesvn.net/]
+  * more info for a command-line checkout is here: [http://code.google.com/p/ala-datamob/source/checkout] (_this assumes familiarity with your local instance of svn/git/..._)
 
 
 ===Contact us...===
-it's early days for this wiki; in time, things might evolve from a scantily clad jumble of notes - feel free to make comments through the wiki interface or directly...
-
-if you have any questions, please do not hesitate to contact us using the following (in order of preference):
+It's early days for this wiki; in time, things might evolve from a scantily clad jumble of notes - feel free to make comments through the wiki interface or directly... if you have any questions, please do not hesitate to contact us using the following (in order of preference):
   * +61 2 6246 4503
   * [mailto:data_management@ala.org.au?subject=data%20mobilisation data_management@ala.org.au]
   * +61 2 6246 4463
