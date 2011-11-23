@@ -7,15 +7,16 @@
   # when (temporal)
   # where (spatial)
   # who (collectors)
-  # _(and sometimes why)_
+  # (and sometimes why, _e.g. [http://en.wikipedia.org/wiki/Symbiosis symbiosis]_)
 
 === sub-systems of the atlas, where data _surface_ ===
 i.e. appear, or are made accessible :
-  # biocache
-  # spatial portal
-  # biodiversity information explorer (bie)
-  # collectory
-  # morphbank
+  # biocache - [http://biocache.ala.org.au] - the main specimens+sightings database
+  # spatial portal - [http://spatial.ala.org.au] - the geographical information system (gis), which shares a common backend with the biocache and allows users to cross-reference the species observation data with contextual (dots, lines, boxes, polygons...) and environmental (measurements+facts, classifications, opinions...) data; _see [http://spatial.ala.org.au/alaspatial/layers/] for a list of layers_
+  # biodiversity information explorer (bie) - [http://bie.ala.org.au] - stores the profile data for taxa (descriptions, taxonomy, synonymy, common names, multimedia, ...)
+  # collectory - [http://collections.ala.org.au] - stores information on most data providers
+  # volunteer portal - [http://volunteer.ala.org.au] - a collaborative tool for users to help collections, particularly with transcription of labels, etc.
+  # morphbank - [http://morphbank.ala.org.au] - the australian node of the morphbank distributed network of images & multimedia
   # _... not an exhaustive list_
 
 === different kinds of data ===
