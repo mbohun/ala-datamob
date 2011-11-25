@@ -1,20 +1,48 @@
 #summary related records proposal
 
+
 == Summary ==
 This document is a draft proposal for handling relationships between data records. It addresses two main specifications for biodiversity informatics data transfer: DarwinCore (2.x) and HISPID (5)
 
+It supersedes (and subsumes) the earlier [IdentifyingRelatedRecords] document, also on this wiki.
+
+
+== Scenarios ==
+A standing assumption: these are patterns in the processes, hopefully evident in the source data; the goal is to ensure the data standards support communicating these relationships if the source data capture them.
+
+ # Specimen record holds metadata on multiple preparations
+ # Specimen record is a single preparation
+ # One or more preparations relate to one or more specimens through a cross-reference table (_note: this situation has not been encountered - if this is your data, give us a yell! thanks..._)
+ # Any of the above three, but 'specimen' is already a constituent part (_piece, relationship, derivation_) of another
+ # A 'collection item' being a generalisation of the more specific (specimen) in any of the above scenarios
+ # Any collection item, from which one or more observations (sightings, occurrences) are evident - these observations may not necessarily have a determination (taxon)
+ # Any collection item representing another in a many to one relationship; eg:
+   * a photo of a drawer full of specimens
+   * a photo of a flock of birds
+   * a digitisation of a sound-reel, having many recordings, each recording a discrete site visit, each recording capturing one or more taxa
+ # DNA and one (or more) sequence(s) of (barcodes), each sequence matching one or more taxa (next-gen sequencing - http://www.google.com.au/search?q=nextgen+sequencing)
+ # vouchering of specimens amongst herbaria
+ # duplication of specimens within herbaria collection management systems (digital representations of the physical, sharing, donation
+ # collaboration between institutions in the field; specimen(s) gathered from a common observation (biological individual, sighting, occurrence) made on a joint expedition
+ # deriving sightings from sightings (?)
+ # ...
+
+
+== General (abstract) behaviour of the collection management system ==
   # Each record that is to be shared must have a consistent, predictable unique identifier. The record will most likely represent a collection item, but may also represent other related entities, such as the collector, a location or a site visit;
   # This identifier is to be set by the data custodian, in accordance with a pattern agreed to by the relevant institutional group (i.e. informatics peak body);
   # If the record represents data that is derived from other data (e.g. a specimen's image, or dna sequence) then this relationship should be stored in the collection management system, and communicated within the record as well;
   # Depending on the data-standard being used to share information, these identifiers will be stored in consistent and agreed terms (i.e. field names) so these relationships can be found programmatically;
-  # The Atlas should provide a web service that:
+
+
+== Aggregator-specific behaviour ==
+  # The data aggregator should provide a web service that:
     * responds to resource identifiers with links to the resource itself,
     * responds to the sub-parts of an identifier with best-guess identifier(s) based on current (and historical) patterns used by the relevant institutional group,
     * and potentially, offer the identifiers of related records as part of the response.
 
 
-
-== Notes ==
+== Appendix: Notes ==
 
 {{{
 _OLD: this is the table of contents for the older version of this doco
