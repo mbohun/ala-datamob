@@ -2,13 +2,16 @@
 
 ----
 
-<table width="98%" border="0" cellpadding="0"><tr>
+<table width="98%" border="0" cellpadding="10"><tr>
 
 <td width="70%">
+
 = Summary of the related records proposal =
-<p>This document is a draft proposal for handling relationships between data records. The intent of this proposal is to ensure the data standards support communicating these relationships if the source data capture them.</p>
-<p>It addresses two main specifications for biodiversity informatics data transfer: DarwinCore (2.x) and HISPID (5).</p>
-<p>It supersedes (and subsumes) the earlier [IdentifyingRelatedRecords] document, also on this wiki.</p>
+This document is a draft proposal for handling relationships between data records. The intent of this proposal is to ensure the data standards support communicating these relationships if the source data capture them.
+
+It addresses two main specifications for biodiversity informatics data transfer: DarwinCore (2.x) and HISPID (5).
+
+It supersedes (and subsumes) the earlier [IdentifyingRelatedRecords] document, also on this wiki.
 
 == General (abstract) behaviour required of the collection management system ==
 
@@ -25,10 +28,11 @@
     * responds to the sub-parts of an identifier with best-guess identifier(s) based on current (and historical) patterns used by the relevant institutional group,
     * and potentially, offer the identifiers of related records as part of the response.
 </td>
-
-<td valign="top" align="right"><table border="1" cellspacing="0"><tr><td>
+<td valign="center" align="right">
+<p><table border="1" cellspacing="0"><tr><td>
 <wiki:toc max_depth="3" />
-</td></tr></table></td>
+</td></tr></table></p>
+</td>
 
 </tr></table>
 
