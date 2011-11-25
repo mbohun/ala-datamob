@@ -1,6 +1,23 @@
 #summary related records proposal
 
+== Summary ==
+This document is a draft proposal for handling relationships between data records. It addresses two main specifications for biodiversity informatics data transfer: DarwinCore (2.x) and HISPID (5)
+
+  # Each record that is to be shared must have a consistent, predictable unique identifier. The record will most likely represent a collection item, but may also represent other related entities, such as the collector, a location or a site visit;
+  # This identifier is to be set by the data custodian, in accordance with a pattern agreed to by the relevant institutional group (i.e. informatics peak body);
+  # If the record represents data that is derived from other data (e.g. a specimen's image, or dna sequence) then this relationship should be stored in the collection management system, and communicated within the record as well;
+  # Depending on the data-standard being used to share information, these identifiers will be stored in consistent and agreed terms (i.e. field names) so these relationships can be found programmatically;
+  # The Atlas should provide a web service that:
+    * responds to resource identifiers with links to the resource itself,
+    * responds to the sub-parts of an identifier with best-guess identifier(s) based on current (and historical) patterns used by the relevant institutional group,
+    * and potentially, offer the identifiers of related records as part of the response.
+
+
+
+== Notes ==
+
 {{{
+_OLD: this is the table of contents for the older version of this doco
 Data mobilisation: related records proposal
 1	SUMMARY	1
 1.1	SPECIFIC RELEVANCE TO DIFFERENT BIODIVERSITY DOMAINS	2
@@ -23,15 +40,3 @@ Data mobilisation: related records proposal
 4.1	VISION AND DESCRIPTION	8
 4.2	EXISTING FUNCTIONALITY	8
 }}}
-
-== Summary ==
-This document is a draft proposal for handling relationships between data records.
-
-  # Each record that is to be shared must have a consistent, predictable unique identifier. The record will most likely represent a collection item, but may also represent other related entities, such as the collector, a location or a site visit;
-  # This identifier is to be set by the data custodian, in accordance with a pattern agreed to by the relevant institutional group (i.e. informatics peak body);
-  # If the record represents data that is derived from other data (e.g. a specimen's image, or dna sequence) then this relationship should be stored in the collection management system, and communicated within the record as well;
-  # Depending on the data-standard being used to share information, these identifiers will be stored in consistent and agreed terms (i.e. field names) so these relationships can be found programmatically;
-  # The Atlas will provide a web service that:
-    * responds to resource identifiers with links to the resource itself,
-    * responds to the sub-parts of an identifier with best-guess identifier(s) based on current (and historical) patterns used by the relevant institutional group,
-    * and potentially, offer the identifiers of related records as part of the response.
