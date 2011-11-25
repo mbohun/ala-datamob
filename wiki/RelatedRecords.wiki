@@ -1,18 +1,16 @@
 #summary related records proposal
 
-#sidebar TableOfContents
-
 ----
 
-== Summary of the related records proposal ==
+<table width="98%" border="0" cellpadding="0"><tr>
 
-This document is a draft proposal for handling relationships between data records. The intent of this proposal is to ensure the data standards support communicating these relationships if the source data capture them.
+<td width="70%">
+= Summary of the related records proposal =
+<p>This document is a draft proposal for handling relationships between data records. The intent of this proposal is to ensure the data standards support communicating these relationships if the source data capture them.</p>
+<p>It addresses two main specifications for biodiversity informatics data transfer: DarwinCore (2.x) and HISPID (5).</p>
+<p>It supersedes (and subsumes) the earlier [IdentifyingRelatedRecords] document, also on this wiki.</p>
 
-It addresses two main specifications for biodiversity informatics data transfer: DarwinCore (2.x) and HISPID (5).
-
-It supersedes (and subsumes) the earlier [IdentifyingRelatedRecords] document, also on this wiki.
-
-=== General (abstract) behaviour required of the collection management system ===
+== General (abstract) behaviour required of the collection management system ==
 
   # Each record that is to be shared must have a consistent, predictable unique identifier. The record will most likely represent a collection item, but may also represent other related entities, such as the collector, a location or a site visit;
   # This identifier is to be set by the data custodian, in accordance with a pattern agreed to by the relevant institutional group (i.e. informatics peak body);
@@ -20,18 +18,25 @@ It supersedes (and subsumes) the earlier [IdentifyingRelatedRecords] document, a
   # Depending on the data-standard being used to share information, these identifiers will be stored in consistent and agreed terms (i.e. field names) so these relationships can be found programmatically;
 
 
-=== Aggregator-specific behaviour ===
+== Aggregator-specific behaviour ==
 
   # The data aggregator should provide a (web?) service that:
     * responds to resource identifiers with links to the resource itself,
     * responds to the sub-parts of an identifier with best-guess identifier(s) based on current (and historical) patterns used by the relevant institutional group,
     * and potentially, offer the identifiers of related records as part of the response.
+</td>
+
+<td valign="top" align="right"><table border="1" cellspacing="0"><tr><td>
+<wiki:toc max_depth="3" />
+</td></tr></table></td>
+
+</tr></table>
 
 ----
 
-== About the data _having relations_ ==
+= About the data _having relations_ =
 
-=== Scenarios giving rise to relationships ===
+== Scenarios giving rise to relationships ==
 
 A standing assumption: these are patterns in the data management processes, and are evident in the source data.
 
@@ -53,21 +58,20 @@ A standing assumption: these are patterns in the data management processes, and 
  # ...
 
 
-=== Core (primary) and supplementary (duplicated, derived, secondary) collection data ===
+== Core (primary) and supplementary (duplicated, derived, secondary) collection data ==
 Supplementary collection data, such as images of specimens, or dna samples, will likely be handled separately to the core data, which can be the records in the collection management system.
 The above should allow these data to be related by any consumer system.
 
 link to bryan's detailed doco on secondary collection data
 
 ----
-
-== Standards usage patterns ==
+= Standards usage patterns =
 
 A pattern is a methodology that you can follow to solve a problem.
 
-=== DarwinCore usage patterns ===
+== DarwinCore usage patterns ==
 
-==== The principal record ====
+=== The principal record ===
 The identifier assigned to the physical item that was _"accessioned into a collection from the field"_ (eg. single vouchered specimen, still image, movie or sound recording, field notes, core sample, phial of multiple organisms, etc.). 
 
 The principal record may be associated with many occurrence records, each with a unique occurrenceId (eg. an image or sound recording containing determinations for many species) as well as derivative records such as gene sequences representing a part of the physical item (eg. leg of spider), or unique records representing different layers of a core sample, etc.
@@ -76,14 +80,16 @@ Examples of cases:
   * downstream preparations/processing of specimens, such as a dna sequence, or a skin preservation, etc. would use this term to 'point back to the originating specimen' 
   * a record of a taxon in multimedia (hosting many taxa) would point to the accessioned collection item, e.g. a sound recording of one or more species, or a photo of an apparent symbiotic relationship (although in this case, "associated taxa" or "associated occurrences" might be more appropriate if the nature of the relationship can be more specifically defined)
 
-==== The parent record ====
+=== The parent record ===
 if the principal record is more than one step removed from this one, you can use this term to communicate the direct parent-child relationship between these two items (_see principal record for more detailed information_)
 
-==== Preparations versus basis of record ====
+=== Preparations versus basis of record ===
   * The concepts 'basis of record' (DwC: basisOfRecord + dcterms:type; HISPID: xxx) and preparations  (DwC: preparations; HISPID: xxx) are metadata.
   * source data – does each record represent a preparation? or are all preparations for a principal collection item aggregated into the one record?
 
 ----
+
+= Appendices =
 
 == Appendix: Relevance to different biodiversity domains ==
 
