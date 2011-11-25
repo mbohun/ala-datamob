@@ -1,5 +1,8 @@
 #summary patterns for identifying relationships between records
 
+== This document is a _problem statement_ only ==
+Please visit the [RelatedRecords] page where you will find proposals for handling these cases in DarwinCore & HISPID; i'll try to keep these scenarios up-to-date as more arise...
+
 == Scenarios ==
 
 A standing assumption: these are patterns in the processes, hopefully evident in the source data; the goal is to ensure the data standards support communicating these relationships if the source data capture them.
@@ -19,3 +22,7 @@ A standing assumption: these are patterns in the processes, hopefully evident in
  # duplication of specimens within herbaria collection management systems (digital representations of the physical, sharing, donation
  # collaboration between institutions in the field; specimen(s) gathered from a common observation (biological individual, sighting, occurrence) made on a joint expedition
  # deriving sightings from sightings (?)
+ # ...
+
+== Further reading ==
+Please visit the [RelatedRecords] page where you will find proposals for handling these cases in DarwinCore & HISPID.
