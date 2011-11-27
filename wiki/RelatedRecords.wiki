@@ -27,6 +27,20 @@ It supersedes (and subsumes) the earlier [IdentifyingRelatedRecords] document, a
     * responds to resource identifiers with a method for accessing the resource itself (freely or securely),
     * responds to the sub-parts of an identifier with best-guess identifier(s) based on current (and historical) patterns used by the relevant institutional group,
     * and potentially, offer the identifiers of related records as part of the response.
+
+== DarwinCore recommendations ==
+Each of these terms should be added to the FCIG dwc extension; propose for ratification+inclusion in DwC
+  # add _principalRecord_
+  # add _parentRecord_
+  # add _principalRelationshipType_
+  # add _parentRelationshipType_
+
+== HISPID recommendations ==
+Each of these terms should be added to the HISCOM ABCD extension (HISPID5):
+  # add _principalUnitID_ to _MultiMediaObject_ and _SiteImage_
+  # add _parentUnitID_ to _MultiMediaObject_ and _SiteImage_
+
+
 </td>
 <td valign="center" align="right">
 <p><table border="1" cellspacing="0"><tr><td>
