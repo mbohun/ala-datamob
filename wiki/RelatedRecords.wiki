@@ -13,18 +13,18 @@ It addresses two main specifications for biodiversity informatics data transfer:
 
 It supersedes (and subsumes) the earlier [IdentifyingRelatedRecords] document, also on this wiki.
 
-== General (abstract) behaviour required of the collection management system ==
+== General (functional) behaviour required of the collection management system ==
 
   # Each record that is to be shared must have a consistent, predictable unique identifier. The record will most likely represent a collection item, but may also represent other related entities, such as the collector, a location or a site visit;
   # This identifier is to be set by the data custodian, in accordance with a pattern agreed to by the relevant institutional group (i.e. informatics peak body);
-  # If the record represents data that is derived from other data (e.g. a specimen's image, or dna sequence) then this relationship should be stored in the collection management system, and communicated within the record as well;
-  # Depending on the data-standard being used to share information, these identifiers will be stored in consistent and agreed terms (i.e. field names) so these relationships can be found programmatically;
+  # If the record represents data that are derived from other data (e.g. a specimen's image, or dna sequence) then this relationship should be stored in the collection management system, and communicated within the record as well;
+  # Depending on the data-standard being used to share information, these identifiers will be stored in consistent and agreed ways (i.e. field names) so these relationships can be discovered programmatically;
 
 
 == Aggregator-specific behaviour ==
 
   # The data aggregator should provide a (web?) service that:
-    * responds to resource identifiers with links to the resource itself,
+    * responds to resource identifiers with a method for accessing the resource itself (freely or securely),
     * responds to the sub-parts of an identifier with best-guess identifier(s) based on current (and historical) patterns used by the relevant institutional group,
     * and potentially, offer the identifiers of related records as part of the response.
 </td>
@@ -38,7 +38,7 @@ It supersedes (and subsumes) the earlier [IdentifyingRelatedRecords] document, a
 
 ----
 
-= About the data _having relations_ =
+= About the data =
 
 == Scenarios giving rise to relationships ==
 
@@ -62,16 +62,31 @@ A standing assumption: these are patterns in the data management processes, and 
  # ...
 
 
-== Core (primary) and supplementary (duplicated, derived, secondary) collection data ==
+== Core (primary) and supplementary (duplicated, derived, secondary) data ==
 Supplementary collection data, such as images of specimens, or dna samples, will likely be handled separately to the core data, which can be the records in the collection management system.
+
+A relationship from one record to another should be evident within the data of a record.
+
 The above should allow these data to be related by any consumer system.
 
-link to bryan's detailed doco on secondary collection data
+== General patterns for communicating relationships between records ==
+
+A pattern is a method for solving a particular problem. It doesn't delve into specifics per se, rather, defines the requirements for a solution. 
+
+At the most basic level, there are a handful of relationships that can be defined:
+  # one-to-one
+  # one-to-many
+  # many-to-many
+
+
+
+It is then up to the specific implememtation to make sure these requirements are met within its own context (more info: [http://en.wikipedia.org/wiki/Design_pattern_%28computer_science%29]); _e.g._:
+  * 
+
 
 ----
-= Standards usage patterns =
-
-A pattern is a methodology that you can follow to solve a problem.
+= Standards-specific solutions =
+Here, solutions for the following standards are defined, as well as links back to the scenarios they can tackle.
 
 == DarwinCore usage patterns ==
 
@@ -90,6 +105,54 @@ if the principal record is more than one step removed from this one, you can use
 === Preparations versus basis of record ===
   * The concepts 'basis of record' (DwC: basisOfRecord + dcterms:type; HISPID: xxx) and preparations  (DwC: preparations; HISPID: xxx) are metadata.
   * source data – does each record represent a preparation? or are all preparations for a principal collection item aggregated into the one record?
+
+== Potential HISPID5 usage patterns ==
+
+[http://goo.gl/50KhE http://goo.gl/50KhE _Specimen / Image Relationships with HISPID 5_]
+
+[https://docs.google.com/document/d/1bJYvz0AXT-O1iiJUs-ongmngTAhDiMfrJD2vu_5lmmM/edit?hl=en_US https://docs.google.com/document/d/1bJYvz0AXT-O1iiJUs-ongmngTAhDiMfrJD2vu_5lmmM/edit?hl=en_US _Specimen / Image Relationships with HISPID 5_]
+
+This section looks at the problem from the hispid perspective; this is what i want to do in hispid - what cases does it apply to? Here is a crude glossary:
+
+  * images - read ‘multimedia’; the assumption is that these are at least indexed in digital form somewhere (with appropriate metadata to find the object, if the image itself has not been digitised);
+  * storage mechanism - the database (/filestore/card-file...) that holds the data;
+  * ‘separate storage mechanisms’ imply a challenge in integrating the data; some types of the impediments encountered so far are a lack of technical capability, a physical separation & a temporal separation;
+  * Unit - HISPID
+  * HISPID SiteImage, SI - DataSets/DataSet/Units/Unit/Gathering/SiteImages/SiteImage http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept1138
+  * MultiMediaObject, MMO - DataSets/DataSet/Units/Unit/MultiMediaObjects/MultiMediaObject http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0772
+  * SpecimenUnit, SU - DataSets/DataSet/Units/Unit/SpecimenUnit http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0404
+
+=== SpecimenUnit record with nested SiteImage record(s) ===
+
+straightforward way of handling scenario XXX; the storage mechanisms are not separated in any way; a complete SpecimenUnit record with nested SiteImage record(s) can be built at the time of export;
+
+=== SpecimenUnit record with nested MultiMediaObject record(s) ===
+
+straightforward way of handling scenario XXX; the storage mechanisms are not separated in any way; a complete SpecimenUnit record with nested MMO records can be built at the time of export;
+
+=== MultiMediaObject/SiteImage record stands alone, from which sighting (specimen?) records are interpolated ===
+
+(this may not be a valid case in the herbaria domain) - in one of the faunal collections, the collection specimen is the sound recording of a habitat; from this, taxa are identified as existing in the fore/background - an occurrence (observation, sighting) is reported for each 'foreground taxon', while background taxa may have their own records, or may be referred to in metadata of the foreground record(s);
+
+HISPID would allow for this but each inferred SpecimenUnit record must have a nested MMO/SI record - in turn, each MMO/SI record would be a redundant copy of the other(s), with all the MMO/SI records sharing the same identifier.
+
+=== An image collection item is treated like more traditional specimen(s); this image may be related to other more traditional specimen(s) ===
+
+In this case, the image is the SpecimenUnit; it may be a duplicate, or derivation, of other SpecimenUnit(s); it has nested MultiMediaObject(s) to point to the image where it resides (usage pattern 1).
+
+    The image may be managed in a digital asset management system (DAMS) or it might be simply a file sent on the email from another institution.
+    It may be desirable as the aggregator to keep both source records (the whole may be equal to or greater than the sum of the parts); however, in this case, the relationship between both records must be maintained.
+
+
+=== SpecimenUnit record and MultiMediaObject / SiteImage record stand alone but share a 1:1 relationship ===
+
+‘separate storage mechanisms’ imply some challenge in integrating the data; up until this point, it is assumed that the data provider will be able to build an aggregate SpecimenUnit record at the time of export, when they are communicating imagery associated with the specimen;
+
+some types of the impediments to this ‘just-in-time aggregation’ that have been encountered so far are a lack of technical capability, a physical separation & a temporal separation;
+
+MultiMediaObject or SiteImage records are nested under Unit (spec suggests that MMO/SI is part of unit); however, MMO/SI has no way of communicating that it belongs to Unit - without this mechanism, each of these types of records could not exist in separate files, yet still maintain their relationship;
+
+this usage pattern doesn’t appear to be supported by hispid as it stands; we would need to add a term to MMO/SI to point to its related Unit - so it is anticipated that the main users of such a mechanism would have a need to communicate SpecimenUnit records completely separately  to their image records, yet have a desire that these be related.
 
 ----
 
