@@ -1,49 +1,66 @@
 #summary related records proposal
 
-----
-
 <table width="98%" border="0" cellpadding="10"><tr>
 
-<td width="70%">
+<td valign="top" width="*">
 
 = Summary of the related records proposal =
-This document is a draft proposal for handling relationships between data records. The intent of this proposal is to ensure the data standards support communicating these relationships if the source data capture them.
+== Introduction ==
+This document is a draft proposal for handling relationships between data records. The intent of this proposal is to ensure the data standards and best-practice support communicating these relationships if the source data capture them.
 
-It addresses two main specifications for biodiversity informatics data transfer: DarwinCore (2.x) and HISPID (5).
+*At 29/11/2011 this document is in draft form*; it supersedes (and subsumes) the earlier [IdentifyingRelatedRecords] document, also on this wiki.
 
-It supersedes (and subsumes) the earlier [IdentifyingRelatedRecords] document, also on this wiki.
+== Relevance ==
+This document applies to some of entities represented in biological collection data (_i.e._ collection items). It focuses on the relationships between specimen (or sighting) records, as well as any associated, supplementary data. It addresses two commonly-used specifications for biodiversity informatics data transfer: DarwinCore (2.x) and HISPID (5).
+
+See _About the data_ and _Appendix: Relevance to different biodiversity domains_ for more information.
 
 == General (functional) behaviour required of the collection management system ==
 
-  # Each record that is to be shared must have a consistent, predictable unique identifier. The record will most likely represent a collection item, but may also represent other related entities, such as the collector, a location or a site visit;
+  # Each record that is to be shared must have a consistent and predictable unique identifier. The record will most likely represent a collection item, but may also represent other related entities, such as the collector, a location or a site visit;
   # This identifier is to be set by the data custodian, in accordance with a pattern agreed to by the relevant institutional group (i.e. informatics peak body);
   # If the record represents data that are derived from other data (e.g. a specimen's image, or dna sequence) then this relationship should be stored in the collection management system, and communicated within the record as well;
   # Depending on the data-standard being used to share information, these identifiers will be stored in consistent and agreed ways (i.e. field names) so these relationships can be discovered programmatically;
 
 
 == Aggregator-specific behaviour ==
-
-  # The data aggregator should provide a (web?) service that:
+_Prioritised using [http://en.wikipedia.org/wiki/MoSCoW_Method MoSCoW - http://en.wikipedia.org/wiki/MoSCoW_Method]_
+  # Due to the high likelihood of inconsistency, the data aggregator must not build a single composite record from related records that are determined to be duplicates or constituent parts, without highlighting the inconsistencies and clearly identifying the provenance of such a record;
+  # The aggregator should clearly offer links to, or notification of, the existence of related records (if possible _i.e._ stored in the data and the aggregation);
+  # The aggregator could provide a (web?) service that:
     * responds to resource identifiers with a method for accessing the resource itself (freely or securely),
     * responds to the sub-parts of an identifier with best-guess identifier(s) based on current (and historical) patterns used by the relevant institutional group,
     * and potentially, offer the identifiers of related records as part of the response.
 
-== DarwinCore recommendations ==
+== Standards usage recommendations ==
+It is the intent of this proposal to maintain a consistent, 'backwards-compatible' behaviour for existing data that doesn't follow recommendations. 
+
+In most cases this is possible, however, in some instances where a relationship between duplicate records is not clearly defined multiple 'dots on the map' will appear. It is the hope that in the future some mechanism exists to mine for, seek validation and then remember these relationships.
+
+See _Appendix: Relationship mining sub-system (The Relator)_ for more information.
+
+=== Usage recommendations ===
+  # one
+  # two...
+
+=== Changes to the DwC specification ===
 Each of these terms should be added to the FCIG dwc extension; propose for ratification+inclusion in DwC
   # add _principalRecord_
   # add _parentRecord_
   # add _principalRelationshipType_
   # add _parentRelationshipType_
 
-== HISPID recommendations ==
+=== Changes to the HISPID specification ===
 Each of these terms should be added to the HISCOM ABCD extension (HISPID5):
   # add _principalUnitID_ to _MultiMediaObject_ and _SiteImage_
   # add _parentUnitID_ to _MultiMediaObject_ and _SiteImage_
 
-
 </td>
-<td valign="center" align="right">
-<p><table border="1" cellspacing="0"><tr><td>
+
+<td valign="top" align="right" width="33%">
+<p> </p><p> </p>
+<p><table border="1" cellspacing="0" cellpadding="4"><tr><td>
+*Contents:*
 <wiki:toc max_depth="3" />
 </td></tr></table></p>
 </td>
