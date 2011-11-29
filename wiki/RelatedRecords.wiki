@@ -5,6 +5,7 @@
 <td valign="top" width="*">
 
 = Summary of the related records proposal =
+
 == Introduction ==
 This document is a draft proposal for handling relationships between data records. The intent of this proposal is to ensure the data standards and best-practice support communicating these relationships if the source data capture them.
 
@@ -15,45 +16,23 @@ This document applies to some of entities represented in biological collection d
 
 See _About the data_ and _Appendix: Relevance to different biodiversity domains_ for more information.
 
-== General (functional) behaviour required of the collection management system ==
+== Requirements ==
+Note: _the following are prioritised using [http://en.wikipedia.org/wiki/MoSCoW_Method MoSCoW - http://en.wikipedia.org/wiki/MoSCoW_Method]_
 
+=== General (functional) behaviour required of the collection management system ===
   # Each record that is to be shared must have a consistent and predictable unique identifier. The record will most likely represent a collection item, but may also represent other related entities, such as the collector, a location or a site visit;
   # This identifier is to be set by the data custodian, in accordance with a pattern agreed to by the relevant institutional group (i.e. informatics peak body);
-  # If the record represents data that are derived from other data (e.g. a specimen's image, or dna sequence) then this relationship should be stored in the collection management system, and communicated within the record as well;
+  # If the record represents data that are derived from other data (see _About the data : Scenarios giving rise to relationships_) then this relationship should be stored in the collection management system, and communicated within the record using the appropriate method (see _About the data : Common patterns in the scenarios_);
   # Depending on the data-standard being used to share information, these identifiers will be stored in consistent and agreed ways (i.e. field names) so these relationships can be discovered programmatically;
 
 
-== Aggregator-specific behaviour ==
-_Prioritised using [http://en.wikipedia.org/wiki/MoSCoW_Method MoSCoW - http://en.wikipedia.org/wiki/MoSCoW_Method]_
+=== Aggregator-specific behaviour ===
   # Due to the high likelihood of inconsistency, the data aggregator must not build a single composite record from related records that are determined to be duplicates or constituent parts, without highlighting the inconsistencies and clearly identifying the provenance of such a record;
-  # The aggregator should clearly offer links to, or notification of, the existence of related records (if possible _i.e._ stored in the data and the aggregation);
+  # The aggregator should use methods (see _About the data : Patterns of relationships_) to discover the existence of related records and clearly offer links to, or notification of, these records;
   # The aggregator could provide a (web?) service that:
     * responds to resource identifiers with a method for accessing the resource itself (freely or securely),
     * responds to the sub-parts of an identifier with best-guess identifier(s) based on current (and historical) patterns used by the relevant institutional group,
     * and potentially, offer the identifiers of related records as part of the response.
-
-== Standards usage recommendations ==
-It is the intent of this proposal to maintain a consistent, 'backwards-compatible' behaviour for existing data that doesn't follow recommendations. 
-
-In most cases this is possible, however, in some instances where a relationship between duplicate records is not clearly defined multiple 'dots on the map' will appear. It is the hope that in the future some mechanism exists to mine for, seek validation and then remember these relationships.
-
-See _Appendix: Relationship mining sub-system (The Relator)_ for more information.
-
-=== Usage recommendations ===
-  # one
-  # two...
-
-=== Changes to the DwC specification ===
-Each of these terms should be added to the FCIG dwc extension; propose for ratification+inclusion in DwC
-  # add _principalRecord_
-  # add _parentRecord_
-  # add _principalRelationshipType_
-  # add _parentRelationshipType_
-
-=== Changes to the HISPID specification ===
-Each of these terms should be added to the HISCOM ABCD extension (HISPID5):
-  # add _principalUnitID_ to _MultiMediaObject_ and _SiteImage_
-  # add _parentUnitID_ to _MultiMediaObject_ and _SiteImage_
 
 </td>
 
@@ -73,7 +52,7 @@ Each of these terms should be added to the HISCOM ABCD extension (HISPID5):
 
 == Scenarios giving rise to relationships ==
 
-A standing assumption: these are patterns in the data management processes, and are evident in the source data.
+The following situations have been encountered to date; they are referred to later when itemising the possible solutions within each specification.
 
  # Specimen record holds metadata on multiple preparations
  # Specimen record is a single preparation
@@ -93,31 +72,55 @@ A standing assumption: these are patterns in the data management processes, and 
  # ...
 
 
+== Common patterns in the scenarios ==
+A pattern is a method for solving a particular problem. It doesn't delve into specifics per se, rather, defines the requirements for a solution. It could be said that the scenarios are actually instances of a particular solution to a problem within a given context and/or domain.
+
+
 == Core (primary) and supplementary (duplicated, derived, secondary) data ==
 Supplementary collection data, such as images of specimens, or dna samples, will likely be handled separately to the core data, which can be the records in the collection management system.
 
-A relationship from one record to another should be evident within the data of a record.
 
-The above should allow these data to be related by any consumer system.
+== Relationships ==
+A standing assumption: relationships between records are captured in the data management processes, and are evident in the source data.
 
-== General patterns for communicating relationships between records ==
+In database parlance, the _cardinality_ of a particular relationship is defined in a handful of ways:  one-to-one, one-to-many (/many-to-one) and many-to-many (_see [http://en.wikipedia.org/wiki/Cardinality_%28data_modeling%29 http://en.wikipedia.org/wiki/Cardinality_%28data_modeling%29]_).
 
-A pattern is a method for solving a particular problem. It doesn't delve into specifics per se, rather, defines the requirements for a solution. 
+The right choice depends on the process and data being captured; but the method employed to communicate these will likely differ even within the same circumstace. 
 
-At the most basic level, there are a handful of relationships that can be defined:
-  # one-to-one
-  # one-to-many
-  # many-to-many
+Some of these methods will be applicable to the specifications as they stand, and others will require a currently non-standard solution. This is clearly defined in _Standards-specific usage patterns_. 
 
-
-
-It is then up to the specific implememtation to make sure these requirements are met within its own context (more info: [http://en.wikipedia.org/wiki/Design_pattern_%28computer_science%29]); _e.g._:
+It is up to the implememtation to make identify which sure these requirements are met within its own context (more info: [http://en.wikipedia.org/wiki/Design_pattern_%28computer_science%29]); _e.g._:
   * 
 
-
 ----
-= Standards-specific solutions =
-Here, solutions for the following standards are defined, as well as links back to the scenarios they can tackle.
+
+= Standards-specific usage patterns =
+
+== Introduction ==
+It is the intent of this proposal to define consistent methods for communicating relationships between records; in all cases, the following design-constraints are considered:
+  # be flexible but solve the problem, and accept that there are multiple solutions - let the data provider choose the best fit;
+  # use the existing standard terms where ever possible, unless the use of these terms in this manner would cause a conflict with the general understanding and/or current practice;
+  # add terms only when the following conditions are met:
+    # the term name is defined which at least hints at the purpose (_yes, this is purely subjective - but if a number of people agree that the naming makes sense, then that's the best that can be hoped for at this stage_)
+    # the term's usage is unambiguously defined in a short description
+
+For true 'backwards compatibility', the newer (extended) version of records must conjur the same behaviour in consuming applications as the earlier version would have.
+
+*One assumption must be made in this regard:* that the data consumer ignores unrecognised fields instead of calling a halt to the load process, or, at worst case, drops this particular record as 'an error'. Ideally, unrecognised fields would be ignored.
+
+In most cases this is possible, however, in some instances where relationships between duplicate records are not clearly defined then multiple 'dots on the map' will appear. It is the hope that in the future some mechanism exists to mine for, seek validation and then remember these relationships - see _Appendix: Relationship mining sub-system (The Relator)_ for more information.
+
+== Changes to the DwC specification ==
+Each of these terms should be added to the FCIG dwc extension; propose for ratification+inclusion in DwC
+  # add _principalRecord_
+  # add _parentRecord_
+  # add _principalRelationshipType_
+  # add _parentRelationshipType_
+
+== Changes to the HISPID specification ==
+Each of these terms should be added to the HISCOM ABCD extension (HISPID5):
+  # add _principalUnitID_ to _MultiMediaObject_ and _SiteImage_
+  # add _parentUnitID_ to _MultiMediaObject_ and _SiteImage_
 
 == DarwinCore usage patterns ==
 
@@ -138,7 +141,6 @@ if the principal record is more than one step removed from this one, you can use
   * source data – does each record represent a preparation? or are all preparations for a principal collection item aggregated into the one record?
 
 == Potential HISPID5 usage patterns ==
-
 [http://goo.gl/50KhE http://goo.gl/50KhE _Specimen / Image Relationships with HISPID 5_]
 
 [https://docs.google.com/document/d/1bJYvz0AXT-O1iiJUs-ongmngTAhDiMfrJD2vu_5lmmM/edit?hl=en_US https://docs.google.com/document/d/1bJYvz0AXT-O1iiJUs-ongmngTAhDiMfrJD2vu_5lmmM/edit?hl=en_US _Specimen / Image Relationships with HISPID 5_]
