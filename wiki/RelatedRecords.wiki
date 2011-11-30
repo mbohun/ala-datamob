@@ -50,8 +50,24 @@ Note: _the following are prioritised using [http://en.wikipedia.org/wiki/MoSCoW_
 
 = About the data =
 
-== Scenarios giving rise to relationships ==
 
+== Core (primary) and supplementary (duplicated, derived, secondary) data ==
+In the scope of this logic, *core collection data* is generally the data that find themselves at the source of other data (causally). They are distinguishable to *supplementary collection data*, which are usually derived in some way; _e.g._
+  * a specimen (core) which is photographed, the photo being stored in a separate system (supplement);
+  * a sound-recording (core) is taken in the field, within which sightings are evident (supplement);
+  * a specimen (core) is scanned by a service provider with CT equipment (supplement);
+
+The organisational boundary most likely plays a role in the distinction as well; _e.g._
+  * the service provider keeps a database of all ct-scans; the specimen's ct-scan (core) is converted to a lower-fidelity .avi file and offerred on their website (supplement);
+  * a herbarium manages a photo of a type specimen, held in another institution, within their own specimen management system (core);
+  * _... it goes on!_
+
+Suffice it to say, each type of data are likely handled in separate (sub-)systems with separate processes for managing them - this point forces us to reconsider some cases; _e.g._
+  * a specimen (core) which then has its skin preserved and treated as a separate, but related, specimen (core);
+
+It seems highly unlikely that any attempt to apply labels to organisations' activities will not bring to light cases that contradict the reasoning used to assign these labels. Therefore, _core_ or _supplementary_ can be considered arbitrary labels used to distinguish the roles data play in relationships. 
+
+== Scenarios giving rise to relationships ==
 The following situations have been encountered to date; they are referred to later when itemising the possible solutions within each specification.
 
  # Specimen record holds metadata on multiple preparations
@@ -73,11 +89,7 @@ The following situations have been encountered to date; they are referred to lat
 
 
 == Common patterns in the scenarios ==
-A pattern is a method for solving a particular problem. It doesn't delve into specifics per se, rather, defines the requirements for a solution. It could be said that the scenarios are actually instances of a particular solution to a problem within a given context and/or domain.
-
-
-== Core (primary) and supplementary (duplicated, derived, secondary) data ==
-Supplementary collection data, such as images of specimens, or dna samples, will likely be handled separately to the core data, which can be the records in the collection management system.
+A pattern can be thought of as a generic method for solving a particular problem. It doesn't delve into specifics per se, rather, defines the requirements for a solution. It could be said that the scenarios are actually instances of a particular solution to a problem within a given context and/or domain.
 
 
 == Relationships ==
