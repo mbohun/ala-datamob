@@ -100,7 +100,7 @@ This section attempts to identify instances of common ground shared amongst the 
 
 <wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&single=true&gid=0&output=html" up_Title="matrix" up_height=380 width="97%" up_refresh=6000 />
 
-(see _Appendix: Embedding a google docs spreadsheet in a wiki page_ for details)
+From [http://goo.gl/TdSLD 20111130 - dm related records scenario-pattern matrix; http://goo.gl/TdSLD] (see _Appendix: Embedding a google docs spreadsheet in a wiki page_ for details)
 
 ----
 
