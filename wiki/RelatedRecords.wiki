@@ -152,6 +152,9 @@ This next table comes from a google docs spreadsheet, at [http://goo.gl/TdSLD ht
 
 = Standards-specific usage patterns =
 
+== NOTE: this section is currently stale ==
+Up until this point, the content in this doc has been under active development; but this section needs to be refined considerably to reflect the reasoning to this point - take the following content with a grain of salt...
+
 == Introduction ==
 
 It is the intent of this proposal to define consistent methods for communicating relationships between records; in all cases, the following design-constraints are considered:
