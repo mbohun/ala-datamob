@@ -42,7 +42,7 @@ Note: _the following are prioritised using [http://en.wikipedia.org/wiki/MoSCoW_
 <p> </p><p> </p>
 <p><table border="1" cellspacing="0" cellpadding="4"><tr><td>
 *Contents:*
-<wiki:toc max_depth="3" />
+<wiki:toc max_depth="2" />
 </td></tr></table></p>
 </td>
 
@@ -92,15 +92,56 @@ The following situations have been encountered to date; they are referred to lat
  # ... 
 
 
+== Common entities in the scenarios ==
+  * Specimen or sighting
+  * Multimedia collection item
+  * Duplicate
+
 == Common patterns in the scenarios ==
 
 This section attempts to identify instances of common ground shared amongst the scenarios, i.e. a 'lowest common denominator', with the goal of relating each pattern to a prescribed usage within a particular standard. 
 
 (For some thoughts on how these patterns are identified, see _Appendix: Searching for common patterns in the scenarios_)
 
+This next table comes from a google docs spreadsheet, at [http://goo.gl/TdSLD http://goo.gl/TdSLD : 20111130 - dm related records scenario-pattern matrix] (see _Appendix: Embedding a google docs spreadsheet in a wiki page_ for details)
+
 <wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&single=true&gid=0&output=html" up_Title="matrix" up_height=380 width="97%" up_refresh=6000 />
 
-From [http://goo.gl/TdSLD 20111130 - dm related records scenario-pattern matrix; http://goo.gl/TdSLD] (see _Appendix: Embedding a google docs spreadsheet in a wiki page_ for details)
+=== a1: Specimen or sighting relates to one only specimen/sighting ===
+
+=== a2: Specimen or sighting relates to many specimens/sightings ===
+
+=== a3: Specimen or sighting relates to one only multimedia collection item ===
+
+=== a4: Specimen or sighting relates to many multimedia collection items ===
+
+=== a5: Specimen or sighting relates to one only duplicate ===
+
+=== a6: Specimen or sighting relates to many duplicates ===
+
+=== b1: Multimedia collection item relates to one only specimen/sighting ===
+
+=== b2: Multimedia collection item relates to many specimens/sightings ===
+
+=== b3: Multimedia collection item relates to one only multimedia collection item ===
+
+=== b4: Multimedia collection item relates to many multimedia collection items ===
+
+=== b5: Multimedia collection item relates to one only duplicate ===
+
+=== b6: Multimedia collection item relates to many duplicates ===
+
+=== c1: Duplicate relates to one only specimen/sighting ===
+
+=== c2: Duplicate relates to many specimens/sightings ===
+
+=== c3: Duplicate relates to one only multimedia collection item ===
+
+=== c4: Duplicate relates to many multimedia collection items ===
+
+=== c5: Duplicate relates to one only duplicate ===
+
+=== c6: Duplicate relates to many duplicates ===
 
 ----
 
