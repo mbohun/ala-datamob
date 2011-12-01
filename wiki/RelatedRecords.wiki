@@ -94,13 +94,27 @@ The following situations have been encountered to date; they are referred to lat
 
 == Common entities in the scenarios ==
 
-
 === Specimen or sighting ===
-=== Multimedia collection item ===
+Specimen, sighting, preparation, occurrence, observation - these entities share the following attributes:
+  * a taxon, a determination;
+  * (possibly) a location in time and space;
 
+=== Multimedia collection item ===
+Image, sound, video, painting, ... :
+  * a representation of a specimen, or evidence of a sighting;
+  * (possibly) metadata of the item such as usage rights, or authorship;
 
 === Duplicate ===
-This is a special case; it could be 
+This is a specialised case of either the specimen/sighting or multimedia entities. 
+
+All of these impact on _how_ a duplicate came to be, and _where_ the duplicate lives. 
+
+=== Other collection entities ===
+Collectors, sites, localities, collection events, field collections, surveys, 
+
+These are generally related to the others through one of the following methods:
+  * explicitly associated through a _[http://en.wikipedia.org/wiki/Foreign_key foreign key - http://en.wikipedia.org/wiki/Foreign_key]_ relationship, _i.e._ a pointer in a specific term within a record, to the unique identifier of another entity; e.g. _DwC.locationID_, _HISPID.XXX_
+  * implied through a nested data structure
 
 == Common patterns in the scenarios ==
 
