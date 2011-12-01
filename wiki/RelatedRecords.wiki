@@ -103,7 +103,8 @@ _can i embed a google docs spreadsheet in this wiki page? that would be good!_
 
 <wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&single=true&gid=0&output=html" up_Title="matrix" up_height=300 up_refresh=0 />
 
-<wiki:gadget url="http://www.gmodules.com/ig/ifr?url=http://googlegadgetworld.com/Jokes/Politicaljokes/bestpoliticaljokes.xml" height="200" border="0" /> 
+<wiki:gadget url="http://www.gmodules.com/ig/ifr?url=http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml
+up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&single=true&gid=0&output=html" up_Title="title" up_height="400" up_refresh="0" up_Version="New" />
 
 ||  || ||  ||  ||
 ||  ||  ||  ||  ||
