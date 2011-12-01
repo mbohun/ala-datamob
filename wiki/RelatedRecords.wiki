@@ -101,14 +101,9 @@ This section attempts to identify instances of common ground shared amongst the 
 _can i embed a google docs spreadsheet in this wiki page? that would be good!_
 [http://goo.gl/PsS0y]
 
-<iframe width='500' height='300' frameborder='0' src='https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&single=true&gid=0&output=html'></iframe>
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&single=true&gid=0&output=html" up_Title="matrix" up_height=300 up_refresh=0 />
 
 <wiki:gadget url="http://www.gmodules.com/ig/ifr?url=http://googlegadgetworld.com/Jokes/Politicaljokes/bestpoliticaljokes.xml" height="200" border="0" /> 
-
-
-<wiki:gadget url="https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&single=true&gid=0&output=html" height="200" border="0" /> 
-
-<script src="http://www.gmodules.com/ig/ifr?url=http://googlegadgetworld.com/Jokes/Politicaljokes/bestpoliticaljokes.xml&amp;synd=open&amp;w=320&amp;h=300&amp;title=Best+Political+Jokes&amp;border=%23ffffff%7C0px%2C1px+solid+%23595959%7C0px%2C1px+solid+%23797979%7C0px%2C2px+solid+%23898989&amp;output=js"></script>
 
 ||  || ||  ||  ||
 ||  ||  ||  ||  ||
