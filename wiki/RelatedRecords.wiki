@@ -98,12 +98,7 @@ This section attempts to identify instances of common ground shared amongst the 
 
 (For some thoughts on how these patterns are identified, see _Appendix: Searching for common patterns in the scenarios_)
 
-<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" 
-up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&single=true&gid=0&output=html" 
-up_Title="matrix" 
-up_height=360 
-width="97%" 
-up_refresh=6000 />
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&single=true&gid=0&output=html" up_Title="matrix" up_height=360 width="97%" up_refresh=6000 />
 
 (see _Appendix: Embedding a google docs spreadsheet in a wiki page_ for details)
 
@@ -282,12 +277,7 @@ In your google docs spreadsheet: *File* menu -> *Publish to the web*; then click
 
 In the wiki markup (customising the following code to suit your specific case)...
 {{{
-<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" 
-up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&single=true&gid=0&output=html" 
-up_Title="matrix" 
-up_height=360 
-width="97%" 
-up_refresh=6000 />
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&single=true&gid=0&output=html" up_Title="matrix" up_height=360 width="97%" up_refresh=6000 />
 }}}
 
 _I noticed some funny business in firefox 7 with no-script under windows 7, which was resolved by 'allowing' the gmodules.com domain_
