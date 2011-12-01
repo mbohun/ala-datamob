@@ -98,9 +98,8 @@ This section attempts to identify instances of common ground shared amongst the 
 
 (For some thoughts on how these patterns are identified, see _Appendix: Searching for common patterns in the scenarios_)
 
-_can i embed a google docs spreadsheet in this wiki page? that would be good!_ [http://goo.gl/PsS0y]
-
-<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&single=true&gid=0&output=html" up_Title="matrix" up_height=510 width="97%" up_refresh=6000 />
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&single=true&gid=0&output=html" up_Title="matrix" up_height=360 width="97%" up_refresh=6000 />
+(see _Appendix: Embedding a google docs spreadsheet in a wiki page_ for details)
 
 ----
 
@@ -269,6 +268,18 @@ Some of these methods will be applicable to the specifications as they stand, an
 In database parlance, the _cardinality_ of a particular relationship is defined in a handful of ways:  one-to-one, one-to-many (/many-to-one) and many-to-many (_see [http://en.wikipedia.org/wiki/Cardinality_%28data_modeling%29 http://en.wikipedia.org/wiki/Cardinality_%28data_modeling%29]_).
 
 The right choice depends on the process and data being captured; but the method employed to communicate these will likely differ even within the same circumstance. 
+
+
+== Appendix: ==
+
+In your google docs spreadsheet: *File* menu -> *Publish to the web*; then click *Start publishing*; then scroll down to _Get a link..._ and choose *Web page* from the drop-down menu; finally, copy the url from the text box - you will need this url in the wiki markup that follows...
+
+In the wiki markup (customising the following code to suit your specific case)...
+{{{
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&single=true&gid=0&output=html" up_Title="matrix" up_height=360 width="97%" up_refresh=6000 />
+}}}
+
+_I noticed some funny business in firefox 7 with no-script under windows 7, which was resolved by 'allowing' the gmodules.com domain_
 
 
 == Appendix: Notes ==
