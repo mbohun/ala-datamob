@@ -100,7 +100,7 @@ This section attempts to identify instances of common ground shared amongst the 
 
 _can i embed a google docs spreadsheet in this wiki page? that would be good!_ [http://goo.gl/PsS0y]
 
-<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&single=true&gid=0&output=html" up_Title="matrix" up_height=510 width=768 up_refresh=6000 />
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&single=true&gid=0&output=html" up_Title="matrix" up_height=510 width="100%" up_refresh=6000 />
 
 ----
 
