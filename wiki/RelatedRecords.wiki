@@ -93,9 +93,14 @@ The following situations have been encountered to date; they are referred to lat
 
 
 == Common entities in the scenarios ==
-  * Specimen or sighting
-  * Multimedia collection item
-  * Duplicate
+
+
+=== Specimen or sighting ===
+=== Multimedia collection item ===
+
+
+=== Duplicate ===
+This is a special case; it could be 
 
 == Common patterns in the scenarios ==
 
