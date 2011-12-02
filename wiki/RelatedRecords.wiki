@@ -14,7 +14,9 @@ This document is a draft proposal for handling relationships between data record
 == Relevance ==
 This document applies to some of the entities represented in biological collection data (_i.e._ collection items). It focuses on the associations amongst specimen (or sighting) records, along with duplicates, other evidential data, or rich content (_i.e._ multimedia). 
 
-It addresses two commonly-used specifications for biodiversity informatics data transfer: DarwinCore (2.x) and HISPID (5).
+It directly addresses two commonly-used specifications for biodiversity informatics data transfer: DarwinCore (2.x) and HISPID (5). ABCD (2) is indirectly referenced, as HISPID5 is implemented as an extension of this. 
+
+The HISPID specific use-cases may conflict with ABCD-usage; an attempt may be made in the future to highlight these, but at the moment the reader should be cautious of this possibility.
 
 See _About the data_ and _Appendix: Relevance to different biodiversity domains_ for more information.
 
@@ -35,6 +37,11 @@ Note: _the following are prioritised using [http://en.wikipedia.org/wiki/MoSCoW_
     * responds to resource identifiers with a method for accessing the resource itself (freely or securely),
     * responds to the sub-parts of an identifier with best-guess identifier(s) based on current (and historical) patterns used by the relevant institutional group,
     * and potentially, offer the identifiers of related records as part of the response.
+
+
+=== Changes to the domain-specific extensions ===
+
+
 
 </td>
 
@@ -66,7 +73,7 @@ The organisational boundary most likely plays a role in the distinction as well;
   * a herbarium manages a photo of a type specimen, held in another institution, within their own specimen management system (core);
   * _... it goes on!_
 
-Suffice it to say, each type of data are likely handled in separate (sub-)systems with separate processes for managing them - this point forces us to reconsider some cases; _e.g._
+Suffice it to say, types of data are likely handled in separate (sub-)systems with separate processes for managing them - this point forces us to reconsider some cases; _e.g._
   * a specimen (core) which then has its skin preserved and treated as a separate, but related, specimen (core);
  
 
@@ -86,7 +93,9 @@ The following situations have been encountered to date; they are referred to lat
    * a digitisation of a sound-reel, having many recordings, each recording a discrete site visit, each recording capturing one or more taxa
  # DNA and one (or more) sequence(s) of (barcodes), each sequence matching one or more taxa (next-gen sequencing - http://www.google.com.au/search?q=nextgen+sequencing)
  # vouchering of specimens amongst herbaria
- # duplication of specimens within herbaria collection management systems (digital representations of the physical, sharing, donation
+ # donation of collections
+ # duplication of specimens within/amonsgt collection management systems 
+ # duplication of sightings in aggregators' data supply chains, _i.e._ harvesting from a primary data-producer, as well as a down-stream aggregator;
  # collaboration between institutions in the field; specimen(s) gathered from a common observation (biological individual, sighting, occurrence) made on a joint expedition
  # deriving sightings from sightings (?)
  # ... 
@@ -96,23 +105,32 @@ The following situations have been encountered to date; they are referred to lat
 
 === Specimen or sighting ===
 Specimen, sighting, preparation, occurrence, observation - these entities share the following attributes:
+  * a collector or observer;
   * a taxon, a determination;
   * (possibly) a location in time and space;
 
 === Multimedia collection item ===
 Image, sound, video, painting, ... :
-  * a representation of a specimen, or evidence of a sighting;
+  * a representation of specimen(s), or evidence of sighting(s);
   * (possibly) metadata of the item such as usage rights, or authorship;
 
 === Duplicate ===
-This is a specialised case of either the specimen/sighting or multimedia entities. 
+This is a specialised case applicable to both the specimen/sighting or multimedia entities. What constitutes a duplicate can vary across the domains (see _Appendix: Relevance to different biodiversity domains_) but the up shot is roughly the same - two 'dots on a map' in the aggregate view, where there should really only be one:
+  * a deliberate duplication of data at the process level, _e.g._ multiple pieces of the whole being distributed to many org's, with no one org keeping the whole;
+  * a necessary duplication, _e.g._ a specimen being digitised,  
+  * an inadvertent duplication, _e.g._ a specimen being digitised,
+  * a redundant dupliction, _e.g._ a specimen being digitised, the original specimen being deaccessioned 
 
-All of these impact on _how_ a duplicate came to be, and _where_ the duplicate lives. 
+There are more detailed analyses of duplicates being undertaken, both from the perspective of _how_ a duplicate came to be and _where_ the duplicate lives, as well as _what_ to do about them:
+  * NZVH.AaronWilton herbaria duplicates doco;
+  * DPEWCS.SimonBennet eliminating outliers, duplicates, ...;
+
+For the purposes of this document, 
 
 === Other collection entities ===
-Collectors, sites, localities, collection events, field collections, surveys, 
+Collectors, sites, localities, collection events, field collections, surveys; 
 
-These are generally related to the others through one of the following methods:
+In cases where this information is not an attribute of the record, these data are generally related to the others through one of the following methods:
   * explicitly associated through a _[http://en.wikipedia.org/wiki/Foreign_key foreign key - http://en.wikipedia.org/wiki/Foreign_key]_ relationship, _i.e._ a pointer in a specific term within a record, to the unique identifier of another entity; e.g. _DwC.locationID_, _HISPID.XXX_
   * implied through a nested data structure
 
@@ -187,11 +205,13 @@ In most cases this is possible, however, in some instances where relationships b
 
 == Changes to the DwC specification ==
 
-Each of these terms should be added to the FCIG dwc extension; propose for ratification+inclusion in DwC
-  # add _principalRecord_
-  # add _parentRecord_
-  # add _principalRelationshipType_
-  # add _parentRelationshipType_
+Each of these terms should be added to the FCIG DwC extension; after community consultation, ALA to propose for ratification+inclusion in DwC:
+  # add _principalRecord_ to _Record_
+  # add _parentRecord_ to _Record_
+  # add _principalRelationType_ to _Record_
+  # add _parentRelationType_ to _Record_
+
+In addition to these terms being added, a new class of data should be added to the logical model that allows communication of multiple relationships, similar to _HISPID.UnitAssociations_. No details have been fleshed out on this one yet - more to follow.
 
 == Changes to the HISPID specification ==
 Each of these terms should be added to the HISCOM ABCD extension (HISPID5):
