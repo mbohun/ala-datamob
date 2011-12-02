@@ -4,42 +4,56 @@
 
 <td valign="top" width="*">
 
+
 = Summary of the related records proposal =
 
-== Introduction ==
-This document is a draft proposal for handling relationships between data records. The intent of this proposal is to ensure the data standards and best-practice support communicating these relationships if the source data capture them.
 
-*At 29/11/2011 this document is in draft form*; it supersedes (and subsumes) the earlier [IdentifyingRelatedRecords] document, also on this wiki.
+== Introduction ==
+
+This document [http://code.google.com/p/ala-datamob/RelatedRecords] is a draft proposal for handling relationships between data records. The intent of this proposal is to ensure the data standards and best-practice support communicating these relationships if the source data capture them.
+
+*At 02/12/2011 this document is still in draft form*, with a first release for peer review imminent; it supersedes (and subsumes) the earlier [IdentifyingRelatedRecords] document, also on this wiki.
+
 
 == Relevance ==
-This document applies to some of the entities represented in biological collection data (_i.e._ collection items). It focuses on the associations amongst specimen (or sighting) records, along with duplicates, other evidential data, or rich content (_i.e._ multimedia). 
 
-It directly addresses two commonly-used specifications for biodiversity informatics data transfer: DarwinCore (2.x) and HISPID (5). ABCD (2) is indirectly referenced, as HISPID5 is implemented as an extension of this. 
+This document applies to some of the entities represented in biological collection data (_i.e._ collection items), with a focus on associations amongst specimen (or sighting) records, along with duplicates, other evidential data, or rich content (_i.e._ multimedia). 
+
+It is a retrospective analysis of two commonly-used specifications for biodiversity informatics data transfer: DarwinCore (2.x) and HISPID (5). ABCD (2) is indirectly referenced, of which HISPID5 is implemented as an extension.
 
 The HISPID specific use-cases may conflict with ABCD-usage; an attempt may be made in the future to highlight these, but at the moment the reader should be cautious of this possibility.
 
 See _About the data_ and _Appendix: Relevance to different biodiversity domains_ for more information.
 
+
 == Requirements ==
+
 Note: _the following are prioritised using [http://en.wikipedia.org/wiki/MoSCoW_Method MoSCoW - http://en.wikipedia.org/wiki/MoSCoW_Method]_
+
 
 === General (functional) behaviour required of the collection management system ===
   # Each record that is to be shared must have a consistent and predictable unique identifier. The record will most likely represent a collection item, but may also represent other related entities, such as the collector, a location or a site visit;
   # This identifier is to be set by the data custodian, in accordance with a pattern agreed to by the relevant institutional group (i.e. informatics peak body);
-  # If the record represents data that are derived from other data (see _About the data : Scenarios giving rise to relationships_) then this relationship should be stored in the collection management system, and communicated within the record using the appropriate method (see _About the data : Common patterns in the scenarios_);
-  # Depending on the data-standard being used to share information, these identifiers will be stored in consistent and agreed ways (i.e. field names) so these relationships can be discovered programmatically;
+  # If the record represents data that are derived, or duplicated, from other data (see _About the data : Scenarios giving rise to relationships_) then this relationship should be stored in the collection management system, and communicated within the record using an appropriate method for the data-standard being used to share information (see _About the data : Common patterns in the scenarios_);
 
 
 === Aggregator-specific behaviour ===
-  # Due to the high likelihood of inconsistency, the data aggregator must not build a single composite record from related records that are determined to be duplicates or constituent parts, without highlighting the inconsistencies and clearly identifying the provenance of such a record;
-  # The aggregator should use methods (see _About the data : Patterns of relationships_) to discover the existence of related records and clearly offer links to, or notification of, these records;
+  # Due to the high likelihood of inconsistency, the data aggregator must not build a single composite record from related records that are determined to be duplicates or constituent parts, without:
+    * highlighting the inconsistencies,
+    * clearly identifying the provenance of such a record as being the aggregator,
+    * not aggregating organisation-specific information (such as _DwC.institutionCode_), or overwriting with aggregator-specific information
+  # The aggregator should use methods (see _About the data : Common patterns in the scenarios_) to discover the existence of related records and clearly offer links to, or notification of, these records;
   # The aggregator could provide a (web?) service that:
     * responds to resource identifiers with a method for accessing the resource itself (freely or securely),
     * responds to the sub-parts of an identifier with best-guess identifier(s) based on current (and historical) patterns used by the relevant institutional group,
     * and potentially, offer the identifiers of related records as part of the response.
+  # The aggregator could remember relationships between records, and allow users to navigate this graph;
+  # The aggregator could infer relationships between records, and allow users to confirm these, which it would also remember;
 
 
 === Changes to the domain-specific extensions ===
+*NOTE:* These recommendations remain untested and are likely to evolve further...
+
 To FCIG-DwC (for more details see _Standards-specific usage patterns : Changes to the DwC specification_) :
   # a mechanism to relate a _General_ record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of dwc (simple, archives and xml);
   # a mechanism to relate a record to other record(s), one-to-many, _n_ relationships, available only in dwc-archives and dwc-xml;
@@ -48,13 +62,14 @@ To HISPID-ABCD (for more details see _Standards-specific usage patterns : Change
   # a mechanism relate a unit record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of hispid;
   # a mechanism to relate _Unit_-nested multimedia (_MultiMediaObjects_, _SiteImages_) to the specimen _explicitly_ in the data, _i.e._ a _UnitID_ pointer in all of these sub-classes;
 
+
 </td>
 
 <td valign="top" align="right" width="33%">
 <p> </p><p> </p>
 <p><table border="1" cellspacing="0" cellpadding="4"><tr><td>
 *Contents:*
-<wiki:toc max_depth="3" />
+<wiki:toc max_depth="2" />
 </td></tr></table></p>
 </td>
 
@@ -64,11 +79,10 @@ To HISPID-ABCD (for more details see _Standards-specific usage patterns : Change
 
 = About the data =
 
+
 == Core (primary) and supplementary (duplicated, derived, secondary) data ==
 
-It seems highly unlikely that any attempt to apply labels to organisations' activities will not bring to light cases that contradict the reasoning used to assign these labels. Therefore, _core_ or _supplementary_ can be considered arbitrary labels used to distinguish the roles data play in relationships.
-
-In the scope of this logic, *core collection data* is generally the data that find themselves at the source of other data (causally). They are distinguishable to *supplementary collection data*, which are usually derived in some way; _e.g._
+In the scope of this logic, *core collection data* are generally the data that find themselves at the source of other data (causally). They are distinguishable to *supplementary collection data*, which are usually derived in some way; _e.g._
   * a specimen (core) which is photographed, the photo being stored in a separate system (supplement);
   * a sound-recording (core) is taken in the field, within which sightings are evident (supplement);
   * a specimen (core) is scanned by a service provider with CT equipment (supplement);
@@ -79,65 +93,36 @@ The organisational boundary most likely plays a role in the distinction as well;
   * _... it goes on!_
 
 Suffice it to say, types of data are likely handled in separate (sub-)systems with separate processes for managing them - this point forces us to reconsider some cases; _e.g._
-  * a specimen (core) which then has its skin preserved and treated as a separate, but related, specimen (core);
- 
+  * a preserved specimen (core) which then has its skin dried and treated as a separate, but related, specimen (core);
+
+It seems highly unlikely that any attempt to apply labels to organisations' activities will not bring to light cases that contradict the reasoning used to assign these labels. 
+
+As such, _core_ or _supplementary_ can be considered arbitrary labels used to distinguish the roles data play in relationships, analogous to _parent_ and _child_ respectively. Both terms are used interchangeably in this document.
+
 
 == Scenarios giving rise to relationships ==
 
 The following situations have been encountered to date; they are referred to later when itemising the possible solutions within each specification.
 
- # Specimen record holds metadata on multiple preparations
- # Specimen record is a single preparation
- # One or more preparations relate to one or more specimens through a cross-reference table (_note: this situation has not been encountered - if this is your data, give us a yell! thanks..._)
- # Any of the above three, but 'specimen' is already a constituent part (_piece, relationship, derivation_) of another
- # A 'collection item' being a generalisation of the more specific (specimen) in any of the above scenarios
- # Any collection item, from which one or more observations (sightings, occurrences) are evident - these observations may not necessarily have a determination (taxon)
- # Any collection item representing another in a many to one relationship; eg:
-   * a photo of a drawer full of specimens
-   * a photo of a flock of birds
-   * a digitisation of a sound-reel, having many recordings, each recording a discrete site visit, each recording capturing one or more taxa
- # DNA and one (or more) sequence(s) of (barcodes), each sequence matching one or more taxa (next-gen sequencing - http://www.google.com.au/search?q=nextgen+sequencing)
- # vouchering of specimens amongst herbaria
- # donation of collections
- # duplication of specimens within/amonsgt collection management systems 
- # duplication of sightings in aggregators' data supply chains, _i.e._ harvesting from a primary data-producer, as well as a down-stream aggregator;
- # collaboration between institutions in the field; specimen(s) gathered from a common observation (biological individual, sighting, occurrence) made on a joint expedition
- # deriving sightings from sightings (?)
- # ... 
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=6" up_Title="matrix" up_height=560 width="768" up_refresh=6000 />
+
+_From [http://goo.gl/TdSLD]_
 
 
 == Common entities in the scenarios ==
 
-=== Specimen or sighting ===
-Specimen, sighting, preparation, occurrence, observation - these entities share the following attributes:
-  * a collector or observer;
-  * a taxon, a determination;
-  * (possibly) a location in time and space;
+*It is the intent of this document to ensure the data provider can communicate duplication whereever possible.*
 
-=== Multimedia collection item ===
-Image, sound, video, painting, ... :
-  * a representation of specimen(s), or evidence of sighting(s);
-  * (possibly) metadata of the item such as usage rights, or authorship;
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=8" up_Title="matrix" up_height=520 width="768" up_refresh=6000 />
 
-=== Duplicate ===
-This is a specialised case applicable to both the specimen/sighting or multimedia entities. What constitutes a duplicate can vary across the domains (see _Appendix: Relevance to different biodiversity domains_) but the up shot is roughly the same - two 'dots on a map' in the aggregate view, where there should really only be one:
-  * a deliberate duplication of data at the process level, _e.g._ multiple pieces of the whole being distributed to many org's, with no one org keeping the whole;
-  * a necessary duplication, _e.g._ a specimen being digitised,  
-  * an inadvertent duplication, _e.g._ a specimen being digitised,
-  * a redundant dupliction, _e.g._ a specimen being digitised, the original specimen being deaccessioned 
+_From [http://goo.gl/TdSLD]_
 
-There are more detailed analyses of duplicates being undertaken, both from the perspective of _how_ a duplicate came to be and _where_ the duplicate lives, as well as _what_ to do about them:
-  * NZVH.AaronWilton herbaria duplicates doco;
-  * DPEWCS.SimonBennet eliminating outliers, duplicates, ...;
-
-For the purposes of this document, 
 
 === Other collection entities ===
-Collectors, sites, localities, collection events, field collections, surveys; 
-
-In cases where this information is not an attribute of the record, these data are generally related to the others through one of the following methods:
+Collectors, sites, localities, collection events, field collections, surveys; in cases where this information is not an attribute of the record, these data are generally related to the others through one of the following methods:
   * explicitly associated through a _[http://en.wikipedia.org/wiki/Foreign_key foreign key - http://en.wikipedia.org/wiki/Foreign_key]_ relationship, _i.e._ a pointer in a specific term within a record, to the unique identifier of another entity; e.g. _DwC.locationID_, _HISPID.XXX_
   * implied through a nested data structure
+
 
 == Common patterns in the scenarios ==
 
@@ -145,45 +130,10 @@ This section attempts to identify instances of common ground shared amongst the 
 
 (For some thoughts on how these patterns are identified, see _Appendix: Searching for common patterns in the scenarios_)
 
-This next table comes from a google docs spreadsheet, at [http://goo.gl/TdSLD http://goo.gl/TdSLD : 20111130 - dm related records scenario-pattern matrix] (see _Appendix: Embedding a google docs spreadsheet in a wiki page_ for details)
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=1" up_Title="matrix" up_height=405 width="768" up_refresh=6000 />
 
-<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&single=true&gid=0&output=html" up_Title="matrix" up_height=380 width="97%" up_refresh=6000 />
+_From [http://goo.gl/TdSLD]_
 
-==== a1: Specimen or sighting relates to one only specimen/sighting ====
-
-==== a2: Specimen or sighting relates to many specimens/sightings ====
-
-==== a3: Specimen or sighting relates to one only multimedia collection item ====
-
-==== a4: Specimen or sighting relates to many multimedia collection items ====
-
-==== a5: Specimen or sighting relates to one only duplicate ====
-
-==== a6: Specimen or sighting relates to many duplicates ====
-
-==== b1: Multimedia collection item relates to one only specimen/sighting ====
-
-==== b2: Multimedia collection item relates to many specimens/sightings ====
-
-==== b3: Multimedia collection item relates to one only multimedia collection item ====
-
-==== b4: Multimedia collection item relates to many multimedia collection items ====
-
-==== b5: Multimedia collection item relates to one only duplicate ====
-
-==== b6: Multimedia collection item relates to many duplicates ====
-
-==== c1: Duplicate relates to one only specimen/sighting ====
-
-==== c2: Duplicate relates to many specimens/sightings ====
-
-==== c3: Duplicate relates to one only multimedia collection item ====
-
-==== c4: Duplicate relates to many multimedia collection items ====
-
-==== c5: Duplicate relates to one only duplicate ====
-
-==== c6: Duplicate relates to many duplicates ====
 
 ----
 
