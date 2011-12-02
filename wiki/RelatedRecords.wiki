@@ -40,8 +40,12 @@ Note: _the following are prioritised using [http://en.wikipedia.org/wiki/MoSCoW_
 
 
 === Changes to the domain-specific extensions ===
+To FCIG-DwC (for more details see _Standards-specific usage patterns : Changes to the DwC specification_ for more details) :
+  # a mechanism to relate (one-to-one, for a total of two relationships) a record to its _principal_ as well as its _parent_ records, in all forms of dwc (simple, archives and xml);
+  # a mechanism to relate (one-to-many, _n_ relationships) a record to other record(s), available only in dwc-archives and dwc-xml;
 
-
+Changes to HISPID-ABCD
+(More details see _Standards-specific usage patterns : Changes to the HISPID specification_ for more details)
 
 </td>
 
