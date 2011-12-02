@@ -40,12 +40,13 @@ Note: _the following are prioritised using [http://en.wikipedia.org/wiki/MoSCoW_
 
 
 === Changes to the domain-specific extensions ===
-To FCIG-DwC (for more details see _Standards-specific usage patterns : Changes to the DwC specification_ for more details) :
-  # a mechanism to relate (one-to-one, for a total of two relationships) a record to its _principal_ as well as its _parent_ records, in all forms of dwc (simple, archives and xml);
-  # a mechanism to relate (one-to-many, _n_ relationships) a record to other record(s), available only in dwc-archives and dwc-xml;
+To FCIG-DwC (for more details see _Standards-specific usage patterns : Changes to the DwC specification_) :
+  # a mechanism to relate a _General_ record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of dwc (simple, archives and xml);
+  # a mechanism to relate a record to other record(s), one-to-many, _n_ relationships, available only in dwc-archives and dwc-xml;
 
-Changes to HISPID-ABCD
-(More details see _Standards-specific usage patterns : Changes to the HISPID specification_ for more details)
+To HISPID-ABCD (for more details see _Standards-specific usage patterns : Changes to the HISPID specification_) :
+  # a mechanism relate a unit record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of hispid;
+  # a mechanism to relate _Unit_-nested multimedia (_MultiMediaObjects_, _SiteImages_) to the specimen _explicitly_ in the data, _i.e._ a _UnitID_ pointer in all of these sub-classes;
 
 </td>
 
@@ -188,9 +189,6 @@ This next table comes from a google docs spreadsheet, at [http://goo.gl/TdSLD ht
 
 = Standards-specific usage patterns =
 
-== NOTE: this section is currently stale ==
-Up until this point, the content in this doc has been under active development; but this section needs to be refined considerably to reflect the reasoning to this point - take the following content with a grain of salt...
-
 == Introduction ==
 
 It is the intent of this proposal to define consistent methods for communicating relationships between records; in all cases, the following design-constraints are considered:
@@ -207,20 +205,30 @@ For true 'backwards compatibility', the newer (extended) version of records must
 In most cases this is possible, however, in some instances where relationships between duplicate records are not clearly defined then multiple 'dots on the map' will appear. It is the hope that in the future some mechanism exists to mine for, seek validation and then remember these relationships - see _Appendix: Relationship mining sub-system (The Relator)_ for more information.
 
 
+== NOTE: this section is currently stale ==
+Up until this point, the content in this doc has been under active development; but this section needs to be refined considerably to reflect the reasoning to this point - take the following content with a grain of salt...
+
+
 == Changes to the DwC specification ==
 
-Each of these terms should be added to the FCIG DwC extension; after community consultation, ALA to propose for ratification+inclusion in DwC:
-  # add _principalRecord_ to _Record_
-  # add _parentRecord_ to _Record_
-  # add _principalRelationType_ to _Record_
-  # add _parentRelationType_ to _Record_
-
-In addition to these terms being added, a new class of data should be added to the logical model that allows communication of multiple relationships, similar to _HISPID.UnitAssociations_. No details have been fleshed out on this one yet - more to follow.
+To FCIG-DwC (for more details see _Standards-specific usage patterns : Changes to the DwC specification_); after community consultation, ALA to propose for ratification+inclusion in DwC :
+  # a mechanism to relate a _General_ record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of dwc (simple, archives and xml):
+    # add _principalRecord_ to _Record_
+    # add _parentRecord_ to _Record_
+    # add _principalRelationType_ to _Record_
+    # add _parentRelationType_ to _Record_
+  # In addition to these terms being added, a new class of data should be added to the logical model that allows communication of multiple relationships, similar to _HISPID.UnitAssociations_ - *no details have been fleshed out on this one yet - more to follow*.
 
 == Changes to the HISPID specification ==
-Each of these terms should be added to the HISCOM ABCD extension (HISPID5):
-  # add _principalUnitID_ to _MultiMediaObject_ and _SiteImage_
-  # add _parentUnitID_ to _MultiMediaObject_ and _SiteImage_
+
+To HISPID-ABCD (for more details see _Standards-specific usage patterns : Changes to the HISPID specification_) :
+  # a mechanism to relate _Unit_-nested multimedia (_MultiMediaObjects_, _SiteImages_) to the specimen _explicitly_ in the data, _i.e._ a _UnitID_ pointer in these sub-classes;
+    # add _relatedUnitID_ to _MultiMediaObject_ and _SiteImage_; in these cases, the type of relationships are implied
+  # a mechanism to relate a _Unit_ record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of hispid;
+    # add _principalUnitID_ to _MultiMediaObject_ and _SiteImage_
+    # add _parentUnitID_ to _MultiMediaObject_ and _SiteImage_
+    # add _principalRelationType_ to _MultiMediaObject_ and _SiteImage_
+    # add _parentRelationType_ to _MultiMediaObject_ and _SiteImage_
 
 
 == DarwinCore usage patterns ==
