@@ -54,7 +54,7 @@ To HISPID-ABCD (for more details see _Standards-specific usage patterns : Change
 <p> </p><p> </p>
 <p><table border="1" cellspacing="0" cellpadding="4"><tr><td>
 *Contents:*
-<wiki:toc max_depth="2" />
+<wiki:toc max_depth="3" />
 </td></tr></table></p>
 </td>
 
@@ -149,41 +149,41 @@ This next table comes from a google docs spreadsheet, at [http://goo.gl/TdSLD ht
 
 <wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&single=true&gid=0&output=html" up_Title="matrix" up_height=380 width="97%" up_refresh=6000 />
 
-=== a1: Specimen or sighting relates to one only specimen/sighting ===
+==== a1: Specimen or sighting relates to one only specimen/sighting ====
 
-=== a2: Specimen or sighting relates to many specimens/sightings ===
+==== a2: Specimen or sighting relates to many specimens/sightings ====
 
-=== a3: Specimen or sighting relates to one only multimedia collection item ===
+==== a3: Specimen or sighting relates to one only multimedia collection item ====
 
-=== a4: Specimen or sighting relates to many multimedia collection items ===
+==== a4: Specimen or sighting relates to many multimedia collection items ====
 
-=== a5: Specimen or sighting relates to one only duplicate ===
+==== a5: Specimen or sighting relates to one only duplicate ====
 
-=== a6: Specimen or sighting relates to many duplicates ===
+==== a6: Specimen or sighting relates to many duplicates ====
 
-=== b1: Multimedia collection item relates to one only specimen/sighting ===
+==== b1: Multimedia collection item relates to one only specimen/sighting ====
 
-=== b2: Multimedia collection item relates to many specimens/sightings ===
+==== b2: Multimedia collection item relates to many specimens/sightings ====
 
-=== b3: Multimedia collection item relates to one only multimedia collection item ===
+==== b3: Multimedia collection item relates to one only multimedia collection item ====
 
-=== b4: Multimedia collection item relates to many multimedia collection items ===
+==== b4: Multimedia collection item relates to many multimedia collection items ====
 
-=== b5: Multimedia collection item relates to one only duplicate ===
+==== b5: Multimedia collection item relates to one only duplicate ====
 
-=== b6: Multimedia collection item relates to many duplicates ===
+==== b6: Multimedia collection item relates to many duplicates ====
 
-=== c1: Duplicate relates to one only specimen/sighting ===
+==== c1: Duplicate relates to one only specimen/sighting ====
 
-=== c2: Duplicate relates to many specimens/sightings ===
+==== c2: Duplicate relates to many specimens/sightings ====
 
-=== c3: Duplicate relates to one only multimedia collection item ===
+==== c3: Duplicate relates to one only multimedia collection item ====
 
-=== c4: Duplicate relates to many multimedia collection items ===
+==== c4: Duplicate relates to many multimedia collection items ====
 
-=== c5: Duplicate relates to one only duplicate ===
+==== c5: Duplicate relates to one only duplicate ====
 
-=== c6: Duplicate relates to many duplicates ===
+==== c6: Duplicate relates to many duplicates ====
 
 ----
 
@@ -264,15 +264,15 @@ This section looks at the problem from the hispid perspective; this is what i wa
   * MultiMediaObject, MMO - DataSets/DataSet/Units/Unit/MultiMediaObjects/MultiMediaObject http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0772
   * SpecimenUnit, SU - DataSets/DataSet/Units/Unit/SpecimenUnit http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0404
 
-=== SpecimenUnit record with nested SiteImage record(s) ===
+==== SpecimenUnit record with nested SiteImage record(s) ====
 
 straightforward way of handling scenario XXX; the storage mechanisms are not separated in any way; a complete SpecimenUnit record with nested SiteImage record(s) can be built at the time of export;
 
-=== SpecimenUnit record with nested MultiMediaObject record(s) ===
+==== SpecimenUnit record with nested MultiMediaObject record(s) ====
 
 straightforward way of handling scenario XXX; the storage mechanisms are not separated in any way; a complete SpecimenUnit record with nested MMO records can be built at the time of export;
 
-=== MultiMediaObject/SiteImage record stands alone, from which sighting (specimen?) records are interpolated ===
+==== MultiMediaObject/SiteImage record stands alone, from which sighting (specimen?) records are interpolated ====
 
 (this may not be a valid case in the herbaria domain) - in one of the faunal collections, the collection specimen is the sound recording of a habitat; from this, taxa are identified as existing in the fore/background - an occurrence (observation, sighting) is reported for each 'foreground taxon', while background taxa may have their own records, or may be referred to in metadata of the foreground record(s);
 
