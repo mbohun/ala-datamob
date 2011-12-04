@@ -12,7 +12,7 @@
 
 This document [http://code.google.com/p/ala-datamob/RelatedRecords] is a draft proposal for handling relationships between data records. The intent of this proposal is to ensure the data standards and best-practice support communicating these relationships if the source data capture them.
 
-*At 02/12/2011 this document is still in draft form*, with a first release for peer review imminent; it supersedes (and subsumes) the earlier [IdentifyingRelatedRecords] document, also on this wiki.
+*At 05/12/2011 this document is still in draft form* first release for peer review; it supersedes (and subsumes) the earlier [IdentifyingRelatedRecords] document, also on this wiki.
 
 
 == Relevance ==
@@ -52,16 +52,16 @@ Note: _the following are prioritised using [http://en.wikipedia.org/wiki/MoSCoW_
 
 
 === Changes to the domain-specific extensions ===
-*NOTE:* These recommendations remain untested and are likely to evolve further...
+*05/12/2011 NOTE:* These recommendations remain untested and are likely to evolve further...
 
-To FCIG-DwC (for more details see _Standards-specific usage patterns : Changes to the DwC specification_) :
+To FCIG-DwC (for more details see _Changes to the FCIG-DwC extension_) :
   # a mechanism to relate a _General_ record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of dwc (simple, archives and xml);
   # a mechanism to relate a record to other record(s), one-to-many, _n_ relationships, available only in dwc-archives and dwc-xml;
 
-To HISPID-ABCD (for more details see _Standards-specific usage patterns : Changes to the HISPID specification_) :
+To HISPID-ABCD (for more details see _Changes to the HISPID specification_) :
   # a mechanism relate a unit record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of hispid;
   # a mechanism to relate _Unit_-nested multimedia (_MultiMediaObjects_, _SiteImages_) to the specimen _explicitly_ in the data, _i.e._ a _UnitID_ pointer in all of these sub-classes;
-
+  # additional metadata for multimedia (_MultiMediaObjects_, _SiteImages_) to communicate date modified (_i.e. current at_) 
 
 </td>
 
@@ -95,9 +95,7 @@ The organisational boundary most likely plays a role in the distinction as well;
 Suffice it to say, types of data are likely handled in separate (sub-)systems with separate processes for managing them - this point forces us to reconsider some cases; _e.g._
   * a preserved specimen (core) which then has its skin dried and treated as a separate, but related, specimen (core);
 
-It seems highly unlikely that any attempt to apply labels to organisations' activities will not bring to light cases that contradict the reasoning used to assign these labels. 
-
-As such, _core_ or _supplementary_ can be considered arbitrary labels used to distinguish the roles data play in relationships, analogous to _parent_ and _child_ respectively. Both terms are used interchangeably in this document.
+It seems highly unlikely that any attempt to apply labels to organisations' activities will not bring to light cases that contradict the reasoning used to assign these labels; as such, _core_ or _supplementary_ can be considered arbitrary labels used to distinguish the roles data play in relationships, analogous to _parent_ and _child_ respectively. Both terms are used interchangeably in this document.
 
 
 == Scenarios giving rise to relationships ==
@@ -159,44 +157,6 @@ In most cases this is possible, however, in some instances where relationships b
 Up until this point, the content in this doc has been under active development; but this section needs to be refined considerably to reflect the reasoning to this point - take the following content with a grain of salt...
 
 
-== Changes to the DwC specification ==
-
-To FCIG-DwC (for more details see _Standards-specific usage patterns : Changes to the DwC specification_); after community consultation, ALA to propose for ratification+inclusion in DwC :
-  # a mechanism to relate a _General_ record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of dwc (simple, archives and xml):
-    # add _principalRecord_ to _Record_
-    # add _parentRecord_ to _Record_
-    # add _principalRelationType_ to _Record_
-    # add _parentRelationType_ to _Record_
-  # In addition to these terms being added, a new class of data should be added to the logical model that allows communication of multiple relationships, similar to _HISPID.UnitAssociations_ - *no details have been fleshed out on this one yet - more to follow*.
-
-=== The principal record ===
-The identifier assigned to the physical item that was _"accessioned into a collection from the field"_ (eg. single vouchered specimen, still image, movie or sound recording, field notes, core sample, phial of multiple organisms, etc.). 
-
-The principal record may be associated with many occurrence records, each with a unique occurrenceId (eg. an image or sound recording containing determinations for many species) as well as derivative records such as gene sequences representing a part of the physical item (eg. leg of spider), or unique records representing different layers of a core sample, etc.
-
-Examples of cases: 
-  * downstream preparations/processing of specimens, such as a dna sequence, or a skin preservation, etc. would use this term to 'point back to the originating specimen' 
-  * a record of a taxon in multimedia (hosting many taxa) would point to the accessioned collection item, e.g. a sound recording of one or more species, or a photo of an apparent symbiotic relationship (although in this case, "associated taxa" or "associated occurrences" might be more appropriate if the nature of the relationship can be more specifically defined)
-
-=== The parent record ===
-if the principal record is more than one step removed from this one, you can use this term to communicate the direct parent-child relationship between these two items (_see principal record for more detailed information_)
-
-=== Preparations versus basis of record ===
-  * The concepts 'basis of record' (DwC: basisOfRecord + dcterms:type; HISPID: xxx) and preparations  (DwC: preparations; HISPID: xxx) are metadata.
-  * source data – does each record represent a preparation? or are all preparations for a principal collection item aggregated into the one record?
-
-== Changes to the HISPID specification ==
-
-To HISPID-ABCD (for more details see _Standards-specific usage patterns : Changes to the HISPID specification_) :
-  # a mechanism to relate _Unit_-nested multimedia (_MultiMediaObjects_, _SiteImages_) to the specimen _explicitly_ in the data, _i.e._ a _UnitID_ pointer in these sub-classes;
-    # add _relatedUnitID_ to _MultiMediaObject_ and _SiteImage_; in these cases, the type of relationships are implied
-  # a mechanism to relate a _Unit_ record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of hispid;
-    # add _principalUnitID_ to _MultiMediaObject_ and _SiteImage_
-    # add _parentUnitID_ to _MultiMediaObject_ and _SiteImage_
-    # add _principalRelationType_ to _MultiMediaObject_ and _SiteImage_
-    # add _parentRelationType_ to _MultiMediaObject_ and _SiteImage_
-
-
 == DarwinCore usage patterns ==
 
 == Potential HISPID5 usage patterns ==
@@ -247,6 +207,77 @@ MultiMediaObject or SiteImage records are nested under Unit (spec suggests that 
 this usage pattern doesn’t appear to be supported by hispid as it stands; we would need to add a term to MMO/SI to point to its related Unit - so it is anticipated that the main users of such a mechanism would have a need to communicate SpecimenUnit records completely separately  to their image records, yet have a desire that these be related.
 
 ----
+
+= Changes to the FCIG-DwC extension =
+
+To FCIG-DwC; after community consultation, ALA to propose for ratification+inclusion in DwC :
+  # a mechanism to relate a _General_ record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of dwc (simple, archives and xml):
+    # add _principalRecord_ to _Record_
+    # add _parentRecord_ to _Record_
+    # add _principalRelationType_ to _Record_
+    # add _parentRelationType_ to _Record_
+  # In addition to these terms being added, a new class of data should be added to the logical model that allows communication of multiple relationships, similar to _HISPID.UnitAssociations_ - *no details have been fleshed out on this one yet - more to follow*.
+
+
+== The principal record ==
+
+The identifier assigned to the physical item that was _"accessioned into a collection from the field"_ (eg. single vouchered specimen, still image, movie or sound recording, field notes, core sample, phial of multiple organisms, etc.). 
+
+The principal record may be associated with many occurrence records, each with a unique occurrenceId (eg. an image or sound recording containing determinations for many species) as well as derivative records such as gene sequences representing a part of the physical item (eg. leg of spider), or unique records representing different layers of a core sample, etc.
+
+Examples of cases: 
+  * downstream preparations/processing of specimens, such as a dna sequence, or a skin preservation, etc. would use this term to 'point back to the originating specimen' 
+  * a record of a taxon in multimedia (hosting many taxa) would point to the accessioned collection item, e.g. a sound recording of one or more species, or a photo of an apparent symbiotic relationship (although in this case, "associated taxa" or "associated occurrences" might be more appropriate if the nature of the relationship can be more specifically defined)
+
+
+== The parent record ==
+
+if the principal record is more than one step removed from this one, you can use this term to communicate the direct parent-child relationship between these two items (_see principal record for more detailed information_)
+
+
+== Relation types: principal and parent ==
+
+This term communicates each type of relationship. Recommended best practice is to use a controlled vocab. (*note: vocab to be determined*) _e.g._ image, sighting, duplicate, donation, ...
+
+
+== Consideration to the existing specification ==
+
+=== _occurrenceId_ to relate records ===
+  * relationship is implied
+  * usage pattern likely to be unintuitive and contradictory to existing practice
+  * the water in this pool is already muddy...
+
+=== _catalogNumber_ to relate records ===
+  * viable option, but relationship is still implied
+
+=== _associatedOccurrences_ to relate records ===
+  * spec is worded such that i believe the intent here is to define symbiotic/familial/individual's relationships;
+  * still a viable option, but would need to specialise the meaning of this term (& related terms) in the fcig domain
+
+=== Preparations versus basis of record ===
+  * The concepts 'basis of record' (DwC: basisOfRecord + dcterms:type; HISPID: xxx) and preparations  (DwC: preparations; HISPID: xxx) are metadata.
+  * source data – does each record represent a preparation? or are all preparations for a principal collection item aggregated into the one record?
+
+
+----
+
+
+= Changes to the HISPID specification =
+
+To HISPID-ABCD :
+  # a mechanism to relate _Unit_-nested multimedia (_MultiMediaObjects_, _SiteImages_) to the specimen _explicitly_ in the data, _i.e._ a _UnitID_ pointer in these sub-classes;
+    # add _relatedUnitID_ to _MultiMediaObject_ and _SiteImage_; in these cases, the type of relationships are implied
+  # a mechanism to relate a _Unit_ record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of hispid;
+    # add _principalUnitID_ to _MultiMediaObject_ and _SiteImage_
+    # add _parentUnitID_ to _MultiMediaObject_ and _SiteImage_
+    # add _principalRelationType_ to _MultiMediaObject_ and _SiteImage_
+    # add _parentRelationType_ to _MultiMediaObject_ and _SiteImage_
+  # additional metadata for multimedia (_MultiMediaObjects_, _SiteImages_) to communicate date modified (_i.e. current at_) information;
+    # add _dateModified_ to _MultiMediaObject_ and _SiteImage_
+
+
+----
+
 
 = Appendices =
 
