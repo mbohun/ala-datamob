@@ -42,6 +42,7 @@ Note: _the following are prioritised using [http://en.wikipedia.org/wiki/MoSCoW_
     * highlighting the inconsistencies,
     * clearly identifying the provenance of such a record as being the aggregator,
     * not aggregating organisation-specific information (such as _DwC.institutionCode_), or overwriting with aggregator-specific information
+  # The aggregator shouldn't fail to ingest a partially complete data set or record when encountering unrecognised terms (fields, concepts) in the source data;
   # The aggregator should use methods (see _About the data : Common patterns in the scenarios_) to discover the existence of related records and clearly offer links to, or notification of, these records;
   # The aggregator could provide a (web?) service that:
     * responds to resource identifiers with a method for accessing the resource itself (freely or securely),
