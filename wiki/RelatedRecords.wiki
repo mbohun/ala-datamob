@@ -80,7 +80,7 @@ To HISPID-ABCD (for more details see _Changes to the HISPID specification_) :
 = About the data =
 
 
-== Core (primary) and supplementary (duplicated, derived, secondary) data ==
+== Core (primary, parent) and supplementary (duplicated, derived, secondary, child) data ==
 
 In the scope of this logic, *core collection data* are generally the data that find themselves at the source of other data (causally). They are distinguishable to *supplementary collection data*, which are usually derived in some way; _e.g._
   * a specimen (core) which is photographed, the photo being stored in a separate system (supplement);
@@ -89,13 +89,19 @@ In the scope of this logic, *core collection data* are generally the data that f
 
 The organisational boundary most likely plays a role in the distinction as well; _e.g._
   * the service provider keeps a database of all ct-scans; the specimen's ct-scan (core) is converted to a lower-fidelity .avi file and offerred on their website (supplement);
-  * a herbarium manages a photo of a type specimen, held in another institution, within their own specimen management system (core);
-  * _... it goes on!_
 
 Suffice it to say, types of data are likely handled in separate (sub-)systems with separate processes for managing them - this point forces us to reconsider some cases; _e.g._
-  * a preserved specimen (core) which then has its skin dried and treated as a separate, but related, specimen (core);
+  * a herbarium photographs a preserved specimen (core), the photo then being shared with full metadata to other institutions, those institutions treating this photo as a specimen in its own right (core);
 
-It seems highly unlikely that any attempt to apply labels to organisations' activities will not bring to light cases that contradict the reasoning used to assign these labels; as such, _core_ or _supplementary_ can be considered arbitrary labels used to distinguish the roles data play in relationships, analogous to _parent_ and _child_ respectively. Both terms are used interchangeably in this document.
+Consideration must also be given to the _[http://code.google.com/p/ala-dataquality/wiki/CompletenessModel completeness]_ ([http://code.google.com/p/ala-dataquality/wiki/CompletenessModel]) of the data stored in sub-system(s) as an aggregate whole, or the ability to draw these data into a whole at the time of export; _e.g._
+  * a preserved specimen (core) which then has its skin dried and treated as a separate, but related, specimen in another database (core);
+  * a dna sample is taken from a live specimen (core, core) which is then passed on with minimal metadata (supplement) _or full metadata (core)_ to another organisation for barcoding/sequencing;
+
+It seems highly unlikely that any attempt to apply labels to organisations' activities will not bring to light cases that contradict the reasoning used to assign these labels. 
+
+As such, _core_ or _supplementary_ can be considered arbitrary labels used to distinguish the roles data play in relationships, analogous to _parent_ and _child_ respectively, with the latter in both cases implies a subordinate relationship to the former. 
+
+All labels are used interchangeably in this document.
 
 
 == Scenarios giving rise to relationships ==
