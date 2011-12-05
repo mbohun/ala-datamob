@@ -153,13 +153,21 @@ For true 'backwards compatibility', the newer (extended) version of records must
 In most cases this is possible, however, in some instances where relationships between duplicate records are not clearly defined then multiple 'dots on the map' will appear. It is the hope that in the future some mechanism exists to mine for, seek validation and then remember these relationships - see _Appendix: Relationship mining sub-system (The Relator)_ for more information.
 
 
-== NOTE: this section is currently stale ==
-Up until this point, the content in this doc has been under active development; but this section needs to be refined considerably to reflect the reasoning to this point - take the following content with a grain of salt...
-
-
 == DarwinCore usage patterns ==
 
-== Potential HISPID5 usage patterns ==
+=== DwC synopsis for communicating relationships ===
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=10" up_Title="matrix" up_height=560 width="768" up_refresh=6000 />
+
+_From [http://goo.gl/TdSLD]_
+
+=== DwC details ===
+
+
+== HISPID5 usage patterns ==
+
+===05/12/2011 NOTE: this HISPID section is currently stale===
+Up until this point, the content in this doc has been under active development; but this section needs to be refined considerably to reflect the reasoning to this point - take the following content with a grain of salt...
+
 [http://goo.gl/50KhE http://goo.gl/50KhE _Specimen / Image Relationships with HISPID 5_]
 
 [https://docs.google.com/document/d/1bJYvz0AXT-O1iiJUs-ongmngTAhDiMfrJD2vu_5lmmM/edit?hl=en_US https://docs.google.com/document/d/1bJYvz0AXT-O1iiJUs-ongmngTAhDiMfrJD2vu_5lmmM/edit?hl=en_US _Specimen / Image Relationships with HISPID 5_]
