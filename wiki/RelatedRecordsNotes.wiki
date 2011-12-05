@@ -1,0 +1,196 @@
+#summary dev-notes for RelatedRecords
+
+The main article, [RelatedRecords], was getting cluttered.
+
+----
+
+== HISPID notes ==
+
+==== _!SpecimenUnit_ record with nested _!SiteImage_ record(s) ====
+
+==== _!SpecimenUnit_ record with nested _!MultiMediaObject_ record(s) ====
+
+==== _!MultiMediaObject_/_!SiteImage_ record stands alone, from which sighting (specimen?) records are interpolated ====
+
+(this may not be a valid case in the herbaria domain) - in one of the faunal collections, the collection specimen is the sound recording of a habitat; from this, taxa are identified as existing in the fore/background - an occurrence (observation, sighting) is reported for each 'foreground taxon', while background taxa may have their own records, or may be referred to in metadata of the foreground record(s);
+
+HISPID would allow for this but each inferred SpecimenUnit record must have a nested MMO/SI record - in turn, each MMO/SI record would be a redundant copy of the other(s), with all the MMO/SI records sharing the same identifier.
+
+=== An image collection item is treated like more traditional specimen(s); this image may be related to other more traditional specimen(s) ===
+
+In this case, the image is the SpecimenUnit; it may be a duplicate, or derivation, of other SpecimenUnit(s); it has nested MultiMediaObject(s) to point to the image where it resides (usage pattern 1).
+
+    The image may be managed in a digital asset management system (DAMS) or it might be simply a file sent on the email from another institution.
+    It may be desirable as the aggregator to keep both source records (the whole may be equal to or greater than the sum of the parts); however, in this case, the relationship between both records must be maintained.
+
+
+=== SpecimenUnit record and MultiMediaObject / SiteImage record stand alone but share a 1:1 relationship ===
+
+‘separate storage mechanisms’ imply some challenge in integrating the data; up until this point, it is assumed that the data provider will be able to build an aggregate SpecimenUnit record at the time of export, when they are communicating imagery associated with the specimen;
+
+some types of the impediments to this ‘just-in-time aggregation’ that have been encountered so far are a lack of technical capability, a physical separation & a temporal separation;
+
+MultiMediaObject or SiteImage records are nested under Unit (spec suggests that MMO/SI is part of unit); however, MMO/SI has no way of communicating that it belongs to Unit - without this mechanism, each of these types of records could not exist in separate files, yet still maintain their relationship;
+
+this usage pattern doesn’t appear to be supported by hispid as it stands; we would need to add a term to MMO/SI to point to its related Unit - so it is anticipated that the main users of such a mechanism would have a need to communicate SpecimenUnit records completely separately  to their image records, yet have a desire that these be related.
+
+----
+
+
+
+== Appendix: Notes ==
+
+{{{
+_OLD: this is the table of contents for the older version of this doco
+Data mobilisation: related records proposal
+1	SUMMARY	1
+1.1	SPECIFIC RELEVANCE TO DIFFERENT BIODIVERSITY DOMAINS	2
+2	URNS AS RECORD IDENTIFIERS	3
+2.1	LSIDS	3
+2.1.1	Structure of, pattern rules	3
+2.1.2	Basis of record contained within LSID	3
+2.1.3	Historical mappings to earlier patterns	3
+2.2	LSID RESPONDER (URN RESOLUTION)	3
+2.2.1	Intended behaviour	3
+2.2.2	Output	3
+2.2.3	Multiple matches to a LSID	3
+3	RELATIONSHIPS BETWEEN RECORDS	4
+3.1	CORE (PRIMARY) AND DERIVED (SECONDARY) COLLECTION DATA	4
+3.1.1	The principal record	4
+3.1.2	The parent record	4
+3.2	PREPARATIONS VERSUS BASIS OF RECORD	4
+3.3	USAGE SCENARIOS AND EXAMPLE DATA	4
+4	RELATIONSHIP MINING SUB-SYSTEM (THE RELATOR)	8
+4.1	VISION AND DESCRIPTION	8
+4.2	EXISTING FUNCTIONALITY	8
+}}}
+
+|| 
+{{{
+3.3	Usage scenarios and example data
+Somewhere in the following morass lies a few use-cases!
+
+Hi all,
+This is a feast that is forever on the move so any attempt to tie it down so we can all partake would be much appreciated. 
+Just some points id like to make:
+1.       “having a framework in place that we can, at least aim at” is a good goal – I totally agree, however the trouble is that this is exactly what we have been trying to do for the past 5 years and things keep moving and shifting on us giving the impression that the topic is always under discussion. 
+2.       If we were to have waited until we got the unique identifier fool proof then we wouldn’t be sharing any data at this point – we need to keep perspective and do our best 
+3.       Even under these circumstances specimen records should have some metadata that never change – ie catalogue number and collection and institution identifiers. Until we have lsid resolvers working across a good swag of records then really as long as the occurrence-id contains those three elements then a record is uniquely identifiable at least to a particular organism - tho there may be multiple records for a catalogue number it should still relate to the one organism.
+4.       Is it such a bad thing that a search on an lsid brings back multiple records? – as long as they all relate to the one organism? Ie id be pretty happy to get back 5 records for the one lsid as long as they all are different types of media/preparations/basis or record of the one organism eg a sound file, a specimen, a dna sequence – rather than having 5 separate lsids for all of these. Even different versions would be ok
+5.       My point from 4 is that many records and institutions may not be able to achieve the best practice lsid (just as Paul A suggests) but that hardly renders it useless – rather as long as we have a strong flexible basis – ie like a core or mandatory lsid and then optional extras – then we can still make them useful.
+6.       By all means lets aim for a good strong flexible framework – but also lets not lose sight of the fact that aiming for a system that can cope with every possible permutation can be counter productive. We should be aiming to deliver the maximum amount of data in a way that is doable with limited resources. Delivering the final 5% is sometimes not worth the effort. 
+Cheers
+Paul
+
+PS looking forward to the outcome of Thursdays meeting
+
+
+From: Paul Avern [mailto:paul.avern@qm.qld.gov.au] 
+Sent: Monday, 29 August 2011 1:40 PM
+To: Garry.Jolley-Rogers@csiro.au; Bryn.Kingsford@csiro.au; Margaret.Cawsey@csiro.au; David.Martin@csiro.au; Peter.Brenton@csiro.au; Paul Flemons; Ewallis@museum.vic.gov.au; piers@gaiaresources.com.au; Peter.Doherty@csiro.au; Miles.Nicholls@csiro.au; Alex.Drew@csiro.au; Bryan.Kalms@csiro.au
+Subject: RE: occurrenceID & also basisOfRecord > + meta data and media files.
+
+Hi All
+ 
+I agree with Garry on this point. I vote for having a framework in place that we can, at least, aim at. Whether we ever achieve this 'ideal' as individual institutions is up to us. However, we can't go on pumping out batches of specimen records with different occurrenceIDs each time we export, simply because the topic is still 'under discussion'.
+ 
+Same goes for images.
+ 
+Cheers
+Paul
+
+________________________________________
+From: Garry.Jolley-Rogers@csiro.au [mailto:Garry.Jolley-Rogers@csiro.au] 
+Sent: Monday, 29 August 2011 12:48 PM
+To: Bryn.Kingsford@csiro.au; Margaret.Cawsey@csiro.au; David.Martin@csiro.au; Peter.Brenton@csiro.au; paul.flemons@austmus.gov.au; Paul Avern; Ewallis@museum.vic.gov.au; piers@gaiaresources.com.au; Peter.Doherty@csiro.au; Miles.Nicholls@csiro.au; Alex.Drew@csiro.au; Bryan.Kalms@csiro.au
+Subject: RE: occurrenceID & also basisOfRecord > + meta data and media files.
+Bryn,
+Good points.  As you suggest, each difficulty can be dealt with in turn and with engagement.  
+Seems to me that, whilst communities don’t want to be dictated too – they also are seeking a framework to respond too / rebel against.  You are well  placed to identify patterns. More coffee? My shout this time.
+
+G
+
+From: Kingsford, Bryn (CES, Black Mountain) 
+Sent: Monday, 29 August 2011 12:30 PM
+To: Jolley-Rogers, Garry (PI, Black Mountain); Cawsey, Margaret (CES, Crace); Martin, Dave (CES, Black Mountain); Brenton, Peter (CES, Black Mountain); Paul Flemons; paul.avern@qm.qld.gov.au Avern; Ely Wallis; Piers Higgs; Doherty, Peter (CES, Black Mountain); Nicholls, Miles (CES, Black Mountain); Drew, Alex (CES, Crace); Kalms, Bryan (CES, Black Mountain)
+Subject: RE: occurrenceID & also basisOfRecord > + meta data and media files.
+
+g'day all
+ 
+some thoughts on possible traps with the earlier proposal
+ 
+ - where multimedia are derived from specimen records (or vice versa) you still need a way to associate the file with the specimen record; this is the job of proposed new dwc term (currently named) 'principal collection item'
+ 
+ - dwc spec 'basis of record' suggests best practice to use a controlled vocab, but this vocab doesn't adequately convey microbiology (amrin), digital tracks derived from an open reel (anwc) and probably more (sequencing??) - my gut feeling here is to encourage the communities to agree on controlled vocabs, without dictating - this is before we even get to cases of misuse; i.e. assume nothing in here either
+ 
+ - on the topic of 'basis of record', the lsid 'occurrence id' alone is not enough to uniquely identify a dwc record. if this is your key then 
+be prepared to receive multiple answers under the following scenarios:
+1. multiple preparations of a specimen within the institute
+2. derivations of a specimen, ie, digital/dna/sequence/...
+3. vouchering of specimen(s)
+4. newer versions of the same record
+ 
+ - dwc has no specific concept of a 'version number' that i can think of off the top of my head; 'dcterms:modified' (date record was last modified) is the closest thing to this (also a fundamental part of basis)
+ 
+ - where multimedia represent anything but specimens/occurrences, they might break the registration system in an institute; good to recommend best practise, bad to expect it. (eg: sound representing taxon, photo of a habitat, ...)
+ 
+---
+ 
+some scenarios for you to test assumptions with (note, these might stretch beyond the scope of the lsid resolver, but i believe they aren't beyond the scope of identifiers in dwc - happy to discuss further):
+ 
+1. find the newest specimen record associated with a lsid
+ 
+2. find any record associated with a 'catalogue/registration number/accession id/...'
+ 
+3. find all image(s) that relate to a specimen lsid
+3b. find all specimen records that relate to an image lsid
+ 
+4. find dna that came from a specimen, identified by a lsid:
+a) within the same institution
+b) within a different institution
+ 
+5. find evidence of vouchering of specimens in other institutes from a given lsid
+ 
+6. remove unnecessary 'dots on the map' in the above
+ 
+r's bryn
+ 
+ 
+ 
+
+________________________________________
+From: Jolley-Rogers, Garry (PI, Black Mountain) 
+Sent: Friday, 26 August 2011 15:35
+To: Cawsey, Margaret (CES, Crace); Kingsford, Bryn (CES, Black Mountain); Martin, Dave (CES, Black Mountain); Brenton, Peter (CES, Black Mountain); Paul Flemons; paul.avern@qm.qld.gov.au Avern; Ely Wallis; Piers Higgs; Doherty, Peter (CES, Black Mountain); Nicholls, Miles (CES, Black Mountain); Drew, Alex (CES, Crace); Kalms, Bryan (CES, Black Mountain)
+Subject: RE: occurrenceID & also basisOfRecord > + meta data and media files.
+Hi, 
+
+Interesting how tech notes are often so much shorter than plain English “translations” – see Dave’s notes below.  
+
+Below you will find notes from a meeting over coffee between Dave and I pertaining to
+•         occurrence record identifiers
+•         identifiers and metadata  for digital media 
+
+We would appreciate your comments. Is this practical? nb mistakes are my fault.
+
+Key points
+1.       digital media objects can be treated in much the same way as occurrence records for specimens
+a.       an appropriate record describing the media file (determined by the provider)
+                                                               i.      with pertinent (DwC ?) information served via OZCAM
+                                                             ii.      with an appropriate Basis of Record 
+(do the terms for basis of record need to be agreed and enumerated?)
+b.      a  unique id (in the collection); 
+either from a DAMS or 
+treating the file as an accessioned part of the collection
+c.       in as much as it is possible and practical, lsid’s and other metadata be embedded in the media.  
+
+This seems to cover all the bases. 
+Best practice would then be to embed the identifier and  metadata in the digital object. 
+Good practice would be to accession digital media objects or use a DAMS or similar.
+2.        a strategy for handling the resolution  of lsid’s  and return of metadata   - (see below).
+3.      variations of lsid forms  to be handled by the resolver.
+e.g.  (punctuation with either dots or colons)
+urn:lsid:ozcam.taxonomy.org.au:[Institution Code]:[Collection code]:[Basis of Record]:[Catalog Number]:[Version]
+urn:lsid:ozcam.taxonomy.org.au:[Institution Code].[Collection code].[Basis of Record].[Catalog Number];[Version]
+}}} 
+||
