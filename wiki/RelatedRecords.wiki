@@ -99,7 +99,7 @@ Consideration must also be given to the _[http://code.google.com/p/ala-dataquali
 
 It seems highly unlikely that any attempt to apply labels to organisations' activities will not bring to light cases that contradict the reasoning used to assign these labels. 
 
-As such, _core_ or _supplementary_ can be considered arbitrary labels used to distinguish the roles data play in relationships, analogous to _parent_ and _child_ respectively, with the latter in both cases implies a subordinate relationship to the former. 
+As such, _core_ or _supplementary_ can be considered arbitrary labels used to distinguish the roles data play in relationships, analogous to _parent_ and _child_ respectively, with the latter in both cases implying a subordinate relationship to the former. 
 
 All labels are used interchangeably in this document.
 
