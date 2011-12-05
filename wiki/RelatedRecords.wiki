@@ -170,12 +170,14 @@ Unfortunately a large number of required patterns are absent from standard DwC. 
 
 == HISPID5 usage patterns ==
 
-Other reading:
-  * [http://goo.gl/50KhE http://goo.gl/50KhE _Specimen / Image Relationships with HISPID 5_]
-  * [https://docs.google.com/document/d/1bJYvz0AXT-O1iiJUs-ongmngTAhDiMfrJD2vu_5lmmM/edit?hl=en_US https://docs.google.com/document/d/1bJYvz0AXT-O1iiJUs-ongmngTAhDiMfrJD2vu_5lmmM/edit?hl=en_US _Specimen / Image Relationships with HISPID 5_]
+*06/12/2011 NOTE: this section is still being pulled together*
+
+_Specimen / Image Relationships with HISPID 5_ :
+  * [http://goo.gl/50KhE http://goo.gl/50KhE]
+  * [https://docs.google.com/document/d/1bJYvz0AXT-O1iiJUs-ongmngTAhDiMfrJD2vu_5lmmM/edit?hl=en_US https://docs.google.com/document/d/1bJYvz0AXT-O1iiJUs-ongmngTAhDiMfrJD2vu_5lmmM/edit?hl=en_US]
 
 === HISPID synopsis for communicating relationships ===
-<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=11" up_Title="matrix" up_height=840 width="768" up_refresh=6000 />
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=12" up_Title="matrix" up_height=840 width="768" up_refresh=6000 />
 
 _From [http://goo.gl/TdSLD]_
 
@@ -198,7 +200,7 @@ This section looks at the problem from the hispid perspective; this is what i wa
 
 HISPID would allow for this but each inferred _!SpecimenUnit_ record must have a nested MMO/SI record - in turn, each MMO/SI record would be a redundant copy of the other(s), with all the MMO/SI records sharing the same identifier.
 
-=== An image collection item is treated like more traditional specimen(s); this image may be related to other more traditional specimen(s) ===
+==== An image collection item is treated like more traditional specimen(s); this image may be related to other more traditional specimen(s) ====
 
 In this case, the image is the _!SpecimenUnit_; it may be a duplicate, or derivation, of other SpecimenUnit(s); it has nested _!MultiMediaObject(s)_ to point to the image where it resides (usage pattern 1).
 
@@ -206,7 +208,7 @@ In this case, the image is the _!SpecimenUnit_; it may be a duplicate, or deriva
     It may be desirable as the aggregator to keep both source records (the whole may be equal to or greater than the sum of the parts); however, in this case, the relationship between both records must be maintained.
 
 
-=== _!SpecimenUnit_ record and _!MultiMediaObject_ / _!SiteImage_ record stand alone but share a 1:1 relationship ===
+==== _!SpecimenUnit_ record and _!MultiMediaObject_ / _!SiteImage_ record stand alone but share a 1:1 relationship ====
 
 'separate storage mechanisms' imply some challenge in integrating the data; up until this point, it is assumed that the data provider will be able to build an aggregate SpecimenUnit record at the time of export, when they are communicating imagery associated with the specimen;
 
