@@ -56,7 +56,7 @@ Note: _the following are prioritised using [http://en.wikipedia.org/wiki/MoSCoW_
 
 To FCIG-DwC (for more details see _Changes to the FCIG-DwC extension_) :
   # a mechanism to relate a _General_ record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of dwc (simple, archives and xml);
-  # a mechanism to relate a record to other record(s), one-to-many, _n_ relationships, available only in dwc-archives and dwc-xml (e.g. a _!RecordAssociations_ class similar to _UnitAssociations_ in HISPID/ABCD);
+  # a mechanism to relate a record to other record(s), one-to-many, _n_ relationships, available only in dwc-archives and dwc-xml; _DwC.!ResourceRelationship_ is probably this mechanism - need to ensure it meets the needs;
 
 To HISPID-ABCD (for more details see _Changes to the HISPID specification_) :
   # a mechanism relate a unit record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of hispid;
@@ -166,17 +166,18 @@ In most cases this is possible, however, in some instances where relationships b
 
 == !DarwinCore usage patterns ==
 
+*06/12/2011 NOTE: this section is still being pulled together*
+
 === DwC synopsis for communicating relationships ===
 <wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=10" up_Title="matrix" up_height=840 width="768" up_refresh=6000 />
 
 _From [http://goo.gl/TdSLD]_
 
 === DwC analysis ===
-Unfortunately a large number of required patterns are absent from standard DwC. The addition of a _RecordAssociations_ class (for dwc-archives & dwx-xml, but not simple-dwc) and _principal-_ and _parentRecord_ terms to the _Record_ class (all dwc) will allow for the data provider to communicate this information.
 
-==== Sample usage of principal and parent record ====
+==== Sample usage of _principal-_ and _parentRecord_ ====
 
-==== Sample usage of RecordAssociations ====
+==== Sample usage of _!ResourceRelationship_ ====
 
 
 == HISPID5 usage patterns ==
@@ -283,13 +284,13 @@ To FCIG-DwC; after community consultation, ALA to propose for ratification+inclu
     # add _parentRecord_ to _Record_
     # add _parentRelationType_ to _Record_
     # add _parentRelIdTerm_ to _Record_
-  # In addition to these terms being added, a new class of data should be added to the logical model that allows communication of multiple relationships, similar to _UnitAssociations_; current proposed name is _RecordAssociations_
+  # In addition to these terms being added, ensure sufficiency of _!ResourceRelationship_ to communicate the multiple relationships described previously
 
-== _DwC.RecordAssociations_ ==
+== _DwC.!ResourceRelationship_ ==
 
-a logical class used to relate _Record_ entities with others; allows for _n_ number of nested (constituent, singular) 'association' entities.
+appears to be a logical class used to relate _Record_ entities with others; allows for _n_ number of nested (constituent, singular) 'association' entities.
 
-each 'association' entity would have the following attributes:
+each relationship must have the following attributes:
   * core (parent, primary) identifier value;
   * core (parent, primary) identifier source term;
   * supplementary (child, subordinate) identifier value;
@@ -297,7 +298,7 @@ each 'association' entity would have the following attributes:
   * relationship type;
   * ...
 
-more details to follow
+... more to follow on this one
 
 == Consideration to the existing DwC standard ==
 
