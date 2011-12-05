@@ -119,7 +119,7 @@ _From [http://goo.gl/TdSLD]_
 === Other collection entities ===
 Collectors, sites, localities, collection events, field collections, surveys; in cases where this information is not an attribute of the record, these data are generally related to the others through one of the following methods:
   * explicitly associated through a _[http://en.wikipedia.org/wiki/Foreign_key foreign key - http://en.wikipedia.org/wiki/Foreign_key]_ relationship, _i.e._ a pointer in a specific term within a record, to the unique identifier of another entity; e.g. _DwC.locationID_, _HISPID.XXX_
-  * implied through a nested data structure
+  * implied through a nested data structure, _i.e._ _HISPID.Unit.MultiMediaObjects.MultiMediaObject_
 
 
 == Common patterns in the scenarios ==
@@ -146,6 +146,9 @@ It is the intent of this proposal to define consistent methods for communicating
     # the term name is defined which at least hints at the purpose (_yes, this is purely subjective - but if a number of people agree that the naming makes sense, then that's the best that can be hoped for at this stage_)
     # the term's usage is unambiguously defined in a short description
 
+
+== Backwards compatibility ==
+
 For true 'backwards compatibility', the newer (extended) version of records must conjur the same behaviour in consuming applications as the earlier version would have.
 
 *One assumption must be made in this regard:* that the data consumer ignores unrecognised fields instead of calling a halt to the load process, or, at worst case, drops this particular record as 'an error'. Ideally, unrecognised fields would be ignored.
@@ -161,7 +164,7 @@ In most cases this is possible, however, in some instances where relationships b
 _From [http://goo.gl/TdSLD]_
 
 === DwC analysis ===
-Unfortunately a large number of required patterns are absent from standard DwC. The addition of a _RecordAssociations_ class (for dwc-archives) and _principal-_ and _parentRecord_ terms to the _Record_ class (all dwc) will allow for the data provider to communicate this information.
+Unfortunately a large number of required patterns are absent from standard DwC. The addition of a _RecordAssociations_ class (for dwc-archives & dwx-xml, but not simple-dwc) and _principal-_ and _parentRecord_ terms to the _Record_ class (all dwc) will allow for the data provider to communicate this information.
 
 ==== Sample usage of principal and parent record ====
 
@@ -224,6 +227,13 @@ this usage pattern doesn’t appear to be supported by hispid as it stands; we w
 
 = Common concepts in proposed specification changes =
 
+
+== Preparations versus basis of record ==
+  * The concepts 'basis of record' (DwC: _basisOfRecord_ + _dcterms:type_; HISPID: _!KindOfUnit_ + _!RecordBasis_) and 'specimen preparations' (DwC: _preparations_; HISPID: _Preparations_) are metadata.
+  * In HISPID/ABCD, _Preparations_ are nested under _!SpecimenUnit_ 
+  * source data – does each record represent a preparation? or are all preparations for a principal collection item aggregated into the one record?
+
+
 == The principal record ==
 
 The identifier assigned to the physical item that was _"accessioned into a collection from the field"_ (eg. single vouchered specimen, still image, movie or sound recording, field notes, core sample, phial of multiple organisms, etc.). 
@@ -283,7 +293,7 @@ more details to follow
 
 == Consideration to the existing DwC standard ==
 
-While being discounted as a preferred way of communicating relationships, all of these are viable mechanisms for a relationship mining sub-system.
+While being discounted as a preferred way of communicating relationships, all of these are viable mechanisms for relationship mining - see _Appendix: Relationship mining sub-system (The Relator)_ for more information.
 
 === _occurrenceId_ to relate records ===
   * relationship is implied
@@ -300,10 +310,6 @@ While being discounted as a preferred way of communicating relationships, all of
 === _associatedTaxa_ to relate records ===
   * spec is worded such that the intent here is to define symbiotic  relationships;
   * this term could be overloaded to 
-
-=== Preparations versus basis of record ===
-  * The concepts 'basis of record' (DwC: basisOfRecord + dcterms:type; HISPID: xxx) and preparations  (DwC: preparations; HISPID: xxx) are metadata.
-  * source data – does each record represent a preparation? or are all preparations for a principal collection item aggregated into the one record?
 
 
 ----
