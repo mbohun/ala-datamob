@@ -61,7 +61,9 @@ To FCIG-DwC (for more details see _Changes to the FCIG-DwC extension_) :
 To HISPID-ABCD (for more details see _Changes to the HISPID specification_) :
   # a mechanism relate a unit record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of hispid;
   # a mechanism to relate _Unit_-nested multimedia (_MultiMediaObjects_, _SiteImages_) to the specimen _explicitly_ in the data, _i.e._ a _UnitID_ pointer in all of these sub-classes;
+  # a mechanism to relate _!SpecimenUnit_-nested _Preparations_ to the specimen _explicitly_ in the data, _i.e._ a _UnitID_ pointer in some/all of the sub-classes;
   # additional metadata for multimedia (_MultiMediaObjects_, _SiteImages_) to communicate date modified (_i.e. current at_) 
+  # additional metadata for _Preparations_ to communicate date modified (_i.e. current at_) 
 
 </td>
 
