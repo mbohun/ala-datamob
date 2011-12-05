@@ -153,14 +153,19 @@ For true 'backwards compatibility', the newer (extended) version of records must
 In most cases this is possible, however, in some instances where relationships between duplicate records are not clearly defined then multiple 'dots on the map' will appear. It is the hope that in the future some mechanism exists to mine for, seek validation and then remember these relationships - see _Appendix: Relationship mining sub-system (The Relator)_ for more information.
 
 
-== DarwinCore usage patterns ==
+== !DarwinCore usage patterns ==
 
 === DwC synopsis for communicating relationships ===
-<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=10" up_Title="matrix" up_height=560 width="768" up_refresh=6000 />
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=10" up_Title="matrix" up_height=840 width="768" up_refresh=6000 />
 
 _From [http://goo.gl/TdSLD]_
 
-=== DwC details ===
+=== DwC analysis ===
+Unfortunately a large number of required patterns are absent from standard DwC. The addition of a _RecordAssociations_ class (for dwc-archives) and _principal-_ and _parentRecord_ terms to the _Record_ class (all dwc) will allow for the data provider to communicate this information.
+
+==== Sample usage of principal and parent record ====
+
+==== Sample usage of RecordAssociations ====
 
 
 == HISPID5 usage patterns ==
