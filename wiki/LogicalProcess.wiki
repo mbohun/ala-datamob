@@ -30,11 +30,13 @@ setting goals & constraints
 
 == 02. implementing ==
 
-<img src="http://ala-datamob.googlecode.com/svn/wiki/01/0102%20DM%20generic%20implementation.jpg">
+Some things to consider for an implementation...
 
-This is described in more detail in the _Data mobilisation: Components and tools_ documents:
-  * an introductory slide show... [http://goo.gl/lMa7D] _-or-_ [https://docs.google.com/present/view?id=0ASNWJFdh4pHZZDhyY3I1OF8xZ2o5M2s4NjY&hl=en_US]
-  * a more detailed document...  [http://goo.gl/5OUSN] _-or-_ [https://docs.google.com/document/d/1pkUvqFdop_T830L-lj631Eb3Owf26enGSRpgMpd2cDs/edit?hl=en_US]
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/present/view?id=d8rcr58_1gj93k866&revision=_latest&start=1&theme=blank&cwj=true" up_Title="matrix" up_height=510 width="768" up_refresh=6000 />
+
+From _Data mobilisation: Components and tools_ introductory slide show... [http://goo.gl/lMa7D] _-or-_ [https://docs.google.com/present/view?id=0ASNWJFdh4pHZZDhyY3I1OF8xZ2o5M2s4NjY&hl=en_US]
+
+Also described in more detail in the _Data mobilisation: Components and tools_ document: [http://goo.gl/5OUSN] _-or-_ [https://docs.google.com/document/d/1pkUvqFdop_T830L-lj631Eb3Owf26enGSRpgMpd2cDs/edit?hl=en_US]
 
 
 == 03. review ==
