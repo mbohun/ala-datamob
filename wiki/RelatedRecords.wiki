@@ -2,12 +2,11 @@
 
 <table width="98%" border="0" cellpadding="10"><tr>
 
-<td valign="top" align="right" width="60%">
-<p> </p><p> </p>
-<p><table border="1" cellspacing="0" cellpadding="4"><tr><td>
+<td valign="top" align="left" width="60%">
+<table border="1" cellspacing="0" cellpadding="4"><tr><td>
 *Contents:*
 <wiki:toc max_depth="2" />
-</td></tr></table></p>
+</td></tr></table>
 </td>
 
 
