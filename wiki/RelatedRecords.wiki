@@ -5,7 +5,7 @@
 <td valign="top" width="*">
 
 
-= Summary of the related records proposal =
+= Summary =
 
 
 == Introduction ==
@@ -26,7 +26,7 @@ The HISPID specific use-cases may conflict with ABCD-usage; an attempt may be ma
 See _About the data_ and _Appendix: Relevance to different biodiversity domains_ for more information.
 </td>
 
-<td valign="top" align="right" width="50%">
+<td valign="top" align="right" width="60%">
 <p> </p><p> </p>
 <p><table border="1" cellspacing="0" cellpadding="4"><tr><td>
 *Contents:*
