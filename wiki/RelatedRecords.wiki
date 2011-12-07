@@ -2,11 +2,18 @@
 
 <table width="98%" border="0" cellpadding="10"><tr>
 
+<td valign="top" align="right" width="60%">
+<p> </p><p> </p>
+<p><table border="1" cellspacing="0" cellpadding="4"><tr><td>
+*Contents:*
+<wiki:toc max_depth="2" />
+</td></tr></table></p>
+</td>
+
+
 <td valign="top" width="*">
 
-
 = Summary =
-
 
 == Introduction ==
 
@@ -24,14 +31,6 @@ It is a retrospective analysis of two commonly-used specifications for biodivers
 The HISPID specific use-cases may conflict with ABCD-usage; an attempt may be made in the future to highlight these, but at the moment the reader should be cautious of this possibility.
 
 See _About the data_ and _Appendix: Relevance to different biodiversity domains_ for more information.
-</td>
-
-<td valign="top" align="right" width="60%">
-<p> </p><p> </p>
-<p><table border="1" cellspacing="0" cellpadding="4"><tr><td>
-*Contents:*
-<wiki:toc max_depth="2" />
-</td></tr></table></p>
 </td>
 
 </tr></table>
@@ -74,13 +73,7 @@ Note: _the following are prioritised using [http://en.wikipedia.org/wiki/MoSCoW_
 === ... to FCIG-DwC ===
 (for more details see _Changes to the FCIG-DwC extension_) :
   # a mechanism to relate a _General_ record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of dwc (simple, archives and xml);
-  # _dwc-archives and dwc-xml only_, using _DwC.!ResourceRelationship_ to relate a record to other record(s), one-to-many, _n_ relationships; each relationship must display the follow attributes:
-    * core (parent, primary) identifier value; _i.e. a unique identifier_
-    * core (parent, primary) identifier source term; _i.e. the field we'll search to find the unique identifiers_
-    * supplementary (child, subordinate) identifier value;
-    * supplementary (child, subordinate) source term;
-    * relationship type;
-    * ... 
+  # _dwc-archives and dwc-xml only_, using _DwC.!ResourceRelationship_ to relate a record to other record(s), one-to-many, _n_ relationships; see _Concepts in proposed specification changes : Generic n-relationships sub-class_ for more details
 
 === ... to HISPID-ABCD ===
 (for more details see _Changes to the HISPID specification_) :
@@ -89,13 +82,7 @@ Note: _the following are prioritised using [http://en.wikipedia.org/wiki/MoSCoW_
     * a _UnitID/UnitGUID_ pointer in sub-classes;
     * _!DateLastEdited_ information for each of the sub-classes;
     * nested sub-classes include: _Unit.Acquisition, Unit.Assemblages, Unit.Associations, Unit.Gathering.!SiteImages, Unit.!MultiMediaObjects, Unit.Sequences, !SpecimenUnit.Preparations, !SpecimenUnit.History.!PreviousUnits, ..._
-  # _hispid-xml only_, using _HISPID.!UnitAssociations_ to relate a record to other record(s), one-to-many, _n_ relationships; each relationship must display the follow attributes:
-    * core (parent, primary) identifier value; _i.e. a unique identifier_
-    * core (parent, primary) identifier source term; _i.e. the field we'll search to find the unique identifiers_
-    * supplementary (child, subordinate) identifier value;
-    * supplementary (child, subordinate) source term;
-    * relationship type;
-    * ... 
+  # _hispid-xml only_, using _HISPID.Unit.Associations_ to relate a record to other record(s), one-to-many, _n_ relationships; see _Concepts in proposed specification changes : Generic n-relationships sub-class_ for more details
 
 
 
@@ -148,12 +135,6 @@ _From [http://goo.gl/TdSLD]_
 _From [http://goo.gl/TdSLD]_
 
 
-=== Other collection entities ===
-Collectors, sites, localities, collection events, field collections, surveys; in cases where this information is not an attribute of the record, these data are generally related to the others through one of the following methods:
-  * explicitly associated through a _[http://en.wikipedia.org/wiki/Foreign_key foreign key - http://en.wikipedia.org/wiki/Foreign_key]_ relationship, _i.e._ a pointer in a specific term within a record, to the unique identifier of another entity; e.g. _DwC.locationID_, _HISPID.XXX_
-  * implied through a nested data structure, _i.e._ _HISPID.Unit.MultiMediaObjects.MultiMediaObject_
-
-
 == Common concepts in the scenarios ==
 
 <wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=13" up_Title="matrix" up_height=450 width="768" up_refresh=6000 />
@@ -177,7 +158,7 @@ _From [http://goo.gl/TdSLD]_
 
 
 
-= Common concepts in proposed specification changes =
+= Concepts in proposed specification changes =
 
 
 == Introduction ==
@@ -203,11 +184,10 @@ In most cases this is possible, however, in some instances where relationships b
 
 The identifier assigned to the physical item that was _"accessioned into a collection from the field"_ (eg. single vouchered specimen, still image, movie or sound recording, field notes, core sample, phial of multiple organisms, etc.). 
 
-The principal record may be associated with many occurrence records, each with a unique occurrenceId (eg. an image or sound recording containing determinations for many species) as well as derivative records such as gene sequences representing a part of the physical item (eg. leg of spider), or unique records representing different layers of a core sample, etc.
+The principal record may be associated with many specimen/sighting records, each with a unique identifier (eg. an image or sound recording containing determinations for many species) as well as derivative records such as gene sequences representing a part of the physical item (eg. leg of spider), or unique records representing different layers of a core sample, etc.
 
-Examples of cases: 
-  * downstream preparations/processing of specimens, such as a dna sequence, or a skin preservation, etc. would use this term to 'point back to the originating specimen' 
-  * a record of a taxon in multimedia (hosting many taxa) would point to the accessioned collection item, e.g. a sound recording of one or more species, or a photo of an apparent symbiotic relationship (although in this case, "associated taxa" or "associated occurrences" might be more appropriate if the nature of the relationship can be more specifically defined)
+The value in this field will be the unique identifier of the principal, i.e. _HISPID.Unit.UnitID_, _HISPID.Unit.UnitGUID_,_HISPID.Unit.Accessions.AccessionNumber_,  _DwC.Occurrence.occurrenceId_, _DwC.Occurrence.catalogNumber_, ...
+
 
 
 == The parent record ==
@@ -215,19 +195,40 @@ Examples of cases:
 if the principal record is more than one step removed from this one, you can use this term to communicate the direct parent-child relationship between these two items (_see principal record for more detailed information_)
 
 
-== Relation types: principal and parent ==
+== Relationship types: principal and parent ==
 
-This term communicates each type of relationship. Recommended best practice is to use a controlled vocab. (*note: vocab to be determined*) _e.g._ image, sighting, duplicate, donation, ...
-
-
-== Relation Id terms: principal and parent ==
-
-This term communicates where source data for _principal-_ and _parentRecord_ exist in those record(s), _i.e._ under what term should the data consumer search if they wished to find this _principal-_ or _parentRecord_? 
-
-Recommended best practice is to use one of the standard dwc term names used to identify a record, e.g. _occurrenceId_, _catalogNumber_ (,_eventId_, _locationId_, ...)
+This term communicates each type of relationship. Recommended best practice is to use a controlled vocab. (*note: vocab to be determined*) _e.g._ image, sound, sighting, duplicate, donation, slide, dna, sequence, _blah..._
 
 
-== Preparations versus basis of record ==
+== Relationship identifiers' source terms: principal and parent ==
+
+These communicate where source data for _principal_ and _parent record_ exist in those record(s), _i.e._ under what term should the data consumer search if they wished to find this _principal_ or _parent record_ identifier? 
+
+Recommended best practice is to use one of the standard dwc/hispid term names used to identify a record, e.g. _HISPID.Unit.UnitID_, _HISPID.Unit.UnitGUID_,_HISPID.Unit.Accessions.AccessionNumber_,  _DwC.Occurrence.occurrenceId_, _DwC.Occurrence.catalogNumber_, ...
+
+
+== Generic _n-relationships_ sub-class: _DwC.!RelatedResources_ and _HISPID.Unit.Associations_ ==
+
+each relationship must display the follow attributes:
+    * principal (parent, primary) identifier value; _i.e. a unique identifier_
+    * principal (parent, primary) identifier source term; _i.e. the field we'll search to find the unique identifiers_
+    * supplementary (child, subordinate) identifier value;
+    * supplementary (child, subordinate) source term;
+    * relationship type;
+    * relationship relevant at _date_;
+    * relationship according to;
+    * ... 
+
+
+== Other attributes or entities relevant to collections ==
+
+Collectors, sites, localities, collection events, field collections, surveys; in cases where this information is not an attribute of the record, these data are generally related to the others through one of the following methods:
+  * explicitly associated through a _[http://en.wikipedia.org/wiki/Foreign_key foreign key - http://en.wikipedia.org/wiki/Foreign_key]_ relationship, _i.e._ a pointer in a specific term within a record, to the unique identifier of another entity; e.g. _DwC.locationID_, _HISPID.XXX_
+  * implied through a nested data structure, _i.e._ _HISPID.Unit.MultiMediaObjects.MultiMediaObject_
+
+
+=== Preparations versus basis of record ===
+
   * The concepts 'basis of record' (DwC: _basisOfRecord_ + _dcterms:type_; HISPID: _!KindOfUnit_ + _!RecordBasis_) and 'specimen preparations' (DwC: _preparations_; HISPID: _Preparations_) are metadata.
   * In HISPID/ABCD, _Preparations_ are nested under _!SpecimenUnit_ 
   * source data – does each record represent a preparation? or are all preparations for a principal collection item aggregated into the one record?
@@ -240,46 +241,43 @@ Recommended best practice is to use one of the standard dwc term names used to i
 
 = Changes to the FCIG-DwC extension =
 
-----
-(for more details see _Changes to the FCIG-DwC extension_) :
+*07/12/2011 NOTE: these are likely to evolve further*
+
+To FCIG-DwC; and after community consultation, ALA to propose to GBIF for ratification+inclusion in standard DwC :
+
   # a mechanism to relate a _General_ record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of dwc (simple, archives and xml);
+    # add _principalRelResourceID_ to _Record_;
+    # add _principalRelResourceTerm_ to _Record_;
+    # add _principalRelType_ to _Record_;
+    # add _parentRelResourceID_ to _Record_;
+    # add _parentRelResourceTerm_ to _Record_;
+    # add _parentRelType_ to _Record_;
+    # _with the following still being agonised over (*simple*-dwc remember!)..._
+      * add _principalRelID_ to _Record_;
+      * add _principalRelDate_ to _Record_;
+      * add _parentRelID_ to _Record_;
+      * add _parentRelDate_ to _Record_;
   # _dwc-archives and dwc-xml only_, using _DwC.!ResourceRelationship_ to relate a record to other record(s), one-to-many, _n_ relationships; each relationship must display the follow attributes:
-    * core (parent, primary) identifier value; _i.e. a unique identifier_
-    * core (parent, primary) identifier source term; _i.e. the field we'll search to find the unique identifiers_
-    * supplementary (child, subordinate) identifier value;
-    * supplementary (child, subordinate) source term;
-    * relationship type;
-    * ... 
-----
-To FCIG-DwC; after community consultation, ALA to propose for ratification+inclusion in DwC :
-  # a mechanism to relate a _General_ record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of dwc (simple, archives and xml):
-    # add _principalRecord_ to _Record_
-    # add _principalRelationType_ to _Record_
-    # add _principalRelIdTerm_ to _Record_
-    # add _parentRecord_ to _Record_
-    # add _parentRelationType_ to _Record_
-    # add _parentRelIdTerm_ to _Record_
-  # In addition to these terms being added, ensure sufficiency of _!ResourceRelationship_ to communicate the multiple relationships described previously
+    # add _xxx_ to _ResourceRelationship_
 
-== _DwC.!ResourceRelationship_ ==
-
-appears to be a logical class used to relate _Record_ entities with others; allows for _n_ number of nested (constituent, singular) 'association' entities.
-
-each relationship must have the following attributes:
-  * core (parent, primary) identifier value;
-  * core (parent, primary) identifier source term;
-  * supplementary (child, subordinate) identifier value;
-  * supplementary (child, subordinate) source term;
-  * relationship type;
-  * ...
-
-... more to follow on this one
 
 == Consideration to the existing DwC standard ==
 
 While being discounted as a preferred way of communicating relationships, all of these are viable mechanisms for relationship mining - see _Appendix: Relationship mining sub-system (The Relator)_ for more information.
 
-=== _occurrenceId_ to relate records ===
+=== why add terms to _Record_? ===
+so people who use simple-dwc can communicate record relationships
+
+=== why have a _principal_ *and* a _parent_ ===
+complex (deep) hierarchical relationships can be communicated and navigated quite effectively (reliably) with this two-level (root, parent) model, whereas there is a significant level of uncertainty associated with a 'one level up' hierarchy, especially across organisational boundaries; [http://en.wikipedia.org/wiki/Graph_theory here's some bedtime reading on the topic...]
+
+=== _DwC.!ResourceRelationship_ ===
+looks like it covers most scenarios:
+  * need to confirm _n_-nested records
+  * need to test with dwc-archives
+  * ... more to follow on this one
+
+=== _occurrenceID_ to relate records ===
   * relationship is implied
   * usage pattern likely to be unintuitive and contradictory to existing practice
   * the water in this pool is already muddy...
@@ -289,11 +287,17 @@ While being discounted as a preferred way of communicating relationships, all of
 
 === _associatedOccurrences_ to relate records ===
   * spec is worded such that i believe the intent here is to define familial/individual's relationships;
-  * still a viable option, but would need to specialise the meaning of this term (& related terms) in the fcig domain
+  * still a viable option, but would need to specialise the meaning (set some rules around the usage) of this term (& related terms) in the fcig domain
 
 === _associatedTaxa_ to relate records ===
   * spec is worded such that the intent here is to define symbiotic  relationships;
-  * this term could be overloaded to 
+  * this term could be overloaded to do the job, but this would need to be trialled first to see how things go...
+
+=== _associatedMedia_ to relate records ===
+  * this falls over when we try to relate a multimedia record with other multimedia records, as _associatedMedia_ is the pointer _to_ the media (and therefore can't be used to point to the related media!)
+
+=== _associatedSequences_ to relate records ===
+  * suffers from the same problem as _associatedMedia_ when relating any sequence record to other sequences... can't imagine a case where this would happen though - is this you?
 
 
 ----
@@ -301,41 +305,39 @@ While being discounted as a preferred way of communicating relationships, all of
 
 = Changes to the HISPID specification =
 
-----
-(for more details see _Changes to the HISPID specification_) :
-  # a mechanism relate a unit record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of hispid;
-  # a mechanism to relate _Unit_-nested related records to the parent specimen _explicitly_ in the data (allowing for these records to be communicated without nesting) :
-    * a _UnitID/UnitGUID_ pointer in sub-classes;
-    * _!DateLastEdited_ information for each of the sub-classes;
-    * nested sub-classes include: _Unit.Acquisition, Unit.Assemblages, Unit.Associations, Unit.Gathering.!SiteImages, Unit.!MultiMediaObjects, Unit.Sequences, !SpecimenUnit.Preparations, !SpecimenUnit.History.!PreviousUnits, ..._
-  # _hispid-xml only_, using _HISPID.!UnitAssociations_ to relate a record to other record(s), one-to-many, _n_ relationships; each relationship must display the follow attributes:
-    * core (parent, primary) identifier value; _i.e. a unique identifier_
-    * core (parent, primary) identifier source term; _i.e. the field we'll search to find the unique identifiers_
-    * supplementary (child, subordinate) identifier value;
-    * supplementary (child, subordinate) source term;
-    * relationship type;
-    * ... 
-----
+*07/12/2011 NOTE: these are likely to evolve further*
+
 To HISPID-ABCD :
-  # a mechanism to relate a _Unit_ record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of hispid;
-    # add _principalUnitID_ to _Unit_
-    # add _principalRelationType_ to _Unit_
-    # add _principalRelIdTerm_ to _Unit_
-    # add _parentUnitID_ to _Unit_
-    # add _parentRelationType_ to _Unit_
-    # add _parentRelIdTerm_ to _Unit_
-  # a mechanism to relate _Unit_-nested multimedia (_MultiMediaObjects_, _SiteImages_) to the specimen _explicitly_ in the data, _i.e._ a _UnitID_ pointer in these sub-classes;
-    # add _relatedUnitID_ to _MultiMediaObject_ and _SiteImage_; in these cases, the type of relationships are implied
-  # additional metadata for multimedia (_MultiMediaObjects_, _SiteImages_) to communicate date modified (_i.e. current at_) information;
-    # add _dateModified_ to _MultiMediaObject_ and _SiteImage_
+  # a mechanism relate a unit record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of hispid;
+    # add _principalUnitID_ to _Unit_;
+    # add _principalUnitTerm_ to _Unit_;
+    # add _principalRelType_ to _Unit_;
+    # add _parentUnitID_ to _Unit_;
+    # add _parentUnitTerm_ to _Unit_;
+    # add _parentRelType_ to _Unit_;
+    # _with the following still being agonised over (hispid-*light* remember!)..._
+      * add _principalRelID_ to _Unit_;
+      * add _principalRelDate_ to _Unit_;
+      * add _parentRelID_ to _Unit_;
+      * add _parentRelDate_ to _Unit_;
+  # a mechanism to relate _Unit_-nested related records to the parent specimen _explicitly_ in the data (allowing for these records to be communicated without nesting) :
+    * sub-classes (_Unit.Acquisition, Unit.Assemblages, Unit.Associations, Unit.Gathering.!SiteImages, Unit.!MultiMediaObjects, Unit.Sequences, !SpecimenUnit.Preparations, !SpecimenUnit.History.!PreviousUnits, ..._) must display the following attributes :
+      * a _UnitID/UnitGUID_ pointer;
+      * _!DateLastEdited_ information;
+  # _hispid-xml only_, using _Unit.Associations_ to relate a record to other record(s), one-to-many, _n_ relationships;
+    # add _this UnitGUID_ to _Unit.Associations_;
+
 
 
 ----
+
 
 
 = Standards-specific usage patterns =
 
 *07/12/2011 NOTE: this section is still being pulled together*
+
+This section to provide use-cases and samples...
 
 == !DarwinCore usage patterns ==
 
@@ -343,12 +345,6 @@ To HISPID-ABCD :
 <wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=10" up_Title="matrix" up_height=840 width="768" up_refresh=6000 />
 
 _From [http://goo.gl/TdSLD]_
-
-=== DwC analysis ===
-
-==== Sample usage of _principal-_ and _parentRecord_ ====
-
-==== Sample usage of _!ResourceRelationship_ ====
 
 
 == HISPID5 usage patterns ==
@@ -362,7 +358,7 @@ _Specimen / Image Relationships with HISPID 5_ :
 
 _From [http://goo.gl/TdSLD]_
 
-=== HISPID analysis ===
+=== Some early HISPID analysis ... ===
 This section looks at the problem from the hispid perspective; this is what i want to do in hispid - what cases does it apply to? Here is a crude glossary:
 
   * images - read ‘multimedia’; the assumption is that these are at least indexed in digital form somewhere (with appropriate metadata to find the object, if the image itself has not been digitised);
