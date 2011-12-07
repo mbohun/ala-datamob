@@ -12,7 +12,7 @@
 
 This document [http://code.google.com/p/ala-datamob/RelatedRecords] is a draft proposal for handling relationships between data records. The intent of this proposal is to ensure the data standards and best-practice support communicating these relationships if the source data capture them.
 
-*At 05/12/2011 this document is still in draft form* first release for peer review; it supersedes (and subsumes) the earlier [IdentifyingRelatedRecords] document, also on this wiki.
+*At 07/12/2011 this document is still in draft form* first release for peer review; it supersedes (and subsumes) the earlier [IdentifyingRelatedRecords] document, also on this wiki.
 
 
 == Relevance ==
@@ -41,8 +41,8 @@ Note: _the following are prioritised using [http://en.wikipedia.org/wiki/MoSCoW_
   # Due to the high likelihood of inconsistency, the data aggregator must not build a single composite record from related records that are determined to be duplicates or constituent parts, without:
     * highlighting the inconsistencies,
     * clearly identifying the provenance of such a record as being the aggregator,
-    * not aggregating organisation-specific information (such as _DwC.institutionCode_), or overwriting with aggregator-specific information
-  # The aggregator shouldn't fail to ingest a partially complete data set or record when encountering unrecognised terms (fields, concepts) in the source data;
+    * not aggregating provenance-specific information (_e.g. DwC.institutionCode, HISPID.SourceInstitutionID_), or replacing these data with aggregator-specific information
+  # The aggregator shouldn't fail to ingest a partially complete data set or record when encountering unrecognised (non-standard) terms (fields, concepts) in the source data;
   # The aggregator should use methods (see _About the data : Common patterns in the scenarios_) to discover the existence of related records and clearly offer links to, or notification of, these records;
   # The aggregator could provide a (web?) service that:
     * responds to resource identifiers with a method for accessing the resource itself (freely or securely),
@@ -53,19 +53,18 @@ Note: _the following are prioritised using [http://en.wikipedia.org/wiki/MoSCoW_
 
 
 === Changes to the domain-specific extensions ===
-*06/12/2011 NOTE:* These recommendations remain are likely to evolve further...
+*07/12/2011 NOTE:* These recommendations remain are likely to evolve further...
 
 To FCIG-DwC (for more details see _Changes to the FCIG-DwC extension_) :
   # a mechanism to relate a _General_ record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of dwc (simple, archives and xml);
-  # a mechanism to relate a record to other record(s), one-to-many, _n_ relationships, available only in dwc-archives and dwc-xml; _DwC.!ResourceRelationship_ is probably this mechanism - need to ensure it meets the needs;
+  # a mechanism to relate a record to other record(s), one-to-many, _n_ relationships, available only in dwc-archives and dwc-xml; _DwC.!ResourceRelationship_ is probably this mechanism - need to ensure sufficiency;
 
 To HISPID-ABCD (for more details see _Changes to the HISPID specification_) :
   # a mechanism relate a unit record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of hispid;
-  # a mechanism to relate _Unit_-nested multimedia (_MultiMediaObjects_, _SiteImages_) to the specimen _explicitly_ in the data, _i.e._ a _UnitID_ pointer in all of these sub-classes;
-  # a mechanism to relate _!SpecimenUnit_-nested _Preparations_ to the specimen _explicitly_ in the data, _i.e._ a _UnitID_ pointer in some/all of the sub-classes;
-  # additional metadata for multimedia (_MultiMediaObjects_, _SiteImages_) to communicate date modified (_i.e. current at_) 
-  # additional metadata for _Preparations_ to communicate date modified (_i.e. current at_) 
-
+  # a mechanism to relate _Unit_-nested related records to the parent specimen _explicitly_ in the data (allowing for these records to be communicated without nesting) :
+    * a _UnitID/UnitGUID_ pointer in sub-classes;
+    * _!DateLastEdited_ information for each of the sub-classes;
+    * nested sub-classes include: _Unit.Acquisition, Unit.Assemblages, Unit.Associations, Unit.Gathering.!SiteImages, Unit.!MultiMediaObjects, Unit.Sequences, !SpecimenUnit.Preparations, !SpecimenUnit.History.!PreviousUnits, ...
 </td>
 
 <td valign="top" align="right" width="33%">
