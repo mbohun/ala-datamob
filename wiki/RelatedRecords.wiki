@@ -130,6 +130,13 @@ Collectors, sites, localities, collection events, field collections, surveys; in
   * implied through a nested data structure, _i.e._ _HISPID.Unit.MultiMediaObjects.MultiMediaObject_
 
 
+== Common concepts in the scenarios ==
+
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=12" up_Title="matrix" up_height=520 width="768" up_refresh=6000 />
+
+_From [http://goo.gl/TdSLD]_
+
+
 == Common patterns in the scenarios ==
 
 This section attempts to identify instances of common ground shared amongst the scenarios, i.e. a 'lowest common denominator', with the goal of relating each pattern to a prescribed usage within a particular standard. 
