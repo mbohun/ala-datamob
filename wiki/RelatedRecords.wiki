@@ -421,6 +421,31 @@ This document is relevant to a number of different groups sharing biodiversity i
 || Living collections || Darwincore csv (simple-dwc) || with domain extensions based on ITF2 standard || 
 
 
+== Appendix: Transport (file) formats in the specifications ==
+
+=== Simple dwc ===
+csv darwincore
+
+=== DwC archives ===
+rough analogy to a star-schema:
+  * _n_ satellite csv/text files; can be a straight dump from the collection management system's core tables
+  * a central xml schema file that relates a field in one of the satellite files:
+    * to another field in another file; _i.e. a foreign key relationship_
+    * to a specific dwc term;
+  * one caveat, relationships are one to one - any processing to do any standardisation must be done before the export
+
+=== DwC xml ===
+full darwincore compliant xml file
+
+=== HISPID light ===
+standing proposal with hiscom to support a simpler file-format which is still hispid5-compliant (_note: this is not hispid 3/4_)
+
+[http://code.google.com/p/ala-datamob/wiki/HerbariaDM]
+
+=== HISPID xml ===
+valid hispid5 xml
+
+
 == Appendix: URNs as record identifiers ==
 
 Uniform resource names (URNs) are textual data intended for use as identifiers of other data or services (resources), and display the following attributes:
@@ -439,7 +464,7 @@ For the purposes of this document, LSIDs are synonymous with URNs??
 === Basis of record contained within LSID ===
 === Historical mappings to earlier patterns ===
 
-== LSID responder (URN resolution) ==
+=== LSID responder (URN resolution) ===
 For the purposes of this document, LSIDs are synonymous with URNs??
 ==== Intended behaviour ====
 ==== Output ====
