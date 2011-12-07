@@ -77,7 +77,11 @@ To HISPID-ABCD (for more details see _Changes to the HISPID specification_) :
 
 </tr></table>
 
+
+
 ----
+
+
 
 = About the data =
 
@@ -119,7 +123,7 @@ _From [http://goo.gl/TdSLD]_
 
 *It is the intent of this document to ensure the data provider can communicate duplication whereever possible.*
 
-<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=8" up_Title="matrix" up_height=520 width="768" up_refresh=6000 />
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=8" up_Title="matrix" up_height=470 width="768" up_refresh=6000 />
 
 _From [http://goo.gl/TdSLD]_
 
@@ -132,7 +136,7 @@ Collectors, sites, localities, collection events, field collections, surveys; in
 
 == Common concepts in the scenarios ==
 
-<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=12" up_Title="matrix" up_height=520 width="768" up_refresh=6000 />
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=13" up_Title="matrix" up_height=450 width="768" up_refresh=6000 />
 
 _From [http://goo.gl/TdSLD]_
 
@@ -148,9 +152,13 @@ This section attempts to identify instances of common ground shared amongst the 
 _From [http://goo.gl/TdSLD]_
 
 
+
 ----
 
-= Standards-specific usage patterns =
+
+
+= Common concepts in proposed specification changes =
+
 
 == Introduction ==
 
@@ -169,85 +177,6 @@ For true 'backwards compatibility', the newer (extended) version of records must
 *One assumption must be made in this regard:* that the data consumer ignores unrecognised fields instead of calling a halt to the load process, or, at worst case, drops this particular record as 'an error'. Ideally, unrecognised fields would be ignored.
 
 In most cases this is possible, however, in some instances where relationships between duplicate records are not clearly defined then multiple 'dots on the map' will appear. It is the hope that in the future some mechanism exists to mine for, seek validation and then remember these relationships - see _Appendix: Relationship mining sub-system (The Relator)_ for more information.
-
-
-== !DarwinCore usage patterns ==
-
-*06/12/2011 NOTE: this section is still being pulled together*
-
-=== DwC synopsis for communicating relationships ===
-<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=10" up_Title="matrix" up_height=840 width="768" up_refresh=6000 />
-
-_From [http://goo.gl/TdSLD]_
-
-=== DwC analysis ===
-
-==== Sample usage of _principal-_ and _parentRecord_ ====
-
-==== Sample usage of _!ResourceRelationship_ ====
-
-
-== HISPID5 usage patterns ==
-
-*06/12/2011 NOTE: this section is still being pulled together*
-
-_Specimen / Image Relationships with HISPID 5_ :
-  * [http://goo.gl/50KhE http://goo.gl/50KhE]
-  * [https://docs.google.com/document/d/1bJYvz0AXT-O1iiJUs-ongmngTAhDiMfrJD2vu_5lmmM/edit?hl=en_US https://docs.google.com/document/d/1bJYvz0AXT-O1iiJUs-ongmngTAhDiMfrJD2vu_5lmmM/edit?hl=en_US]
-
-=== HISPID synopsis for communicating relationships ===
-<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=12" up_Title="matrix" up_height=840 width="768" up_refresh=6000 />
-
-_From [http://goo.gl/TdSLD]_
-
-=== HISPID analysis ===
-This section looks at the problem from the hispid perspective; this is what i want to do in hispid - what cases does it apply to? Here is a crude glossary:
-
-  * images - read ‘multimedia’; the assumption is that these are at least indexed in digital form somewhere (with appropriate metadata to find the object, if the image itself has not been digitised);
-  * storage mechanism - the database (/filestore/card-file...) that holds the data;
-  * 'separate storage mechanisms' imply a challenge in integrating the data; some types of the impediments encountered so far are a lack of technical capability, a physical separation & a temporal separation;
-  * _Unit_ - 
-  * _!SiteImage_ (SI for short) - [http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept1138 DataSets/DataSet/Units/Unit/Gathering/SiteImages/SiteImage http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept1138]
-  * _!MultiMediaObject_, (MMO for short) - [http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0772 DataSets/DataSet/Units/Unit/MultiMediaObjects/MultiMediaObject http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0772]
-  * _SpecimenUnit_ - a specialisation of _Unit_ - [http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0404 DataSets/DataSet/Units/Unit/SpecimenUnit http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0404]
-
-==== _!SpecimenUnit_ record with nested _!SiteImage_ record(s) ====
-
-==== _!SpecimenUnit_ record with nested _!MultiMediaObject_ record(s) ====
-
-==== _!MultiMediaObject_/_!SiteImage_ record stands alone, from which sighting (specimen?) records are interpolated ====
-
-HISPID would allow for this but each inferred _!SpecimenUnit_ record must have a nested MMO/SI record - in turn, each MMO/SI record would be a redundant copy of the other(s), with all the MMO/SI records sharing the same identifier.
-
-==== An image collection item is treated like more traditional specimen(s); this image may be related to other more traditional specimen(s) ====
-
-In this case, the image is the _!SpecimenUnit_; it may be a duplicate, or derivation, of other SpecimenUnit(s); it has nested _!MultiMediaObject(s)_ to point to the image where it resides (usage pattern 1).
-
-    The image may be managed in a digital asset management system (DAMS) or it might be simply a file sent on the email from another institution.
-    It may be desirable as the aggregator to keep both source records (the whole may be equal to or greater than the sum of the parts); however, in this case, the relationship between both records must be maintained.
-
-
-==== _!SpecimenUnit_ record and _!MultiMediaObject_ / _!SiteImage_ record stand alone but share a 1:1 relationship ====
-
-'separate storage mechanisms' imply some challenge in integrating the data; up until this point, it is assumed that the data provider will be able to build an aggregate SpecimenUnit record at the time of export, when they are communicating imagery associated with the specimen;
-
-some types of the impediments to this 'just-in-time aggregation' that have been encountered so far are a lack of technical capability, a physical separation & a temporal separation;
-
-_!MultiMediaObject_ or _!SiteImage_ records are nested under _Unit_ (spec suggests that MMO/SI is part of unit); however, MMO/SI has no way of communicating explicitly that it belongs to _!Unit_ - without this mechanism, each of these types of records could not exist in separate files, yet still maintain their relationship;
-
-this usage pattern doesn’t appear to be supported by hispid as it stands; we would need to add a term to MMO/SI to point to its related _!Unit_ - so it is anticipated that the main users of such a mechanism would have a need to communicate _!SpecimenUnit_ records completely separately  to their image records, yet have a desire that these be related.
-
-
-----
-
-
-= Common concepts in proposed specification changes =
-
-
-== Preparations versus basis of record ==
-  * The concepts 'basis of record' (DwC: _basisOfRecord_ + _dcterms:type_; HISPID: _!KindOfUnit_ + _!RecordBasis_) and 'specimen preparations' (DwC: _preparations_; HISPID: _Preparations_) are metadata.
-  * In HISPID/ABCD, _Preparations_ are nested under _!SpecimenUnit_ 
-  * source data – does each record represent a preparation? or are all preparations for a principal collection item aggregated into the one record?
 
 
 == The principal record ==
@@ -278,7 +207,15 @@ This term communicates where source data for _principal-_ and _parentRecord_ exi
 Recommended best practice is to use one of the standard dwc term names used to identify a record, e.g. _occurrenceId_, _catalogNumber_ (,_eventId_, _locationId_, ...)
 
 
+== Preparations versus basis of record ==
+  * The concepts 'basis of record' (DwC: _basisOfRecord_ + _dcterms:type_; HISPID: _!KindOfUnit_ + _!RecordBasis_) and 'specimen preparations' (DwC: _preparations_; HISPID: _Preparations_) are metadata.
+  * In HISPID/ABCD, _Preparations_ are nested under _!SpecimenUnit_ 
+  * source data – does each record represent a preparation? or are all preparations for a principal collection item aggregated into the one record?
+
+
+
 ----
+
 
 
 = Changes to the FCIG-DwC extension =
@@ -345,6 +282,76 @@ To HISPID-ABCD :
     # add _relatedUnitID_ to _MultiMediaObject_ and _SiteImage_; in these cases, the type of relationships are implied
   # additional metadata for multimedia (_MultiMediaObjects_, _SiteImages_) to communicate date modified (_i.e. current at_) information;
     # add _dateModified_ to _MultiMediaObject_ and _SiteImage_
+
+
+----
+
+
+= Standards-specific usage patterns =
+
+*07/12/2011 NOTE: this section is still being pulled together*
+
+== !DarwinCore usage patterns ==
+
+=== DwC synopsis for communicating relationships ===
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=10" up_Title="matrix" up_height=840 width="768" up_refresh=6000 />
+
+_From [http://goo.gl/TdSLD]_
+
+=== DwC analysis ===
+
+==== Sample usage of _principal-_ and _parentRecord_ ====
+
+==== Sample usage of _!ResourceRelationship_ ====
+
+
+== HISPID5 usage patterns ==
+
+_Specimen / Image Relationships with HISPID 5_ :
+  * [http://goo.gl/50KhE http://goo.gl/50KhE]
+  * [https://docs.google.com/document/d/1bJYvz0AXT-O1iiJUs-ongmngTAhDiMfrJD2vu_5lmmM/edit?hl=en_US https://docs.google.com/document/d/1bJYvz0AXT-O1iiJUs-ongmngTAhDiMfrJD2vu_5lmmM/edit?hl=en_US]
+
+=== HISPID synopsis for communicating relationships ===
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=12" up_Title="matrix" up_height=840 width="768" up_refresh=6000 />
+
+_From [http://goo.gl/TdSLD]_
+
+=== HISPID analysis ===
+This section looks at the problem from the hispid perspective; this is what i want to do in hispid - what cases does it apply to? Here is a crude glossary:
+
+  * images - read ‘multimedia’; the assumption is that these are at least indexed in digital form somewhere (with appropriate metadata to find the object, if the image itself has not been digitised);
+  * storage mechanism - the database (/filestore/card-file...) that holds the data;
+  * 'separate storage mechanisms' imply a challenge in integrating the data; some types of the impediments encountered so far are a lack of technical capability, a physical separation & a temporal separation;
+  * _Unit_ - 
+  * _!SiteImage_ (SI for short) - [http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept1138 DataSets/DataSet/Units/Unit/Gathering/SiteImages/SiteImage http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept1138]
+  * _!MultiMediaObject_, (MMO for short) - [http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0772 DataSets/DataSet/Units/Unit/MultiMediaObjects/MultiMediaObject http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0772]
+  * _SpecimenUnit_ - a specialisation of _Unit_ - [http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0404 DataSets/DataSet/Units/Unit/SpecimenUnit http://wiki.tdwg.org/twiki/bin/view/ABCD/AbcdConcept0404]
+
+==== _!SpecimenUnit_ record with nested _!SiteImage_ record(s) ====
+
+==== _!SpecimenUnit_ record with nested _!MultiMediaObject_ record(s) ====
+
+==== _!MultiMediaObject_/_!SiteImage_ record stands alone, from which sighting (specimen?) records are interpolated ====
+
+HISPID would allow for this but each inferred _!SpecimenUnit_ record must have a nested MMO/SI record - in turn, each MMO/SI record would be a redundant copy of the other(s), with all the MMO/SI records sharing the same identifier.
+
+==== An image collection item is treated like more traditional specimen(s); this image may be related to other more traditional specimen(s) ====
+
+In this case, the image is the _!SpecimenUnit_; it may be a duplicate, or derivation, of other SpecimenUnit(s); it has nested _!MultiMediaObject(s)_ to point to the image where it resides (usage pattern 1).
+
+    The image may be managed in a digital asset management system (DAMS) or it might be simply a file sent on the email from another institution.
+    It may be desirable as the aggregator to keep both source records (the whole may be equal to or greater than the sum of the parts); however, in this case, the relationship between both records must be maintained.
+
+
+==== _!SpecimenUnit_ record and _!MultiMediaObject_ / _!SiteImage_ record stand alone but share a 1:1 relationship ====
+
+'separate storage mechanisms' imply some challenge in integrating the data; up until this point, it is assumed that the data provider will be able to build an aggregate SpecimenUnit record at the time of export, when they are communicating imagery associated with the specimen;
+
+some types of the impediments to this 'just-in-time aggregation' that have been encountered so far are a lack of technical capability, a physical separation & a temporal separation;
+
+_!MultiMediaObject_ or _!SiteImage_ records are nested under _Unit_ (spec suggests that MMO/SI is part of unit); however, MMO/SI has no way of communicating explicitly that it belongs to _!Unit_ - without this mechanism, each of these types of records could not exist in separate files, yet still maintain their relationship;
+
+this usage pattern doesn’t appear to be supported by hispid as it stands; we would need to add a term to MMO/SI to point to its related _!Unit_ - so it is anticipated that the main users of such a mechanism would have a need to communicate _!SpecimenUnit_ records completely separately  to their image records, yet have a desire that these be related.
 
 
 ----
