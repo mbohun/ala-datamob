@@ -24,20 +24,36 @@ It is a retrospective analysis of two commonly-used specifications for biodivers
 The HISPID specific use-cases may conflict with ABCD-usage; an attempt may be made in the future to highlight these, but at the moment the reader should be cautious of this possibility.
 
 See _About the data_ and _Appendix: Relevance to different biodiversity domains_ for more information.
+</td>
+
+<td valign="top" align="right" width="50%">
+<p> </p><p> </p>
+<p><table border="1" cellspacing="0" cellpadding="4"><tr><td>
+*Contents:*
+<wiki:toc max_depth="2" />
+</td></tr></table></p>
+</td>
+
+</tr></table>
 
 
-== Requirements ==
+
+----
+
+
+
+= Requirements =
 
 Note: _the following are prioritised using [http://en.wikipedia.org/wiki/MoSCoW_Method MoSCoW - http://en.wikipedia.org/wiki/MoSCoW_Method]_
 
 
-=== General (functional) behaviour required of the collection management system ===
+== General (functional) behaviour required of the collection management system ==
   # Each record that is to be shared must have a consistent and predictable unique identifier. The record will most likely represent a collection item, but may also represent other related entities, such as the collector, a location or a site visit;
   # This identifier is to be set by the data custodian, in accordance with a pattern agreed to by the relevant institutional group (i.e. informatics peak body);
   # If the record represents data that are derived, or duplicated, from other data (see _About the data : Scenarios giving rise to relationships_) then this relationship should be stored in the collection management system, and communicated within the record using an appropriate method for the data-standard being used to share information (see _About the data : Common patterns in the scenarios_);
 
 
-=== Aggregator-specific behaviour ===
+== Aggregator-specific behaviour ==
   # Due to the high likelihood of inconsistency, the data aggregator must not build a single composite record from related records that are determined to be duplicates or constituent parts, without:
     * highlighting the inconsistencies,
     * clearly identifying the provenance of such a record as being the aggregator,
@@ -52,30 +68,34 @@ Note: _the following are prioritised using [http://en.wikipedia.org/wiki/MoSCoW_
   # The aggregator could infer relationships between records, and allow users to confirm these, which it would also remember;
 
 
-=== Changes to the domain-specific extensions ===
+== Changes to the domain-specific extensions ==
 *07/12/2011 NOTE:* These recommendations remain are likely to evolve further...
 
-To FCIG-DwC (for more details see _Changes to the FCIG-DwC extension_) :
+=== ... to FCIG-DwC ===
+(for more details see _Changes to the FCIG-DwC extension_) :
   # a mechanism to relate a _General_ record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of dwc (simple, archives and xml);
-  # a mechanism to relate a record to other record(s), one-to-many, _n_ relationships, available only in dwc-archives and dwc-xml; _DwC.!ResourceRelationship_ is probably this mechanism - need to ensure sufficiency;
+  # _dwc-archives and dwc-xml only_, using _DwC.!ResourceRelationship_ to relate a record to other record(s), one-to-many, _n_ relationships; each relationship must display the follow attributes:
+    * core (parent, primary) identifier value; _i.e. a unique identifier_
+    * core (parent, primary) identifier source term; _i.e. the field we'll search to find the unique identifiers_
+    * supplementary (child, subordinate) identifier value;
+    * supplementary (child, subordinate) source term;
+    * relationship type;
+    * ... 
 
-To HISPID-ABCD (for more details see _Changes to the HISPID specification_) :
+=== ... to HISPID-ABCD ===
+(for more details see _Changes to the HISPID specification_) :
   # a mechanism relate a unit record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of hispid;
   # a mechanism to relate _Unit_-nested related records to the parent specimen _explicitly_ in the data (allowing for these records to be communicated without nesting) :
     * a _UnitID/UnitGUID_ pointer in sub-classes;
     * _!DateLastEdited_ information for each of the sub-classes;
-    * nested sub-classes include: _Unit.Acquisition, Unit.Assemblages, Unit.Associations, Unit.Gathering.!SiteImages, Unit.!MultiMediaObjects, Unit.Sequences, !SpecimenUnit.Preparations, !SpecimenUnit.History.!PreviousUnits, ...
-</td>
-
-<td valign="top" align="right" width="33%">
-<p> </p><p> </p>
-<p><table border="1" cellspacing="0" cellpadding="4"><tr><td>
-*Contents:*
-<wiki:toc max_depth="2" />
-</td></tr></table></p>
-</td>
-
-</tr></table>
+    * nested sub-classes include: _Unit.Acquisition, Unit.Assemblages, Unit.Associations, Unit.Gathering.!SiteImages, Unit.!MultiMediaObjects, Unit.Sequences, !SpecimenUnit.Preparations, !SpecimenUnit.History.!PreviousUnits, ..._
+  # _hispid-xml only_, using _HISPID.!UnitAssociations_ to relate a record to other record(s), one-to-many, _n_ relationships; each relationship must display the follow attributes:
+    * core (parent, primary) identifier value; _i.e. a unique identifier_
+    * core (parent, primary) identifier source term; _i.e. the field we'll search to find the unique identifiers_
+    * supplementary (child, subordinate) identifier value;
+    * supplementary (child, subordinate) source term;
+    * relationship type;
+    * ... 
 
 
 
@@ -220,6 +240,17 @@ Recommended best practice is to use one of the standard dwc term names used to i
 
 = Changes to the FCIG-DwC extension =
 
+----
+(for more details see _Changes to the FCIG-DwC extension_) :
+  # a mechanism to relate a _General_ record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of dwc (simple, archives and xml);
+  # _dwc-archives and dwc-xml only_, using _DwC.!ResourceRelationship_ to relate a record to other record(s), one-to-many, _n_ relationships; each relationship must display the follow attributes:
+    * core (parent, primary) identifier value; _i.e. a unique identifier_
+    * core (parent, primary) identifier source term; _i.e. the field we'll search to find the unique identifiers_
+    * supplementary (child, subordinate) identifier value;
+    * supplementary (child, subordinate) source term;
+    * relationship type;
+    * ... 
+----
 To FCIG-DwC; after community consultation, ALA to propose for ratification+inclusion in DwC :
   # a mechanism to relate a _General_ record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of dwc (simple, archives and xml):
     # add _principalRecord_ to _Record_
@@ -270,6 +301,21 @@ While being discounted as a preferred way of communicating relationships, all of
 
 = Changes to the HISPID specification =
 
+----
+(for more details see _Changes to the HISPID specification_) :
+  # a mechanism relate a unit record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of hispid;
+  # a mechanism to relate _Unit_-nested related records to the parent specimen _explicitly_ in the data (allowing for these records to be communicated without nesting) :
+    * a _UnitID/UnitGUID_ pointer in sub-classes;
+    * _!DateLastEdited_ information for each of the sub-classes;
+    * nested sub-classes include: _Unit.Acquisition, Unit.Assemblages, Unit.Associations, Unit.Gathering.!SiteImages, Unit.!MultiMediaObjects, Unit.Sequences, !SpecimenUnit.Preparations, !SpecimenUnit.History.!PreviousUnits, ..._
+  # _hispid-xml only_, using _HISPID.!UnitAssociations_ to relate a record to other record(s), one-to-many, _n_ relationships; each relationship must display the follow attributes:
+    * core (parent, primary) identifier value; _i.e. a unique identifier_
+    * core (parent, primary) identifier source term; _i.e. the field we'll search to find the unique identifiers_
+    * supplementary (child, subordinate) identifier value;
+    * supplementary (child, subordinate) source term;
+    * relationship type;
+    * ... 
+----
 To HISPID-ABCD :
   # a mechanism to relate a _Unit_ record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of hispid;
     # add _principalUnitID_ to _Unit_
