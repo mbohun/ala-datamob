@@ -1,6 +1,6 @@
 #summary related records proposal
 
-<table width="98%" border="0" cellpadding="10"><tr>
+<table width="95%" border="0" cellpadding="10"><tr>
 
 <td valign="top" align="left" width="60%">
 <table border="1" cellspacing="0" cellpadding="4"><tr><td>
@@ -42,7 +42,7 @@ See _About the data_ and _Appendix: Relevance to different biodiversity domains_
 
 = Requirements =
 
-Note: _the following are prioritised using [http://en.wikipedia.org/wiki/MoSCoW_Method MoSCoW - http://en.wikipedia.org/wiki/MoSCoW_Method]_
+_prioritised using [http://en.wikipedia.org/wiki/MoSCoW_Method MoSCoW - http://en.wikipedia.org/wiki/MoSCoW_Method]_
 
 
 == General (functional) behaviour required of the collection management system ==
@@ -70,7 +70,7 @@ Note: _the following are prioritised using [http://en.wikipedia.org/wiki/MoSCoW_
 
 == Changes to the domain-specific extensions ==
 
-*07/12/2011 NOTE:* These recommendations remain are likely to evolve further...
+*07/12/2011 NOTE:* These recommendations are likely to evolve further...
 
 This document refers to _simple-dwc_, _dwc-archive_, _dwc-xml_, _hispid-light_, _hispid-xml_ - refer to _Appendix: Transport (file) formats in the specifications_ for more details on these concepts.
 
@@ -126,21 +126,21 @@ All labels are used interchangeably in this document.
 
 == Scenarios giving rise to relationships ==
 
-<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=6" up_Title="matrix" up_height=560 width="768" up_refresh=6000 />
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=6" up_Title="matrix" up_height=640 width="768" up_refresh=6000 />
 
 _From [http://goo.gl/TdSLD]_
 
 
 == Common entities in the scenarios ==
 
-<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=8" up_Title="matrix" up_height=470 width="768" up_refresh=6000 />
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=8" up_Title="matrix" up_height=590 width="768" up_refresh=6000 />
 
 _From [http://goo.gl/TdSLD]_
 
 
 == Common concepts in the scenarios ==
 
-<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=13" up_Title="matrix" up_height=550 width="768" up_refresh=6000 />
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=13" up_Title="matrix" up_height=650 width="768" up_refresh=6000 />
 
 _From [http://goo.gl/TdSLD]_
 
@@ -151,7 +151,7 @@ This section attempts to identify instances of common ground shared amongst the 
 
 (For some thoughts on how these patterns are identified, see _Appendix: Searching for common patterns in the scenarios_)
 
-<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=1" up_Title="matrix" up_height=405 width="768" up_refresh=6000 />
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=1" up_Title="matrix" up_height=415 width="768" up_refresh=6000 />
 
 _From [http://goo.gl/TdSLD]_
 
