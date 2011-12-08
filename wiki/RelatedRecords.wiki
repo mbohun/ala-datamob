@@ -257,7 +257,7 @@ gut feeling is this becomes _too_ complex, whereas it is the _simple_ forms that
 
 
 
-== Changes to the FCIG-DwC extension ==
+= Changes to the FCIG-DwC extension =
 
 *07/12/2011 NOTE: these are likely to evolve further*
 
@@ -331,7 +331,7 @@ looks like it covers most scenarios:
 ----
 
 
-== Changes to the HISPID specification ==
+= Changes to the HISPID specification =
 
 *07/12/2011 NOTE: these are likely to evolve further*
 
