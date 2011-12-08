@@ -30,6 +30,13 @@ It is a retrospective analysis of two commonly-used specifications for biodivers
 The HISPID specific use-cases may conflict with ABCD-usage; an attempt may be made in the future to highlight these, but at the moment the reader should be cautious of this possibility.
 
 See _About the data_ and _Appendix: Relevance to different biodiversity domains_ for more information.
+
+
+== Next steps ==
+  * release to a wider audience & incorporate feedback;
+  * test the proposed changes to the standards-extensions with cases from the communities;
+  * compile & include sample data for the various scenarios, use cases, etc.
+
 </td>
 
 </tr></table>
