@@ -294,6 +294,7 @@ in the case of specimen/sighting records, it seems that this term has become syn
 therefore, the advice i'm leaning towards at this stage is to :
   * put the lsid/urn of the specimen/sighting record (maybe made up from the accession number?) into _occurrenceID_
   * put the unique identifier of the multimedia into _catalogNumber_
+  * populate the other basis terms in an appropriate manner (_dcterms:type, dcterms:modified, basisOfRecord, institutionCode, collectionCode..._)
 
 === same _occurrenceID_ to relate records ===
   * type of relationship is implied therefore more complex relationships aren't possible to define
