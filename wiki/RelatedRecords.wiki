@@ -25,7 +25,7 @@ This document [http://code.google.com/p/ala-datamob/RelatedRecords] is a draft p
 
 This document applies to some of the entities represented in biological collection data (_i.e._ collection items), with a focus on associations amongst specimen (or sighting) records, along with duplicates, other evidential data, or rich content (_i.e._ multimedia). 
 
-It is a retrospective analysis of two commonly-used specifications for biodiversity informatics data transfer: DarwinCore (2.x) and HISPID (5). ABCD (2) is indirectly referenced, of which HISPID5 is implemented as an extension.
+It is a retrospective analysis of two commonly-used specifications for biodiversity informatics data transfer: !DarwinCore 2.x and HISPID 5. ABCD 2 is indirectly referenced, of which HISPID5 is implemented as an extension.
 
 The HISPID specific use-cases may conflict with ABCD-usage; an attempt may be made in the future to highlight these, but at the moment the reader should be cautious of this possibility.
 
@@ -209,18 +209,21 @@ Recommended best practice is to use one of the standard dwc/hispid term names us
 
 == Types of relationships ==
 
-This term communicates each type of relationship. Recommended best practice is to use the controlled vocab.
+This term communicates each type of relationship. Recommended best practice is to use the controlled vocab, _e.g._ image, sound, sighting, duplicate, donation, slide, dna, sequence, _blah..._
 
-Topics for discussion are the controlled vocab, and whether it highlights 'copies of copies'; _e.g._ image, sound, sighting, duplicate, donation, slide, dna, sequence, _blah..._
+Topics for discussion are the controlled vocab, and whether it highlights 'copies of copies'.
 
 
-== Generic _n-relationships_ sub-class: _DwC.!RelatedResources_ and _HISPID.Unit.Associations_ ==
+== Generic _n-relationships_ logical/sub class: _DwC.!RelatedResources_ and _HISPID.Unit.Associations_ ==
 
-each relationship must display the follow attributes:
-    * principal (parent, primary) identifier value; _i.e. a unique identifier_
-    * principal (parent, primary) identifier source term; _i.e. the field we'll search to find the unique identifiers_
-    * supplementary (child, subordinate) identifier value;
-    * supplementary (child, subordinate) source term;
+DwC: object-relationship-subject model;
+HISPID: parent-subordinate model;
+
+desired attributes for each relationship :
+    * principal (parent, primary, subject) identifier value; _i.e. a unique identifier_
+    * principal (parent, primary, subject) identifier source term; _i.e. the field we'll search to find the unique identifiers_
+    * supplementary (child, subordinate, object) identifier value;
+    * supplementary (child, subordinate, object) source term;
     * relationship type;
     * relationship relevant at _date_;
     * relationship according to;
@@ -234,18 +237,19 @@ Collectors, sites, localities, collection events, field collections, surveys; in
   * implied through a nested data structure, _i.e._ _HISPID.Unit.MultiMediaObjects.MultiMediaObject_
 
 
-== additional thoughts... ==
+== Additional thoughts... ==
+
+
+=== why have a _principal_ *and* a _parent_ ===
+complex (deep) hierarchical relationships can be communicated and navigated quite effectively (reliably) with this two-level (root, parent) model, whereas there is a significant level of uncertainty associated with a 'one level up' hierarchy, especially across organisational boundaries; [http://en.wikipedia.org/wiki/Graph_theory here's some bedtime reading on the topic...]
+
+=== _principal, parent_: why not imply an object-relationship-subject pattern (ie, bi-directional); instead, a subordinate relationship is implied ===
+gut feeling is this becomes _too_ complex, whereas it is the _simple_ forms that are likely to use _principal_ and _parent_... where desire exists to point in both directions within the one, it might be time to use the appropriate _n_-relationships class
 
 === Preparations versus basis of record ===
   * The concepts 'basis of record' (DwC: _basisOfRecord_ + _dcterms:type_; HISPID: _!KindOfUnit_ + _!RecordBasis_) and 'specimen preparations' (DwC: _preparations_; HISPID: _Preparations_) are metadata.
   * In HISPID/ABCD, _Preparations_ are nested under _!SpecimenUnit_ 
   * source data – does each record represent a preparation? or are all preparations for a principal collection item aggregated into the one record?
-
-=== why have a _principal_ *and* a _parent_ ===
-complex (deep) hierarchical relationships can be communicated and navigated quite effectively (reliably) with this two-level (root, parent) model, whereas there is a significant level of uncertainty associated with a 'one level up' hierarchy, especially across organisational boundaries; [http://en.wikipedia.org/wiki/Graph_theory here's some bedtime reading on the topic...]
-
-=== why not imply an object-relationship-subject pattern (ie, bi-directional); instead, a subordinate relationship is implied, _i.e. principal, parent_ ===
-gut feeling is this becomes _too_ complex, whereas it is the _simple_ forms that i likely to use _principal_ and _parent_... in this case, it might be time to use the _n_-relationships logical class
 
 
 
@@ -253,7 +257,7 @@ gut feeling is this becomes _too_ complex, whereas it is the _simple_ forms that
 
 
 
-= Changes to the FCIG-DwC extension =
+== Changes to the FCIG-DwC extension ==
 
 *07/12/2011 NOTE: these are likely to evolve further*
 
@@ -271,8 +275,9 @@ To FCIG-DwC; and after community consultation, ALA to propose to GBIF for ratifi
       * add _principalRelDate_ to _Record_;
       * add _parentRelID_ to _Record_;
       * add _parentRelDate_ to _Record_;
-  # _dwc-archives and dwc-xml only_, using _DwC.!ResourceRelationship_ to relate a record to other record(s), one-to-many, _n_ relationships; each relationship must display the follow attributes:
-    # add _xxx_ to _ResourceRelationship_
+  # _dwc-archives and dwc-xml only_, using _DwC.!ResourceRelationship_ to relate a record to other record(s), one-to-many (many-to-many?), _n_ relationships:
+    # add _resourceIDTerm_ to _ResourceRelationship_
+    # add _relatedResourceIDTerm_ to _ResourceRelationship_
 
 
 == Consideration to the existing DwC standard ==
@@ -314,12 +319,13 @@ looks like it covers most scenarios:
 ----
 
 
-= Changes to the HISPID specification =
+== Changes to the HISPID specification ==
 
 *07/12/2011 NOTE: these are likely to evolve further*
 
-To HISPID-ABCD :
-  # a mechanism relate a unit record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of hispid;
+To HISPID, and after community consultation / trial of changes, proposed to TDWG for inclusion in ABCD.
+
+  # a mechanism relate a _Unit_ record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of hispid;
     # add _principalUnitID_ to _Unit_;
     # add _principalUnitTerm_ to _Unit_;
     # add _principalRelType_ to _Unit_;
@@ -331,14 +337,15 @@ To HISPID-ABCD :
       * add _principalRelDate_ to _Unit_;
       * add _parentRelID_ to _Unit_;
       * add _parentRelDate_ to _Unit_;
-  # a mechanism to relate _Unit_-nested related records to the parent specimen _explicitly_ in the data (allowing for these records to be communicated without nesting) :
+  # a mechanism to relate _Unit_-nested related records to the parent _Unit_ _explicitly_ in the data (allowing for these records to be communicated without nesting) :
     * sub-classes (_Unit.Acquisition, Unit.Assemblages, Unit.Associations, Unit.Gathering.!SiteImages, Unit.!MultiMediaObjects, Unit.Sequences, !SpecimenUnit.Preparations, !SpecimenUnit.History.!PreviousUnits, ..._) must display the following attributes :
       * a _UnitID/UnitGUID_ pointer;
       * _!DateLastEdited_ information;
-  # _hispid-xml only_, using _Unit.Associations_ to relate a record to other record(s), one-to-many, _n_ relationships;
+  # _hispid-xml only_, ensuring _HISPID.Unit.Associations_ can relate a record to other record(s), one-to-many, _n_ relationships:
     # add _!AssociationDate_;
     # add _AssociationID_;
     # confirm _UnitGUID_ points to _this unit_ (not _that unit_);
+    * consideration must also be given to relating _Unit_-nested records to other _Unit_-nested records;
 
 
 
