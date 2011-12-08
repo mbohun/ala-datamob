@@ -46,12 +46,14 @@ Note: _the following are prioritised using [http://en.wikipedia.org/wiki/MoSCoW_
 
 
 == General (functional) behaviour required of the collection management system ==
+
   # Each record that is to be shared must have a consistent and predictable unique identifier. The record will most likely represent a collection item, but may also represent other related entities, such as the collector, a location or a site visit;
-  # This identifier is to be set by the data custodian, in accordance with a pattern agreed to by the relevant institutional group (i.e. informatics peak body);
+  # This identifier should be set by the data custodian, in accordance with a pattern agreed to by the relevant institutional group (i.e. informatics peak body);
   # If the record represents data that are derived, or duplicated, from other data (see _About the data : Scenarios giving rise to relationships_) then this relationship should be stored in the collection management system, and communicated within the record using an appropriate method for the data-standard being used to share information (see _About the data : Common patterns in the scenarios_);
 
 
 == Aggregator-specific behaviour ==
+
   # Due to the high likelihood of inconsistency, the data aggregator must not build a single composite record from related records that are determined to be duplicates or constituent parts, without:
     * highlighting the inconsistencies,
     * clearly identifying the provenance of such a record as being the aggregator,
@@ -67,21 +69,27 @@ Note: _the following are prioritised using [http://en.wikipedia.org/wiki/MoSCoW_
 
 
 == Changes to the domain-specific extensions ==
+
 *07/12/2011 NOTE:* These recommendations remain are likely to evolve further...
 
+This document refers to _simple-dwc_, _dwc-archive_, _dwc-xml_, _hispid-light_, _hispid-xml_ - refer to _Appendix: Transport (file) formats in the specifications_ for more details on these concepts.
+
+(for more details on these requirements, see _Proposed specification changes_)
+
+
 === ... to FCIG-DwC ===
-(for more details see _Changes to the FCIG-DwC extension_) :
   # a mechanism to relate a _General_ record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of dwc (simple, archives and xml);
-  # _dwc-archives and dwc-xml only_, using _DwC.!ResourceRelationship_ to relate a record to other record(s), one-to-many, _n_ relationships; see _Concepts in proposed specification changes : Generic n-relationships sub-class_ for more details
+  # _dwc-archive and dwc-xml only_, ensuring _DwC.!ResourceRelationship_ can relate a record to other record(s), one-to-many (many-to-many?), _n_ relationships;
+
 
 === ... to HISPID-ABCD ===
-(for more details see _Changes to the HISPID specification_) :
-  # a mechanism relate a unit record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of hispid;
-  # a mechanism to relate _Unit_-nested related records to the parent specimen _explicitly_ in the data (allowing for these records to be communicated without nesting) :
+  # a mechanism relate a _Unit_ record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of hispid;
+  # a mechanism to ensure _Unit_-nested records point to the parent specimen _explicitly_ in the data (allowing for these records to be communicated without nesting) :
     * a _UnitID/UnitGUID_ pointer in sub-classes;
     * _!DateLastEdited_ information for each of the sub-classes;
     * nested sub-classes include: _Unit.Acquisition, Unit.Assemblages, Unit.Associations, Unit.Gathering.!SiteImages, Unit.!MultiMediaObjects, Unit.Sequences, !SpecimenUnit.Preparations, !SpecimenUnit.History.!PreviousUnits, ..._
-  # _hispid-xml only_, using _HISPID.Unit.Associations_ to relate a record to other record(s), one-to-many, _n_ relationships; see _Concepts in proposed specification changes : Generic n-relationships sub-class_ for more details
+  # _hispid-xml only_, ensuring _HISPID.Unit.Associations_ can relate a record to other record(s), one-to-many, _n_ relationships;
+  # _hispid-xml only_, a mechanism to relate multimedia collection items to other records;
 
 
 
@@ -118,16 +126,12 @@ All labels are used interchangeably in this document.
 
 == Scenarios giving rise to relationships ==
 
-The following situations have been encountered to date; they are referred to later when itemising the possible solutions within each specification.
-
 <wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=6" up_Title="matrix" up_height=560 width="768" up_refresh=6000 />
 
 _From [http://goo.gl/TdSLD]_
 
 
 == Common entities in the scenarios ==
-
-*It is the intent of this document to ensure the data provider can communicate duplication whereever possible.*
 
 <wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=8" up_Title="matrix" up_height=470 width="768" up_refresh=6000 />
 
@@ -157,12 +161,12 @@ _From [http://goo.gl/TdSLD]_
 
 
 
-= Concepts in proposed specification changes =
+= Proposed specification changes =
 
 
 == Introduction ==
 
-It is the intent of this proposal to define consistent methods for communicating relationships between records; in all cases, the following design-constraints are considered:
+It is a goal of this proposal to define consistent methods for communicating relationships between records; in all cases, the following design-constraints are considered:
   # be flexible but solve the problem, and accept that there are multiple solutions - let the data provider choose the best fit;
   # use the existing standard terms where ever possible, unless the use of these terms in this manner would cause a conflict with the general understanding and/or current practice;
   # add terms only when the following conditions are met:
@@ -185,7 +189,7 @@ The identifier assigned to the physical item that was _"accessioned into a colle
 
 The principal record may be associated with many specimen/sighting records, each with a unique identifier (eg. an image or sound recording containing determinations for many species) as well as derivative records such as gene sequences representing a part of the physical item (eg. leg of spider), or unique records representing different layers of a core sample, etc.
 
-The value in this field will be the unique identifier of the principal, i.e. _HISPID.Unit.UnitID_, _HISPID.Unit.UnitGUID_,_HISPID.Unit.Accessions.AccessionNumber_,  _DwC.Occurrence.occurrenceId_, _DwC.Occurrence.catalogNumber_, ...
+The value in this field will be the unique identifier of the principal, i.e. _HISPID.Unit.UnitID_, _HISPID.Unit.UnitGUID_,_HISPID.Unit.Accessions.!AccessionNumber_,  _DwC.Occurrence.occurrenceId_, _DwC.Occurrence.catalogNumber_, ...
 
 
 
@@ -194,16 +198,20 @@ The value in this field will be the unique identifier of the principal, i.e. _HI
 if the principal record is more than one step removed from this one, you can use this term to communicate the direct parent-child relationship between these two items (_see principal record for more detailed information_)
 
 
-== Relationship types: principal and parent ==
-
-This term communicates each type of relationship. Recommended best practice is to use a controlled vocab. (*note: vocab to be determined*) _e.g._ image, sound, sighting, duplicate, donation, slide, dna, sequence, _blah..._
-
-
 == Relationship identifiers' source terms: principal and parent ==
 
 These communicate where source data for _principal_ and _parent record_ exist in those record(s), _i.e._ under what term should the data consumer search if they wished to find this _principal_ or _parent record_ identifier? 
 
-Recommended best practice is to use one of the standard dwc/hispid term names used to identify a record, e.g. _HISPID.Unit.UnitID_, _HISPID.Unit.UnitGUID_,_HISPID.Unit.Accessions.AccessionNumber_,  _DwC.Occurrence.occurrenceId_, _DwC.Occurrence.catalogNumber_, ...
+This is important because it allows for relationships between different types of records (_i.e. different bases; image:specimen, duplicate image:image..._)
+
+Recommended best practice is to use one of the standard dwc/hispid term names used to identify a record, e.g. _HISPID.Unit.UnitID_, _HISPID.Unit.UnitGUID_,_HISPID.Unit.Accessions.!AccessionNumber_,  _DwC.Occurrence.occurrenceId_, _DwC.Occurrence.catalogNumber_, ...
+
+
+== Types of relationships ==
+
+This term communicates each type of relationship. Recommended best practice is to use the controlled vocab.
+
+Topics for discussion are the controlled vocab, and whether it highlights 'copies of copies'; _e.g._ image, sound, sighting, duplicate, donation, slide, dna, sequence, _blah..._
 
 
 == Generic _n-relationships_ sub-class: _DwC.!RelatedResources_ and _HISPID.Unit.Associations_ ==
@@ -226,11 +234,18 @@ Collectors, sites, localities, collection events, field collections, surveys; in
   * implied through a nested data structure, _i.e._ _HISPID.Unit.MultiMediaObjects.MultiMediaObject_
 
 
-=== Preparations versus basis of record ===
+== additional thoughts... ==
 
+=== Preparations versus basis of record ===
   * The concepts 'basis of record' (DwC: _basisOfRecord_ + _dcterms:type_; HISPID: _!KindOfUnit_ + _!RecordBasis_) and 'specimen preparations' (DwC: _preparations_; HISPID: _Preparations_) are metadata.
   * In HISPID/ABCD, _Preparations_ are nested under _!SpecimenUnit_ 
   * source data – does each record represent a preparation? or are all preparations for a principal collection item aggregated into the one record?
+
+=== why have a _principal_ *and* a _parent_ ===
+complex (deep) hierarchical relationships can be communicated and navigated quite effectively (reliably) with this two-level (root, parent) model, whereas there is a significant level of uncertainty associated with a 'one level up' hierarchy, especially across organisational boundaries; [http://en.wikipedia.org/wiki/Graph_theory here's some bedtime reading on the topic...]
+
+=== why not imply an object-relationship-subject pattern (ie, bi-directional); instead, a subordinate relationship is implied, _i.e. principal, parent_ ===
+gut feeling is this becomes _too_ complex, whereas it is the _simple_ forms that i likely to use _principal_ and _parent_... in this case, it might be time to use the _n_-relationships logical class
 
 
 
@@ -266,9 +281,6 @@ While being discounted as a preferred way of communicating relationships, all of
 
 === why add terms to _Record_? ===
 so people who use simple-dwc can communicate record relationships
-
-=== why have a _principal_ *and* a _parent_ ===
-complex (deep) hierarchical relationships can be communicated and navigated quite effectively (reliably) with this two-level (root, parent) model, whereas there is a significant level of uncertainty associated with a 'one level up' hierarchy, especially across organisational boundaries; [http://en.wikipedia.org/wiki/Graph_theory here's some bedtime reading on the topic...]
 
 === _DwC.!ResourceRelationship_ ===
 looks like it covers most scenarios:
