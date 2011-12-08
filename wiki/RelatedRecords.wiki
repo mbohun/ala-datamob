@@ -84,12 +84,12 @@ This document refers to _simple-dwc_, _dwc-archive_, _dwc-xml_, _hispid-light_, 
 
 === ... to HISPID-ABCD ===
   # a mechanism relate a _Unit_ record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of hispid;
-  # a mechanism to ensure _Unit_-nested records point to the parent specimen _explicitly_ in the data (allowing for these records to be communicated without nesting) :
+  # a mechanism to ensure _Unit_-nested records point to the parent _Unit_ _explicitly_ in the data (allowing for these records to be communicated without nesting) :
     * a _UnitID/UnitGUID_ pointer in sub-classes;
     * _!DateLastEdited_ information for each of the sub-classes;
     * nested sub-classes include: _Unit.Acquisition, Unit.Assemblages, Unit.Associations, Unit.Gathering.!SiteImages, Unit.!MultiMediaObjects, Unit.Sequences, !SpecimenUnit.Preparations, !SpecimenUnit.History.!PreviousUnits, ..._
   # _hispid-xml only_, ensuring _HISPID.Unit.Associations_ can relate a record to other record(s), one-to-many, _n_ relationships;
-  # _hispid-xml only_, a mechanism to relate multimedia collection items to other records;
+    * consideration must also be given to relating _Unit_-nested records to other _Unit_-nested records;
 
 
 
