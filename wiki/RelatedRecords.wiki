@@ -261,7 +261,7 @@ gut feeling is this becomes _too_ complex, whereas it is the _simple_ forms that
 
 *07/12/2011 NOTE: these are likely to evolve further*
 
-To FCIG-DwC; and after community consultation, ALA to propose to GBIF for ratification+inclusion in standard DwC :
+To FCIG-DwC; and after community consultation, ALA to propose to TDWG for ratification+inclusion in standard DwC :
 
   # a mechanism to relate a _General_ record to its _principal_ as well as its _parent_ records, one-to-one for a maximum of two relationships, in all forms of dwc (simple, archives and xml);
     # add _principalRelResourceID_ to _Record_;
@@ -282,24 +282,26 @@ To FCIG-DwC; and after community consultation, ALA to propose to GBIF for ratifi
 
 == Consideration to the existing DwC standard ==
 
-While being discounted as a preferred way of communicating relationships, all of these are viable mechanisms for relationship mining - see _Appendix: Relationship mining sub-system (The Relator)_ for more information.
+Some of these are viable mechanisms for relationship mining - see _Appendix: Relationship mining sub-system (The Relator)_ for more information.
 
-=== why add terms to _Record_? ===
-so people who use simple-dwc can communicate record relationships
+=== how should i uniquely identify my multimedia collection item then? ===
+at first glance, a  _generalRecordID_ appears to be missing from dwc - but i reckon _catalogNumber_ was meant to fulfil this role
 
-=== _DwC.!ResourceRelationship_ ===
-looks like it covers most scenarios:
-  * need to confirm _n_-nested records
-  * need to test with dwc-archives
-  * ... more to follow on this one
+the description _'an identifier (preferably unique) for the record within the data set or collection'_ seems to make far more sense if it lived under _General_, along with _institutionCode_, _collectionCode_, and the like.
 
-=== _occurrenceID_ to relate records ===
-  * relationship is implied
+in the case of specimen/sighting records, it seems that this term has become synonymous with an accession number - a multimedia record may well have an accession number _and_ its own identifier... but it also has an _occurrenceID_
+
+therefore, the advice i'm leaning towards at this stage is to :
+  * put the lsid/urn of the specimen/sighting record (maybe made up from the accession number?) into _occurrenceID_
+  * put the unique identifier of the multimedia into _catalogNumber_
+
+=== same _occurrenceID_ to relate records ===
+  * type of relationship is implied therefore more complex relationships aren't possible to define
   * usage pattern likely to be unintuitive and contradictory to existing practice
   * the water in this pool is already muddy...
 
-=== _catalogNumber_ to relate records ===
-  * viable option, but relationship is still implied
+=== same _catalogNumber_ to relate records ===
+  * possibility, but the type of relationship is still implied
 
 === _associatedOccurrences_ to relate records ===
   * spec is worded such that i believe the intent here is to define familial/individual's relationships;
@@ -314,6 +316,15 @@ looks like it covers most scenarios:
 
 === _associatedSequences_ to relate records ===
   * suffers from the same problem as _associatedMedia_ when relating any sequence record to other sequences... can't imagine a case where this would happen though - is this you?
+
+=== why add terms to _Record_? ===
+so people who use simple-dwc can communicate record relationships
+
+=== _DwC.!ResourceRelationship_ ===
+looks like it covers most scenarios:
+  * need to confirm _n_-nested records
+  * need to test with dwc-archives
+  * ... more to follow on this one
 
 
 ----
@@ -341,11 +352,11 @@ To HISPID, and after community consultation / trial of changes, proposed to TDWG
     * sub-classes (_Unit.Acquisition, Unit.Assemblages, Unit.Associations, Unit.Gathering.!SiteImages, Unit.!MultiMediaObjects, Unit.Sequences, !SpecimenUnit.Preparations, !SpecimenUnit.History.!PreviousUnits, ..._) must display the following attributes :
       * a _UnitID/UnitGUID_ pointer;
       * _!DateLastEdited_ information;
+    * consideration must also be given to relating these _Unit_-nested records to other _Unit_-nested records;
   # _hispid-xml only_, ensuring _HISPID.Unit.Associations_ can relate a record to other record(s), one-to-many, _n_ relationships:
     # add _!AssociationDate_;
     # add _AssociationID_;
     # confirm _UnitGUID_ points to _this unit_ (not _that unit_);
-    * consideration must also be given to relating _Unit_-nested records to other _Unit_-nested records;
 
 
 
