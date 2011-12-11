@@ -20,7 +20,7 @@ This site is loosely arranged around the following concepts:
   * [DataStandards Domain-specific data standards]
   * [Implementations Specific implementations of DM] (coupled to their source systems)
   * [http://code.google.com/p/ala-dataquality/wiki/CompletenessModel DM completeness] - external link - (fitness for use, quality at source, ...)
-  * [IdentifyingRelatedRecords Identifying relationships] (derived collection items, inferred records, ...) [RelatedRecords and communicating those relationships]
+  * [RelatedRecords Identifying relationships] (derived collection items, inferred records, ...) [RelatedRecords and communicating those relationships]
 
 
 ===...or by artefact type===
@@ -34,8 +34,9 @@ In case you know exactly what you're looking for:
 ===Hand over everything at once...===
 You can see all content (wiki, source-code, ...) through the googe: [http://code.google.com/p/ala-datamob/source/browse/#svn http://code.google.com/p/ala-datamob/source/browse/#svn]; the wiki only is found here: [http://code.google.com/p/ala-datamob/source/browse/#svn%2Fwiki http://code.google.com/p/ala-datamob/source/browse/#svn%2Fwiki]
 
-In addition to the above, you can take a local copy of all the content (except the DM completeness section) by using the following svn url: 
+In addition to the above, you can take a local copy of all the content (except the DM completeness section) *by using the following svn url*: 
   * [https://ala-datamob.googlecode.com/svn] (_note:_ if you are use tortoise svn then use this as the 'url of repository' when you 'svn checkout' - the absence of credentials gives you read-only access)
+  * google help points you to '.../svn/trunk/' but this will only give you the code, not the contents of the wiki
   * if you need a good windows svn client, i recommend [http://tortoisesvn.net/ tortoise svn - http://tortoisesvn.net/]
   * more info for a command-line checkout is here: [http://code.google.com/p/ala-datamob/source/checkout] (_this assumes familiarity with your local instance of svn/git/..._)
 
