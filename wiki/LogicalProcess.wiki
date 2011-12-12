@@ -1,9 +1,15 @@
 #summary a generic, logical process for data mobilisation
 
-= Details =
+= Summary =
 
-a generic data mobilisation process:
-  * sample of / complete existing data export
+This page is dedicated to helping data providers organise an implementation. It could apply to one dataset (_i.e._ a discrete sub-system), or its scope might be broadened to include all of an organisation's data, regardless of the system in which they are managed.
+
+== Steps ==
+
+
+== Outputs (artefacts) ==
+The following output comes from _each_ pass (iteration):
+  * sample of, or a complete, export of existing data
   * completeness analysis first pass
     * completeness iteration(s) with data provider
     * future enhancements in completeness
@@ -13,6 +19,11 @@ a generic data mobilisation process:
     * testing for fuller automation (ie, access to upload.ala.org.au, batch jobs & sample scripts for operating system envioronment, etc)
     * recommendation(s) or implementation(s) of batch-upload
 
+These will likely be enhanced at each step, but may also fall stagnant (as proof of poor suitability of a particular idea or method). 
+
+Like all agile methodology, one goal is to reduce overall risk to success by discovering a lack of suitability at the earliest possible point (_i.e._ a 'point of no return' in the budget is reached!) ... the reader can find a detailed description of one such method at [http://en.wikipedia.org/wiki/DSDM]
+
+= More details on each step =
 
 == 01. planning ==
 
@@ -50,4 +61,4 @@ Also described in more detail in the _Data mobilisation: Components and tools_ d
 
 == 04. iteration ==
 
-is there another phase to the desired outcomes? if yes, iterate
+is there more effort required to achieve the desired outcomes? if yes, iterate
