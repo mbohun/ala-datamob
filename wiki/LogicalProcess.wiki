@@ -2,8 +2,6 @@
 
 = Details =
 
-<!--img src="http://ala-datamob.googlecode.com/svn/wiki/01%20Data%20mobilisation.jpg" width="719" height="116"-->
-
 a generic data mobilisation process:
   * sample of / complete existing data export
   * completeness analysis first pass
