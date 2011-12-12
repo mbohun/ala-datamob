@@ -6,9 +6,13 @@ This page is dedicated to helping data providers organise an implementation. It 
 
 == Steps ==
 
+  # plan
+  # implement
+  # review
+  # iterate
 
 == Outputs (artefacts) ==
-The following output comes from _each_ pass (iteration):
+The following output exists after the first pass (iteration):
   * sample of, or a complete, export of existing data
   * completeness analysis first pass
     * completeness iteration(s) with data provider
@@ -19,9 +23,9 @@ The following output comes from _each_ pass (iteration):
     * testing for fuller automation (ie, access to upload.ala.org.au, batch jobs & sample scripts for operating system envioronment, etc)
     * recommendation(s) or implementation(s) of batch-upload
 
-These will likely be enhanced at each step, but may also fall stagnant (as proof of poor suitability of a particular idea or method). 
+These outputs will likely be enhanced _with each pass_, but improvements may also cease (as proof of poor suitability of a particular idea). 
 
-Like all agile methodology, one goal is to reduce overall risk to success by discovering a lack of suitability at the earliest possible point (_i.e._ a 'point of no return' in the budget is reached!) ... the reader can find a detailed description of one such method at [http://en.wikipedia.org/wiki/DSDM]
+Like all agile methodology, a main goal is to reduce overall risk to success by discovering a lack of suitability at the earliest possible point (_i.e._ a 'point of no return' in the budget is reached!) ... the reader can find a detailed description of one such method at [http://en.wikipedia.org/wiki/DSDM]
 
 = More details on each step =
 
