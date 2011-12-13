@@ -1,25 +1,30 @@
 #summary a generic, logical process for data mobilisation
 
 = Summary =
-
 This page is dedicated to helping data providers organise an implementation. It could apply to one dataset (_i.e._ a discrete sub-system), or its scope might be broadened to include all of an organisation's data, regardless of the system in which they are managed.
 
-== Steps ==
+== Proposed iterations (phases) ==
+Phase:
+  # an _export storage mechanism_ to hold your data for your own (private) purposes, _e.g._ data analysis & planning, and a _push mechanism_ to bundle and send the data (_e.g._ sftp);
+  # the _export storage mechanism_ revised to hold data in a [DataStandards standard form] (_i.e._ for public consumption) with a working _push mechanism_, _i.e._ proof of ability to move data externally;
+  # _if desired_, a mechanism that supports on-demand harvesting by interested parties, _e.g._ a biocase data provider, or a website download;
 
-  # plan
-  # implement
-  # review
+
+== Steps for each iteration ==
+  # plan - decide what you want to achieve;
+  # implement - prove the plan; build a functional prototype;
+  # review - the output, ascertain whether the original goals were met;
   # iterate
 
 == Outputs (artefacts) ==
 The following output exists after the first pass (iteration):
-  * sample of, or a complete, export of existing data
-  * completeness analysis first pass
+  # sample of (or a complete) export of existing data, not necessarily in one of the [DataStandards standard forms];
+  # completeness analysis first pass:
     * completeness iteration(s) with data provider
     * future enhancements in completeness
-  * content analysis first pass
+  # content analysis first pass:
     * recommendations for data standard compliance
-  * existing transport method analysis
+  # existing transport method analysis:
     * testing for fuller automation (ie, access to upload.ala.org.au, batch jobs & sample scripts for operating system envioronment, etc)
     * recommendation(s) or implementation(s) of batch-upload
 
