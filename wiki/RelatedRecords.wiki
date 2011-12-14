@@ -448,12 +448,7 @@ This document is relevant to a number of different groups sharing biodiversity i
   * focussed on activities of the organisations within the group (i.e. areas of expertise),
   * any or all of the above!
 
-|| *Domain* || *Description of focus* || *Data sharing standard* || 
-|| FCIG || Faunal collections || Darwincore csv (simple-dwc) with non-standard domain extensions to be proposed to TDWG, and maintained by FCIG || 
-|| HISCOM || Herbaria || HISPID5: hispid-xml and 'hispid-light' || 
-|| Microbial collections || Darincore archive (dwc-a) with domain extensions based on ITF2 standard<br>hispid  || 
-|| Barcoding & sequencing || Darwincore csv (simple-dwc) || with non-standard extensions || 
-|| Living collections || Darwincore csv (simple-dwc) || with domain extensions based on ITF2 standard || 
+... see [BioDomains] on this wiki for more detailed information
 
 
 == Appendix: Transport (file) formats in the specifications ==
