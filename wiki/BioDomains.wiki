@@ -1,3 +1,25 @@
 #summary Groups within biodiversity informatics
 
+= Introduction =
+
+This wiki is relevant to a number of different groups sharing biodiversity information. The boundaries may be :
+  * historical (or traditional), 
+  * along taxonomic lines (or other taxa classification methodology),
+  * focussed on activities of the organisations within the group (i.e. areas of expertise),
+  * any or all of the above!
+
+
+= Standards usage =
+
+|| *Domain* || *Description of focus* || *Data sharing standard* || 
+|| FCIG || Faunal collections || Darwincore csv (simple-dwc) with non-standard domain extensions to be proposed to TDWG, and maintained by FCIG || 
+|| HISCOM || Herbaria || HISPID5: hispid-xml and 'hispid-light' || 
+|| Microbial collections || Darincore archive (dwc-a) with domain extensions based on ITF2 standard<br>hispid  || 
+|| Barcoding & sequencing || Darwincore csv (simple-dwc) || with non-standard extensions || 
+|| Living collections || Darwincore csv (simple-dwc) || with domain extensions based on ITF2 standard || 
+
+...
+
+= Domain-specific documents =
+
 == [HerbariaDM Herbaria data mobilisation] ==
