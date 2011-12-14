@@ -1,16 +1,16 @@
 #summary a generic, logical process for data mobilisation
 
 = Summary =
-This page is dedicated to helping data providers organise an implementation. It could apply to one dataset (_i.e._ a discrete sub-system), or its scope might be broadened to include all of an organisation's data, regardless of the system in which they are managed.
+This page is dedicated to helping data providers organise an export implementation, but it also offers some thoughts on _value-adding_ (drawing inference) and _repatriation_ (returning information to the data provider). It could apply to one dataset (_i.e._ a discrete sub-system), or its scope might be broadened to include all of an organisation's data, regardless of the system in which they are managed.
 
-== Proposed iterations (phases) ==
+== Proposed iterations (phases) for an export ==
   # an _export storage mechanism_ to hold your data for your own (private) purposes, _e.g._ data analysis & planning, and a _push mechanism_ to bundle and send the data (_e.g._ sftp);
   # the _export storage mechanism_ revised to hold data in a [DataStandards standard form] (_i.e._ for public consumption) with a working _push mechanism_, _i.e._ proof of ability to move data externally;
   # _if desired_, a mechanism that supports on-demand harvesting by interested parties, _e.g._ a biocase data provider, or a website download;
 
 see _More details : implementing_ for more detail on these concepts...
 
-== Steps for each iteration ==
+== Steps for each iteration of an export ==
   # plan - decide what you want to achieve;
   # implement - prove the plan; build a functional prototype;
   # review - the output, ascertain whether the original goals were met;
@@ -32,23 +32,19 @@ These outputs will likely be enhanced _with each pass_, but improvements may als
 
 Like all agile methodology, a main goal is to reduce overall risk to success by discovering a lack of suitability at the earliest possible point (_i.e._ a 'point of no return' in the budget is reached!) ... the reader can find a detailed description of one such method at [http://en.wikipedia.org/wiki/DSDM]
 
-= More details on each step =
+= More details on the export steps =
 
-== 01. planning ==
+== Planning ==
 
 setting goals & constraints
-
-<img src="http://ala-datamob.googlecode.com/svn/wiki/0101%20DM%20planning.jpg">
 
 <wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/present/view?id=d8rcr58_19cc2d3kcq&revision=_latest&start=0&theme=blank&cwj=true" up_Title="matrix" up_height=510 width="768" up_refresh=6000 />
 
 From _Data mobilisation: considerations_ slide show...  
 [http://goo.gl/LuPHe] _-or-_ [https://docs.google.com/present/view?id=d8rcr58_19cc2d3kcq&revision=_latest&start=0&theme=blank&cwj=true]
 
-[https://docs.google.com/leaf?id=0ByNWJFdh4pHZZGQ3Mzk5NmQtODcwNi00MDc2LTk2NDUtZjMyOTRlNTBhZTkx&sort=name&layout=list&num=50 dm process revision.201105]
 
-
-== 02. implementing ==
+== Implementing ==
 
 Some things to consider for an implementation...
 
@@ -71,3 +67,10 @@ Also described in more detail in the _Data mobilisation: Components and tools_ d
 == 04. iteration ==
 
 is there more effort required to achieve the desired outcomes? if yes, iterate
+
+
+= Other relevant considerations =
+
+[http://ala-datamob.googlecode.com/svn/wiki/01/0101/010101%20process-review-201105.png]
+
+From _Data mobilisation: process revision.201105_ [http://goo.gl/zp0cX]
