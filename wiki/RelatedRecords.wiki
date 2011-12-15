@@ -201,7 +201,7 @@ It is a goal of this proposal to define consistent methods for communicating rel
     # the term name is defined which at least hints at the purpose (_yes, this is purely subjective - but if a number of people agree that the naming makes sense, then that's the best that can be hoped for at this stage_)
     # the term's usage is unambiguously defined in a short description
 
-In the case of both standards-recommendations, the ramifications are that new fields will be added if the proposal is accepted, but if it is not accepted, any case in the afore-mentioned _... usage patterns_ sections that have no standard solution will remain ambiguous and/or unresolvable in the data.
+In the case of both standards-recommendations, the ramifications are that new fields will be added if the proposal is accepted, but if it is not accepted, any case in the _Standards-specific usage patterns_ section that have no standard solution will remain ambiguous and/or unresolvable in the data.
 
 
 == Backwards compatibility ==
@@ -410,7 +410,7 @@ This section to provide use-cases and samples...
 == !DarwinCore usage patterns ==
 
 === DwC synopsis for communicating relationships ===
-<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=10" up_Title="matrix" up_height=1000 width="768" up_refresh=6000 />
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=10" up_Title="matrix" up_height=1000 width="880" up_refresh=6000 />
 
 _From [http://goo.gl/TdSLD]_
 
@@ -422,7 +422,7 @@ _Specimen / Image Relationships with HISPID 5_ :
   * [https://docs.google.com/document/d/1bJYvz0AXT-O1iiJUs-ongmngTAhDiMfrJD2vu_5lmmM/edit?hl=en_US https://docs.google.com/document/d/1bJYvz0AXT-O1iiJUs-ongmngTAhDiMfrJD2vu_5lmmM/edit?hl=en_US]
 
 === HISPID synopsis for communicating relationships ===
-<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=12" up_Title="matrix" up_height=1000 width="768" up_refresh=6000 />
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=12" up_Title="matrix" up_height=1000 width="880" up_refresh=6000 />
 
 _From [http://goo.gl/TdSLD]_
 
