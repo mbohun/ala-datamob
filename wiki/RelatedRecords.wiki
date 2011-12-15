@@ -133,12 +133,23 @@ All labels are used interchangeably in this document.
 
 == Scenarios giving rise to relationships ==
 
+A scenario can be thought of as 'a circumstance of the data / data management', _i.e._ it's a way someone is gathering and managing their collection data which results in a relationship being formed, or captured, between two (or more) records.
+
 <wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=6" up_Title="matrix" up_height=640 width="768" up_refresh=6000 />
 
 _From [http://goo.gl/TdSLD]_
 
 
 == Common entities in the scenarios ==
+
+These are logical (, generic, abstract) 'things' that participate in the scenarios, _i.e._ the things between which relationships exist; in the scope of the document, all scenarios can be broken down to interactions between:
+  * specimen or sighting
+  * a multimedia collection item
+  * a duplicate
+
+Entities are limited to being either the 'object' or 'subject' of a relationship.
+
+There are obviously other metadata associated with each entity, such as the collector, or the location, or the date, or the url, _etc._ - these are beyond the scope of the document and therefore remain unaddressed; _e.g._ the relationship between a specimen and its collector is clearly defined by the group of collector-related metadata in whichever spec the reader is concerned with...
 
 <wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=8" up_Title="matrix" up_height=590 width="768" up_refresh=6000 />
 
@@ -147,6 +158,12 @@ _From [http://goo.gl/TdSLD]_
 
 == Common concepts in the scenarios ==
 
+Concepts could be considered more completely as 'concepts pertinent to record relationships' ... the concepts are also a reduction of the scenarios to a more common base - but a step in a slightly different direction than that of 'scenario and entity'.
+ 
+These is show that there are key concepts already addressed in the standards, and there are these terms to communicate these facts to data consumers.
+ 
+The concepts in the scenarios are not limited to being either the 'object' or 'subject' of a relationship, whereas the entities are.
+
 <wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/pub?hl=en_US&key=0AiNWJFdh4pHZdDY2cEgxdHZ5YlBoTUx4MGVfVTgyTGc&hl=en_US&gid=13" up_Title="matrix" up_height=650 width="768" up_refresh=6000 />
 
 _From [http://goo.gl/TdSLD]_
@@ -154,7 +171,9 @@ _From [http://goo.gl/TdSLD]_
 
 == Common patterns in the scenarios ==
 
-This section attempts to identify instances of common ground shared amongst the scenarios, i.e. a 'lowest common denominator', with the goal of relating each pattern to a prescribed usage within a particular standard. 
+This section attempts to identify instances of common ground shared amongst the scenarios, _i.e._ a 'lowest common denominator', with the goal of relating each pattern to a prescribed usage within a particular standard. 
+
+For each discrete combination of entity-pairs, there is a pattern - a matrix; another way of putting it would be 'entity combinations'. Once these patterns are identified, we can use them to give rigour to the standards analysis in latter sections; _i.e._ for each pattern, determine if it is currently supported by the standards, or if we need to address it with a non-standard extension.
 
 (For some thoughts on how these patterns are identified, see _Appendix: Searching for common patterns in the scenarios_)
 
@@ -190,9 +209,14 @@ For true 'backwards compatibility', the newer (extended) version of records must
 In most cases this is possible, however, in some instances where relationships between duplicate records are not clearly defined then multiple 'dots on the map' will appear. It is the hope that in the future some mechanism exists to mine for, seek validation and then remember these relationships - see _Appendix: Relationship mining sub-system (The Relator)_ for more information.
 
 
+== Principal and parent ==
+
+These are both pointers to core records (see _About the data_). They could be the _DwC.occurrenceId_, _HISPID.Unit.UnitGUID_ or potentially a _DwC.catalogNumber_ or _HISPID.Accessions.AccessionNumber_.
+
+
 == The principal record ==
 
-The identifier assigned to the physical item that was _"accessioned into a collection from the field"_ (eg. single vouchered specimen, still image, movie or sound recording, field notes, core sample, phial of multiple organisms, etc.). 
+The principal is the record that is at the root of this and all other related records; the physical item that was _"accessioned into a collection from the field"_ (eg. single vouchered specimen, still image, movie or sound recording, field notes, core sample, phial of multiple organisms, etc.). 
 
 The principal record may be associated with many specimen/sighting records, each with a unique identifier (eg. an image or sound recording containing determinations for many species) as well as derivative records such as gene sequences representing a part of the physical item (eg. leg of spider), or unique records representing different layers of a core sample, etc.
 
@@ -202,12 +226,12 @@ The value in this field will be the unique identifier of the principal, i.e. _HI
 
 == The parent record ==
 
-if the principal record is more than one step removed from this one, you can use this term to communicate the direct parent-child relationship between these two items (_see principal record for more detailed information_)
+The _parent_ is also potentially core data, but is included only if the supplementary data are more than one step removed, eg: a sequence of a dna sample of a specimen, or, a sighting of a digitised sound-track (a collection event), which came from an analogue sound reel (the collection item).
 
 
 == Relationship identifiers' source terms: principal and parent ==
 
-These communicate where source data for _principal_ and _parent record_ exist in those record(s), _i.e._ under what term should the data consumer search if they wished to find this _principal_ or _parent record_ identifier? 
+Because the principal and parent can be one of a number of different identifieres, some additonal terms are needed to communicate where source data for _principal_ and _parent record_ exist in those record(s), _i.e._ under what term should the data consumer search if they wished to find this _principal_ or _parent record_ identifier? 
 
 This is important because it allows for relationships between different types of records (_i.e. different bases; image:specimen, duplicate image:image..._)
 
