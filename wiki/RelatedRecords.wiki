@@ -173,7 +173,7 @@ _From [http://goo.gl/TdSLD]_
 
 This section attempts to identify instances of common ground shared amongst the scenarios, _i.e._ a 'lowest common denominator', with the goal of relating each pattern to a prescribed usage within a particular standard. 
 
-For each discrete combination of entity-pairs, there is a pattern - a matrix; another way of putting it would be 'entity combinations'. Once these patterns are identified, we can use them to give rigour to the standards analysis in latter sections; _i.e._ for each pattern, determine if it is currently supported by the standards, or if we need to address it with a non-standard extension.
+For each discrete combination of entity-pairs, there is a pattern - a matrix; another way of putting it would be 'entity combinations'. Once these patterns are identified, we can use them to give rigour to the standards analyses in later sections (synopses); _i.e._ for each pattern, determine if it is currently supported by the standards, or if we need to address it with a non-standard extension.
 
 (For some thoughts on how these patterns are identified, see _Appendix: Searching for common patterns in the scenarios_)
 
@@ -192,12 +192,16 @@ _From [http://goo.gl/TdSLD]_
 
 == Introduction ==
 
+This section offers general information on changes, relevant to both standards. For the standard-specific elaboration on the _Requirements_ section at the front, see _Changes to the ..._ sections that follow.
+
 It is a goal of this proposal to define consistent methods for communicating relationships between records; in all cases, the following design-constraints are considered:
   # be flexible but solve the problem, and accept that there are multiple solutions - let the data provider choose the best fit;
   # use the existing standard terms where ever possible, unless the use of these terms in this manner would cause a conflict with the general understanding and/or current practice;
   # add terms only when the following conditions are met:
     # the term name is defined which at least hints at the purpose (_yes, this is purely subjective - but if a number of people agree that the naming makes sense, then that's the best that can be hoped for at this stage_)
     # the term's usage is unambiguously defined in a short description
+
+In the case of both standards-recommendations, the ramifications are that new fields will be added if the proposal is accepted, but if it is not accepted, any case in the afore-mentioned _... usage patterns_ sections that have no standard solution will remain ambiguous and/or unresolvable in the data.
 
 
 == Backwards compatibility ==
@@ -211,7 +215,9 @@ In most cases this is possible, however, in some instances where relationships b
 
 == Principal and parent ==
 
-These are both pointers to core records (see _About the data_). They could be the _DwC.occurrenceId_, _HISPID.Unit.UnitGUID_ or potentially a _DwC.catalogNumber_ or _HISPID.Accessions.AccessionNumber_.
+These are both pointers to core records (see _About the data_). They could be the _DwC.occurrenceId_, _HISPID.Unit.UnitGUID_ or potentially a _DwC.catalogNumber_, _HISPID.Accessions.!AccessionNumber_, _or more!_...
+
+*20111215 - TODO:* add the likely standard term to each usage pattern for _parent_ and _principal_...
 
 
 == The principal record ==
@@ -221,7 +227,6 @@ The principal is the record that is at the root of this and all other related re
 The principal record may be associated with many specimen/sighting records, each with a unique identifier (eg. an image or sound recording containing determinations for many species) as well as derivative records such as gene sequences representing a part of the physical item (eg. leg of spider), or unique records representing different layers of a core sample, etc.
 
 The value in this field will be the unique identifier of the principal, i.e. _HISPID.Unit.UnitID_, _HISPID.Unit.UnitGUID_,_HISPID.Unit.Accessions.!AccessionNumber_,  _DwC.Occurrence.occurrenceId_, _DwC.Occurrence.catalogNumber_, ...
-
 
 
 == The parent record ==
