@@ -13,7 +13,7 @@
 
 <wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/ccc?key=0AiNWJFdh4pHZdFlCY20wbnBVdUZoZk5mS1lUU0Nzb3c&hl=en_US#gid=4" up_Title="DM Status" up_height=460 width="840" up_refresh=6000 />
 
-_from google docs [http://goo.gl/F25de DM Status] (http://goo.gl/F25de)_
+_from google docs [https://docs.google.com/spreadsheet/ccc?key=0AiNWJFdh4pHZdFlCY20wbnBVdUZoZk5mS1lUU0Nzb3c&hl=en_US#gid=4 DM Status] (http://goo.gl/78L46)_
 
 == Other functional prototypes, interesting algorithms, etc... ==
  * afd names denormalising algorithm -> morphbank load (pentaho, awk)
