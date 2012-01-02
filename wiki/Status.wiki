@@ -5,3 +5,5 @@
 <wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/spreadsheet/ccc?key=0AiNWJFdh4pHZdFlCY20wbnBVdUZoZk5mS1lUU0Nzb3c&hl=en_US#gid=4" up_Title="DM Status" up_height=700 width="1000" up_refresh=6000 />
 
 _from google docs [https://docs.google.com/spreadsheet/ccc?key=0AiNWJFdh4pHZdFlCY20wbnBVdUZoZk5mS1lUU0Nzb3c&hl=en_US#gid=4 DM Status] ([http://goo.gl/78L46])_
+
+for a schedule of guilty parties, please contact us using the details [http://code.google.com/p/ala-datamob/ on the main page]... 
