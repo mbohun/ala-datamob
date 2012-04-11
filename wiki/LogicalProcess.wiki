@@ -1,14 +1,77 @@
 #summary a generic, logical process for data mobilisation
 
 = Summary =
+
 This page is dedicated to helping data providers organise an export implementation, but it also offers some thoughts on _value-adding_ (drawing inference) and _repatriation_ (returning information to the data provider). It could apply to one dataset (_i.e._ a discrete sub-system), or its scope might be broadened to include all of an organisation's data, regardless of the system in which they are managed.
 
-== Proposed iterations (phases) for an export ==
+
+= Design concepts for building an exporter =
+
+There are a series of logical steps towards building an exporter, however, some systems may not be able to be implemented in such a linear fashion and other systems may not require each step to be completed to function correctly.
+
+== 1. Proof-of-concept exporter ==
+Proof-of-concept consists of a mechanism to extract data from the source system and store it in an appropriate format, compatible with Darwincore comma-separated text (simple-dwc).
+
+For work to commence on a proof of concept, either sufficient access must be granted to the source system, or a full snapshot of the source system be provided in the case of desktop databases.
+
+== 2. DwC mapping ==
+DwC mapping will consist of a first-pass (minimal) mapping of source data to the Darwincore (DwC) standard.
+
+For a dwc mapping to occur, a proof-of-concept exporter must be completed, or in lieu of this, a data sample is provided by the data custodian with a sufficient number of records to be representative of the data collection as a whole.
+
+The dwc mapping will be documented in a completeness model spreadsheet, in the Mapping section.
+(Please see: [http://code.google.com/p/ala-dataquality/wiki/CompletenessModel])
+
+== 3. ALA for loading ==
+This proves the most appropriate method of transferring data to the Atlas systems, based on what is possible given the constraints imposed by the source system and infrastructure. 
+
+The desired standard will be compressed file transfer to the Atlas' sftp server, in a mechanism suitable for batch automation.
+
+In addition to this, data will also be made available to the Atlas team responsible for data loading. Any errors arising from the ingest process will feed back in to the mapping and exporter designs where appropriate.
+
+== 4. Exporter repeatability ==
+The goal is a functional prototype to transfer data from the custodian's source-system into simple-dwc. It brings together the design concepts tested in components 1, 2 and 3.
+
+Each prototype will be implemented using the most appropriate technology, with the following in mind:
+  * viability of options for exporting from the source data system;
+  * familiarity with the technology involved; (reliability of implementation)
+  * data custodian's ability to maintain and further develop; (in-house or sourced capability)
+  * reusability of new code by other institutions or implementations;
+  * reuse of existing export mechanisms
+
+... see _More details on planning_ for a more thorough analysis of the considerations.
+
+== 5. Completeness analysis ==
+Completeness analysis reviews the data being exported to improve the overall fitness for use.
+
+Each analysis must include: a completeness model spreadsheet, knowledge transfer to the data custodian, a description of source data storage system and any existing data transport mechanism, recommendations for improvement to completeness.
+
+(see: [http://goo.gl/WZj7Z] for examples of existing completeness analyses)
+
+== More details on planning ==
+Setting goals & constraints
+
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/present/view?id=d8rcr58_19cc2d3kcq&revision=_latest&start=0&theme=blank&cwj=true" up_Title="matrix" up_height=510 width="768" up_refresh=6000 />
+
+From _Data mobilisation: considerations_ slide show...  
+[http://goo.gl/LuPHe] _-or-_ [https://docs.google.com/present/view?id=d8rcr58_19cc2d3kcq&revision=_latest&start=0&theme=blank&cwj=true]
+
+
+= Implementing an exporter =
+
+If we look at an exporter from the perspective of an implementation, there are a number of system components that (logically) must exist to support the functional requirements of the exporter itself.
+
+Physically, the functions provided by any of these components may well be incorporated into a single one, or further broken down - this is implementation-specific and so doesn't concern us at this point in time!
+
+== The necessary components of an exporter ==
   # an _export storage mechanism_ to hold your data for your own (private) purposes, _e.g._ data analysis & planning, and a _push mechanism_ to bundle and send the data (_e.g._ sftp);
   # the _export storage mechanism_ revised to hold data in a [DataStandards standard form] (_i.e._ for public consumption) with a working _push mechanism_, _i.e._ proof of ability to move data externally;
   # _if desired_, a mechanism that supports on-demand harvesting by interested parties, _e.g._ a biocase data provider, or a website download;
 
-see _More details : implementing_ for more detail on these concepts...
+see _More details on implementing_ for more detail on these necessary components...
+
+== Contradictions in processes ==
+_Please note: information on process in the following section somewhat contradicts the process outlined in the design concepts section - both approaches are valid and may even be complementary. It is recommended that the reader decide which best suits their needs..._
 
 == Steps for each iteration of an export ==
   # plan - decide what you want to achieve;
@@ -32,20 +95,7 @@ These outputs will likely be enhanced _with each pass_, but improvements may als
 
 Like all agile methodology, a main goal is to reduce overall risk to success by discovering a lack of suitability at the earliest possible point (_i.e._ a 'point of no return' in the budget is reached!) ... the reader can find a detailed description of one such method at [http://en.wikipedia.org/wiki/DSDM]
 
-= More details on the export steps =
-
-== Planning ==
-
-setting goals & constraints
-
-<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/present/view?id=d8rcr58_19cc2d3kcq&revision=_latest&start=0&theme=blank&cwj=true" up_Title="matrix" up_height=510 width="768" up_refresh=6000 />
-
-From _Data mobilisation: considerations_ slide show...  
-[http://goo.gl/LuPHe] _-or-_ [https://docs.google.com/present/view?id=d8rcr58_19cc2d3kcq&revision=_latest&start=0&theme=blank&cwj=true]
-
-
-== Implementing ==
-
+= More details on implementing ==
 Some things to consider for an implementation...
 
 <wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/117808631063490062819/url.xml" up_Url="https://docs.google.com/present/view?id=d8rcr58_1gj93k866&revision=_latest&start=1&theme=blank&cwj=true" up_Title="matrix" up_height=510 width="768" up_refresh=6000 />
