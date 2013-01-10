@@ -1,14 +1,33 @@
-== AM - Australian Museum primary collection management system exporter ==
+#summary Australian Museum's primary DwC exporter
+
+== Summary ==
 
 <table>
 
 <tr>
+<td>Item</td>
+<td>Short URL</td>
+<td>Details (or long URL)</td>
+</tr>
+
+<tr>
+<td>Completeness model</td>
+<td>[http://goo.gl/dB4W6]</td>
+<td>[https://docs.google.com/folder/d/0ByNWJFdh4pHZZTExOTU5ZTMtNjE4Yy00ODk0LWIxNzktOGRhZTczZDgxMmUz/edit Google docs -> Data management -> CompletenessDwC -> am-emu.dwccm.26]</td>
+</tr>
+
+<tr>
+<td>Source code</td>
 <td>[http://goo.gl/kI0d8]</td>
 <td>[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am]</td>
 </tr>
+
 <tr>
+<td>Usage doco</td>
 <td>[http://goo.gl/Aw6Zy]</td>
 <td>[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/am%20cms%20doco.20130103.pdf]</td>
 </tr>
 
 </table>
+
+== AM - Australian Museum primary collection management system exporter ==
