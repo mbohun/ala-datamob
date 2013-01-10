@@ -2,7 +2,7 @@
 
 == Summary ==
 
-<table>
+<table cellpadding="3" cellspacing="0" border="1">
 
 <tr>
 <td>Item</td>
