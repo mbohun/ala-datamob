@@ -62,8 +62,42 @@ This is an implementation of a darwincore export, for one of the [FcigDM FCIG-OZ
 
 == Behavioural diagrams ==
 
-[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/dwcdm2.sh http://code.google.com/p/ala-datamob/source/browse/wiki/FcigDM/am-dwcdm2.sh.png]
+_From usage documentation [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/am%20cms%20doco.20130103.pdf]..._
 
-[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/dwcdm2dsx.sh http://code.google.com/p/ala-datamob/source/browse/wiki/FcigDM/am-dwcdm2dsx.sh.png]
+There are five parts to the exporter:
+  * the main script (dwcdm2.sh), 
+  * the disciplines-list (disciplines-list), 
+  * the sub-script (dwcdm2dsx.sh), 
+  * the data mapping scripts (ozdc_full.awk, ozdc_id.awk), and
+  * the update script (amupdate.sh).
 
-[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/ozdc_full.awk http://code.google.com/p/ala-datamob/source/browse/wiki/FcigDM/am-ozdwc.awk.png]
+=== dwcdm2.sh ===
+The first export component is a bash shell script, /amexport/dwcdm2.sh, which is the entry point for running an
+export – this script prepares the export directory, reads in disciplines-list and calls the sub-script dwcdm2dsx.sh
+for each non-comment line (no leading #), bundles the export on completion and sends to specified servers using
+sftp.
+
+The second export component is the text file, /amexport/disciplines-list, which controls the behaviour of the main
+script dwdm2.sh. Disciplines matching the CatDiscipline field should be entered here, one per line. Comment
+lines (beginning with #) and blank lines are ignored. Comment out disciplines to do a partial export. If you delete or
+rename this file, dwcdm2.sh will rebuild it from the database.
+Note: this is a costly operation (roughly 2 hours) and no subsequent exports will occur, to allow for any unwanted
+disciplines to be excluded by deletion or comment.
+
+[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/dwcdm2.sh http://ala-datamob.googlecode.com/svn/wiki/FcigDM/am-dwcdm2.sh.png]
+
+=== dwcdm2dsx.sh ===
+The third export component is a bash shell script, /amexport/dwcdm2dsx.sh, which is called by dwcdm2.sh for
+each line in the disciplines-list, and handles exporting the full list of current id's, as well as the partial or full export
+depending. Scripts ozdc_full.awk and ozdc_id.awk are called by dwcdm2dsx.sh, and handle mapping between
+an emu export and a darwincore csv. The output file DISCIPLINE-dwcid.csv is converted by ozdc_id.awk while
+DISCIPLINE-dwcdata.csv is converted by ozdc_full.awk.
+
+[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/dwcdm2dsx.sh http://ala-datamob.googlecode.com/svn/wiki/FcigDM/am-dwcdm2dsx.sh.png]
+
+=== ozdc_full.awk ===
+The fourth export component are the awk scripts, /amexport/ozdc_full.awk and /amexport/ozdc_id.awk. These
+scripts handle the mapping between an emu export and a darwincore csv – they are called on by dwcdm2dsx.sh
+to convert data inline before output csv files are written by dwcdm2.sh.
+
+[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/ozdc_full.awk http://ala-datamob.googlecode.com/svn/wiki/FcigDM/am-ozdwc.awk.png]
