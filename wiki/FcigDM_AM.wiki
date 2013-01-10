@@ -59,6 +59,9 @@ This is an implementation of a darwincore export, for one of the [FcigDM FCIG-OZ
 
 </table>
 
+
+== Behavioural diagrams ==
+
 [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/dwcdm2.sh http://code.google.com/p/ala-datamob/source/browse/wiki/FcigDM/am-dwcdm2.sh.png]
 
 [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/dwcdm2dsx.sh http://code.google.com/p/ala-datamob/source/browse/wiki/FcigDM/am-dwcdm2dsx.sh.png]
