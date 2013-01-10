@@ -1,33 +1,49 @@
-#summary Australian Museum's primary DwC exporter
+#summary AM's primary DwC exporter
 
-== Summary ==
+= Australian Museum: primary collection management system darwincore export =
+
+== Introduction ==
+This is an implementation of a darwincore export, for one of the [FcigDM FCIG-OZCAM participants].
+
+== Synopsis ==
 
 <table cellpadding="3" cellspacing="0" border="1">
 
 <tr>
-<td>Item</td>
-<td>Short URL</td>
-<td>Details (or long URL)</td>
+<td>*Item*</td>
+<td>*Short URL*</td>
+<td>*Details (or long URL)*</td>
 </tr>
 
 <tr>
-<td>Completeness model</td>
+<td>*Source data system*</td>
+<td>KEEMu on Linux</td>
+<td>[http://www.kesoftware.com/emu]</td>
+</tr>
+
+<tr>
+<td>*Output data format*</td>
+<td>[http://rs.tdwg.org/dwc/terms/]</td>
+<td>Darwincore csv (simple-dwc) format</td>
+</tr>
+
+<tr>
+<td>*Completeness model*</td>
 <td>[http://goo.gl/dB4W6]</td>
 <td>[https://docs.google.com/folder/d/0ByNWJFdh4pHZZTExOTU5ZTMtNjE4Yy00ODk0LWIxNzktOGRhZTczZDgxMmUz/edit Google docs -> Data management -> CompletenessDwC -> am-emu.dwccm.26]</td>
 </tr>
 
 <tr>
-<td>Source code</td>
+<td>*Source code*</td>
 <td>[http://goo.gl/kI0d8]</td>
 <td>[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am]</td>
 </tr>
 
 <tr>
-<td>Usage doco</td>
+<td>*Usage doco*</td>
 <td>[http://goo.gl/Aw6Zy]</td>
 <td>[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/am%20cms%20doco.20130103.pdf]</td>
 </tr>
 
 </table>
 
-== AM - Australian Museum primary collection management system exporter ==
