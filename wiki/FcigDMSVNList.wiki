@@ -1,17 +1,45 @@
 # raw files in the source tree
 
-http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am
-http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/am%20cms%20doco.20130103.pdf
-http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/dwcdm2.sh
-http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/dwcdm2dsx.sh
-http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/ozdc_full.awk
-http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/ozdc_id.awk
+<table>
 
-http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anfc
-http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anfc/anfc%20cms%20doco.20130103.pdf
-http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anfc/anfc-csv.ktr
-http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anfc/anfc-dwc%20pentaho%20transformation.odg
-http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anfc/anfc-dwc%20pentaho%20transformation.pdf
+<tr>
+[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am]
+</tr>
+<tr>
+[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/am%20cms%20doco.20130103.pdf]
+</tr>
+<tr>
+[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/dwcdm2.sh]
+</tr>
+<tr>
+[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/dwcdm2dsx.sh]
+</tr>
+<tr>
+[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/ozdc_full.awk]
+</tr>
+<tr>
+[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/ozdc_id.awk]
+</tr>
+
+</table>
+
+<table>
+<tr>
+http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anfc]
+</tr>
+<tr>
+[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anfc/anfc%20cms%20doco.20130103.pdf]
+</tr>
+<tr>
+[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anfc/anfc-csv.ktr]
+</tr>
+<tr>
+[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anfc/anfc-dwc%20pentaho%20transformation.odg]
+</tr>
+<tr>
+[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anfc/anfc-dwc%20pentaho%20transformation.pdf]
+</tr>
+</table>
 
 http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anwc
 http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anwc/anwc%20cms%20doco.20130103.pdf
