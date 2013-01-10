@@ -51,5 +51,10 @@ This is an implementation of a darwincore export, for one of the [FcigDM FCIG-OZ
 <td>[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/am%20cms%20doco.20130103.pdf]</td>
 </tr>
 
-</table>
+<tr>
+<td>*Draft report*</td>
+<td>[http://goo.gl/Jwk3p]</td>
+<td>[https://docs.google.com/document/d/1mNZ1-vZU0PkYFW3w9G-GOZ6HYxlnu6VnXAS5T6TsodA/edit Google docs -> Mobilisation reports -> draft AM final report]</td>
+</tr>
 
+</table>
