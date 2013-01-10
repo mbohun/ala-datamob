@@ -1,0 +1,3 @@
+#summary Faunal collections' data mobilisation root
+
+== Welcome to the FCIG-OZCAM data mobilisation pages ==
