@@ -63,4 +63,4 @@ This is an implementation of a darwincore export, for one of the [FcigDM FCIG-OZ
 
 [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/dwcdm2dsx.sh http://code.google.com/p/ala-datamob/source/browse/wiki/FcigDM/am-dwcdm2dsx.sh.png]
 
-[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/ozdc_full.awk http://code.google.com/p/ala-datamob/source/browse]/wiki/FcigDM/am-ozdwc.awk.png
+[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/ozdc_full.awk http://code.google.com/p/ala-datamob/source/browse/wiki/FcigDM/am-ozdwc.awk.png]
