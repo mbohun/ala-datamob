@@ -7,7 +7,7 @@ This is an implementation of a darwincore export, for one of the [FcigDM FCIG-OZ
 
 == Artefacts and synopsis ==
 
-<table cellpadding="3" cellspacing="0" border="1" width="93%">
+<table cellpadding="4" cellspacing="0" border="1" width="90%">
 
 <tr>
 <td>*Item*</td>
