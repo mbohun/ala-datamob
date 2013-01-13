@@ -1,0 +1,1 @@
+#summary details on the darwincore simple-dwc standard, and fcig extension
