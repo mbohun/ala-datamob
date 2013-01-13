@@ -105,7 +105,8 @@ rename this file, dwcdm2.sh will rebuild it from the database.
 Note: this is a costly operation (roughly 2 hours) and no subsequent exports will occur, to allow for any unwanted
 disciplines to be excluded by deletion or comment.
 
-[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/dwcdm2.sh http://ala-datamob.googlecode.com/svn/wiki/FcigDM/am-dwcdm2.sh.png]
+[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/dwcdm2.sh http://ala-datamob.googlecode.com/svn/wiki/FcigDM/am-dwcdm2.sh.png]<br>
+_Activity diagram for [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/dwcdm2.sh]_
 
 === dwcdm2dsx.sh ===
 The third export component is a bash shell script, /amexport/dwcdm2dsx.sh, which is called by dwcdm2.sh for
@@ -114,11 +115,13 @@ depending. Scripts ozdc_full.awk and ozdc_id.awk are called by dwcdm2dsx.sh, and
 an emu export and a darwincore csv. The output file DISCIPLINE-dwcid.csv is converted by ozdc_id.awk while
 DISCIPLINE-dwcdata.csv is converted by ozdc_full.awk.
 
-[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/dwcdm2dsx.sh http://ala-datamob.googlecode.com/svn/wiki/FcigDM/am-dwcdm2dsx.sh.png]
+[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/dwcdm2dsx.sh http://ala-datamob.googlecode.com/svn/wiki/FcigDM/am-dwcdm2dsx.sh.png]<br>
+_Activity diagram for [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/dwcdm2dsx.sh]_
 
-=== ozdc_full.awk ===
+=== ozdc_full.awk, ozdc_id.awk ===
 The fourth export component are the awk scripts, /amexport/ozdc_full.awk and /amexport/ozdc_id.awk. These
 scripts handle the mapping between an emu export and a darwincore csv – they are called on by dwcdm2dsx.sh
 to convert data inline before output csv files are written by dwcdm2.sh.
 
-[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/ozdc_full.awk http://ala-datamob.googlecode.com/svn/wiki/FcigDM/am-ozdwc.awk.png]
+[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/ozdc_full.awk http://ala-datamob.googlecode.com/svn/wiki/FcigDM/am-ozdwc.awk.png]<br>
+_Activity diagram for [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/ozdc_full.awk] and [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/ozdc_id.awk]_
