@@ -1,3 +1,7 @@
 #summary the ALA data ingest sub-system (... pretty important!)
 
-*put some stuff here about ingest*
+This is not an attempt to document the ingest sub-system - merely a pointer to the code base, along with high-level descriptions (based on the understanding of someone who hasn't developed or used these tools, merely relied on their outcomes)
+
+  * google code project [http://code.google.com/p/ala-portal/source/browse/#svn%2Ftrunk%2Fbiocache-store%2Fsrc%2Fmain%2Fscala%2Fau%2Forg%2Fala%2Fbiocache ala-portal], rooted at the ingest (importer) source-code
+  * the main entrypoint for loading new records for a data resource, [http://code.google.com/p/ala-portal/source/browse/trunk/biocache-store/src/main/scala/au/org/ala/biocache/dataimport.scala dataimport.scala]
+  * ... *put more stuff here about ingest*
