@@ -21,7 +21,27 @@ The goal of this section of the wiki is to help the user understand how quality 
 There is a [LogicalProcess series of considerations] available for the reader as they decide which way to tackle their implementation, but for the purposes of 'when' and 'quality' a definition of the states of data may be helpful:
   # before standardisation - (in the source-system) data are in a schema specific to the institution (or process, or collection management software, ...)
   # after standardisation - (at time of export, preparation for export, ...) data are mapped to simple-dwc, possibly with non-standard extensions
-  # after ingest - 
-  # after biocache download - 
+  # after ingest - once data have been through the [AtlasSubsysIngest ingest process], they are available in the [AtlasSubsysBiocache biocache]
+  # after biocache export - data can be [AtlasSubsysBiocache#Data%20export exported] from the [AtlasSubsysBiocache biocache]
 
 From a systems perspective, data can exists in these states in one or many systems (ie, data or code bases) but we are concerned with their transition from one to the next, and what quality tools are applicable or available.
+
+=== TODO - flesh this out a little more ===
+
+=== Quality: before standardisation ===
+
+  # bulk export from data store
+  # [ArtefactAlgorithm_PGColumnar columnar transformation] for [ArtefactAnalysis_Datacleaner distribution analysis]
+  # [http://code.google.com/p/ala-dataquality/wiki/CompletenessModel completeness analysis spreadsheet]
+  # [http://rs.tdwg.org/dwc/terms/ darwincore specification] and the [http://code.google.com/p/darwincore/ darwincore wiki]
+
+
+=== Quality: after standardisation ===
+
+  # [http://sandbox.ala.org.au atlas biocache sandbox] 
+
+=== Quality: after ingest ===
+
+  # [ArtefactAnalysis_BiocacheFacets biocache facets] to help understanding your data
+
+=== Quality: after biocache export ===
