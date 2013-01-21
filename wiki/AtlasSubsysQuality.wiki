@@ -6,12 +6,22 @@ This is not an attempt to document the quality sub-system - merely a pointer for
 Quality analysis performed by this subsystem :
   * is domain-specific; a lot of the tests performed make sense in the broader domains of taxonomy, biodiversity and geospatial analysis
   * is statistical; many tests are founded on logic and maths, e.g: _XXX_
-  * can alert users to 'fitness-for-use', or _[http://code.google.com/p/ala-dataquality/wiki/CompletenessModel completeness]_ issues 
-
-This subsystem does not alert the user to 
+  * can help users improve the 'fitness-for-use', or _[http://code.google.com/p/ala-dataquality/wiki/CompletenessModel completeness]_ of their data as it relates to [DataStandardsDwC Darwincore]
 
 == ALA data quality wiki ==
 Firstly, there is an Atlas quality wiki: [http://code.google.com/p/ala-dataquality/]. Most of the information here directs the reader to this site, directly to source code, or to logic related to data quality.
 
 === Quality checks spreadsheet ===
 This document hosts a spreadsheet of the tests performed by the quality analysis sub-system: [http://goo.gl/0ICnO] or [http://code.google.com/p/ala-dataquality/] -> _Data Quality Checks Spreadsheet_
+
+== When does 'quality happen' in the Atlas? ==
+The goal of this section of the wiki is to help the user understand how quality fits in the overall data mobilisation. It would be easy to say 'everywhere', but for new users that offers only a 'trendy _.5_ menu' that 'does nothing for their hunger'... _so let's tuck in!_
+
+=== A logical DM process ===
+There is a [LogicalProcess series of considerations] available for the reader as they decide which way to tackle their implementation, but for the purposes of 'when' and 'quality' a definition of the states of data may be helpful:
+  # before standardisation - (in the source-system) data are in a schema specific to the institution (or process, or collection management software, ...)
+  # after standardisation - (at time of export, preparation for export, ...) data are mapped to simple-dwc, possibly with non-standard extensions
+  # after ingest - 
+  # after biocache download - 
+
+From a systems perspective, data can exists in these states in one or many systems (ie, data or code bases) but we are concerned with their transition from one to the next, and what quality tools are applicable or available.
