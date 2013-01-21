@@ -42,6 +42,7 @@ From a systems perspective, data can exists in these states in one or many syste
 
 === Quality: after ingest ===
 
-  # [ArtefactAnalysis_BiocacheFacets biocache facets] to help understanding your data
+  # [ArtefactAnalysis_BiocacheFacets biocache facets]
+  # [ArtefactAnalysis_SpatialPortal spatial portal]
 
 === Quality: after biocache export ===
