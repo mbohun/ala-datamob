@@ -1,3 +1,18 @@
 #summary Faunal collections' data mobilisation root
 
 == Welcome to the FCIG-OZCAM data mobilisation pages ==
+
+This area of the wiki attempts to give the reader a central point for dm efforts of the [http://www.chafc.org.au/fcig/ Faunal Collections Informatics Group] (FCIG) partners, and their data aggregation: [http://www.ozcam.org.au/ Online Zoological Collections of Australian Museums] (OZCAM).
+
+== Data mobilisations ==
+|| Aus­tralian Museum || [FcigDM_AM] ||
+|| Aus­tralian National Fish Collection || [FcigDM_ANFC] ||
+|| Aus­tralian National Insect Collection || [FcigDM_ANIC] ||
+|| Aus­tralian National Wildlife Col­lec­tion || [FcigDM_ANWC] ||
+|| Museum Vic­to­ria || [FcigDM_MV] ||
+|| North­ern Ter­ri­tory Museum and Art Gallery || ||
+|| Queen Vic­to­ria Museum Art Gallery || [FcigDM_QVMAG] ||
+|| Queens­land Museum || [FcigDM_QM] ||
+|| South Aus­tralian Museum Aus­tralia || [FcigDM_SAM] ||
+|| Tas­man­ian Museum and Art Gallery ||  ||
+|| West­ern Aus­tralia Museum || [FcigDM_WAM] ||
