@@ -1,11 +1,14 @@
 #summary the ALA data quality analysis sub-system
 
 == Introduction ==
-This is not an attempt to document the quality sub-system - merely a pointer for the reader to the volume of information on this many-faceted beast (based on the understanding of someone who hasn't developed these tools, merely uses and relies on their outcomes for quality content analysis)
+This is not an attempt to document the quality sub-system - merely a pointer for the reader to the volume of information on this many-faceted beast (based on the understanding of someone who has developed some of these tools, and actively uses most of them for quality content analysis)
 
-Quality analysis performed by this subsystem is:
-  * domain-specific; a lot of the tests performed make sense in the broader domains of taxonomy, biodiversity and geospatial analysis
-  * statistical; many tests are founded on logic and maths, for example
+Quality analysis performed by this subsystem :
+  * is domain-specific; a lot of the tests performed make sense in the broader domains of taxonomy, biodiversity and geospatial analysis
+  * is statistical; many tests are founded on logic and maths, e.g: _XXX_
+  * can alert users to 'fitness-for-use', or _[http://code.google.com/p/ala-dataquality/wiki/CompletenessModel completeness]_ issues 
+
+This subsystem does not alert the user to 
 
 == ALA data quality wiki ==
 Firstly, there is an Atlas quality wiki: [http://code.google.com/p/ala-dataquality/]. Most of the information here directs the reader to this site, directly to source code, or to logic related to data quality.
