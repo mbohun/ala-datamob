@@ -23,15 +23,16 @@ This is an implementation of a darwincore export, for one of the [FcigDM FCIG-OZ
 
 <tr>
 <td valign="top">*Source data system*</td>
-<td colspan="2">
-|| Collection management software || [http://www.kesoftware.com/emu KEEMu on Linux] ||
-|| Exporter's execution environment || bash (linux command shell) ||
+<td colspan="2" cellpadding="0">
+
+|| Collection management software || [http://www.kesoftware.com/emu KE EMu on Linux] ||
 || Database backend || texpress ||
-|| Bulk export method || texexport ||
+|| Exporter's execution environment || bash (linux command shell) ||
 || Adhoc query || texql ||
-|| Mapping || awk script ||
-|| Compression || gzip ||
-|| Transmission || sftp to upload.ala.org.au ||
+|| Bulk export method || texkfdump, texexport ||
+|| Schema reporting || texdescribe ||
+|| [DwC] mapping || awk script ||
+|| Compression, transmission || gzip, sftp to upload.ala.org.au ||
 
 </td>
 </tr>
@@ -47,7 +48,7 @@ This is an implementation of a darwincore export, for one of the [FcigDM FCIG-OZ
 
 Data availability:
 || AM data before export || [http://australianmuseum.net.au/Australian-Museum-Collection-Search] ||
-|| AM data at export || not generally available - contact data custodian ||
+|| AM data at export || not generally available - contact data manager ||
 || AM data after atlas (biocache) ingest || [http://biocache.ala.org.au/occurrences/search?fq=data_resource_uid:dr340# http://goo.gl/Gkiba] ||
 
 </td>
@@ -73,9 +74,19 @@ Data availability:
 </tr>
 
 <tr>
-<td valign="top">*Final status report*</td>
-<td>[http://goo.gl/Jwk3p]</td>
-<td>[https://docs.google.com/document/d/1mNZ1-vZU0PkYFW3w9G-GOZ6HYxlnu6VnXAS5T6TsodA/edit Google docs -> Mobilisation reports -> draft AM final report]</td>
+<td valign="top" rowspan="2">*Final status report*</td>
+
+This document lives at: http://goo.gl/8E2b0 or  under
+ [http://goo.gl/x9Yo1].
+A pdf version is also available:  or ‘finalreport.am.pdf’ (under the same).
+Please send comments or corrections to brynk.ala@gmail.com or data_management@ala.org.au.
+
+<td>[http://goo.gl/tEioQ]</td>
+<td>[http://goo.gl/x9Yo1 Google docs ➢ Communications ➢ Data management ➢ Mobilisation reports] ➢ finalreport.am.odt</td>
+</tr>
+
+<td>[http://goo.gl/8E2b0]</td>
+<td>finalreport.am.pdf (under the same directory)</td>
 </tr>
 
 </table>
