@@ -69,13 +69,13 @@ Data availability:
 
 <tr>
 <td valign="top">*Usage doco*</td>
-<td>[http://goo.gl/Aw6Zy]</td>
+<td>[http://goo.gl/tEioQ]</td>
 <td>[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/am%20cms%20doco.20130103.pdf]</td>
 </tr>
 
 <tr>
 <td valign="top" rowspan="2">*Final status report*</td>
-<td>[http://goo.gl/tEioQ]</td>
+<td>[http://goo.gl/Aw6Zy]</td>
 <td>[http://goo.gl/x9Yo1 Google docs ➢ Communications ➢ Data management ➢ Mobilisation reports] ➢ finalreport.am.odt</td>
 </tr>
 <tr>
