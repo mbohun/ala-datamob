@@ -91,10 +91,10 @@ Data availability:
 _From usage documentation [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/am%20cms%20doco.20130103.pdf]..._
 
 There are five parts to the exporter:
-  * the main script (dwcdm2.sh), 
+  * the main script ([http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/dwcdm2.sh dwcdm2.sh]), 
   * the disciplines-list (disciplines-list), 
-  * the sub-script (dwcdm2dsx.sh), 
-  * the data mapping scripts (ozdc_full.awk, ozdc_id.awk), and
+  * the sub-script ([http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/dwcdm2dsx.sh dwcdm2dsx.sh]), 
+  * the data mapping scripts ([http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/ozdc_full.awk ozdc_full.awk], [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/ozdc_id.awk ozdc_id.awk]), and
   * the update script (amupdate.sh).
 
 === dwcdm2.sh ===
