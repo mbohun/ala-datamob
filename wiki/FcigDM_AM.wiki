@@ -56,7 +56,7 @@ Data availability:
 
 
 <tr>
-<td valign="top">*Completeness model*</td>
+<td valign="top">*[http://code.google.com/p/ala-dataquality/wiki/CompletenessModel Completeness model]*</td>
 <td>[http://goo.gl/dB4W6]</td>
 <td>[https://docs.google.com/folder/d/0ByNWJFdh4pHZZTExOTU5ZTMtNjE4Yy00ODk0LWIxNzktOGRhZTczZDgxMmUz/edit Google docs -> Data management -> CompletenessDwC -> am-emu.dwccm.26]</td>
 </tr>
