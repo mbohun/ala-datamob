@@ -75,16 +75,10 @@ Data availability:
 
 <tr>
 <td valign="top" rowspan="2">*Final status report*</td>
-
-This document lives at: http://goo.gl/8E2b0 or  under
- [http://goo.gl/x9Yo1].
-A pdf version is also available:  or ‘finalreport.am.pdf’ (under the same).
-Please send comments or corrections to brynk.ala@gmail.com or data_management@ala.org.au.
-
 <td>[http://goo.gl/tEioQ]</td>
 <td>[http://goo.gl/x9Yo1 Google docs ➢ Communications ➢ Data management ➢ Mobilisation reports] ➢ finalreport.am.odt</td>
 </tr>
-
+<tr>
 <td>[http://goo.gl/8E2b0]</td>
 <td>finalreport.am.pdf (under the same directory)</td>
 </tr>
