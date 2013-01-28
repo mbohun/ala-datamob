@@ -1,0 +1,1 @@
+#summary details on the hispid data standard and early notes on 'simple-hispid', a .csv translation

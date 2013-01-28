@@ -1,10 +1,17 @@
-# raw files in the source tree
-
-<table>
+#summary Faunal collections' exhaustive schedule of data mobilisation links
 
 <tr>
-<td>[http://goo.gl/_____]</td>
-<td>[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am]</td>
+<td>Australian Museum</td>
+<td>
+|| Wiki page || [http://goo.gl/w1Z9m] || [http://code.google.com/p/ala-datamob/wiki/FcigDM_AM] ||
+Source code || [http://goo.gl/kI0d8] || [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am] ||
+Usage doco || [http://goo.gl/Aw6Zy] || [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/am%20cms%20doco.20130103.pdf] ||
+ALA biocache data || [http://goo.gl/Gkiba] || [http://biocache.ala.org.au/occurrences/search?fq=data_resource_uid:dr340#] ||
+ALA institution page || [http://goo.gl/8Pxbk] || [http://collections.ala.org.au/public/show/in4] ||
+Final report || [http://goo.gl/Jwk3p] || [https://docs.google.com/document/d/1mNZ1-vZU0PkYFW3w9G-GOZ6HYxlnu6VnXAS5T6TsodA/edit] ||
+Reports directory || [http://goo.gl/x9Yo1] || [https://docs.google.com/folder/d/0ByNWJFdh4pHZYlJWaGxLWENuZDA/edit] ||
+Completeness model || [http://goo.gl/dB4W6] ||  ||
+</td>
 </tr>
 <tr>
 <td>[http://goo.gl/_____]</td>
