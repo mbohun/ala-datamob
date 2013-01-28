@@ -31,7 +31,7 @@ This is an implementation of a darwincore export, for one of the [FcigDM FCIG-OZ
 || Adhoc query || texql ||
 || Bulk export method || texkfdump, texexport ||
 || Schema reporting || texdescribe ||
-|| [DwC] mapping || awk script ||
+|| [DataStandardsDwC DwC] mapping || awk script ||
 || Compression, transmission || gzip, sftp to upload.ala.org.au ||
 
 </td>
