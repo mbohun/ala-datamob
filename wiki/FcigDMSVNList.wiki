@@ -1,14 +1,17 @@
 #summary Faunal collections' exhaustive schedule of data mobilisation links
 
+<table>
 <tr>
 <td>Australian Museum</td>
+</tr>
+<tr>
 <td>
 || Wiki page || [http://goo.gl/w1Z9m] || [http://code.google.com/p/ala-datamob/wiki/FcigDM_AM] ||
 || Source code || [http://goo.gl/kI0d8] || [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am] ||
-|| Source code || dwcdm2.sh || [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/dwcdm2.sh]</td>
-|| Source code || dwcdm2dsx.sh || [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/dwcdm2dsx.sh]</td>
-|| Source code || ozdc_full.awk || [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/ozdc_full.awk]</td>
-|| Source code || ozdc_id.awk || [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/ozdc_id.awk]</td>
+|| Source code || dwcdm2.sh || [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/dwcdm2.sh] ||
+|| Source code || dwcdm2dsx.sh || [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/dwcdm2dsx.sh] ||
+|| Source code || ozdc_full.awk || [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/ozdc_full.awk] ||
+|| Source code || ozdc_id.awk || [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/ozdc_id.awk] ||
 || Usage doco || [http://goo.gl/Aw6Zy] || [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/am/am%20cms%20doco.20130103.pdf] ||
 || ALA biocache data || [http://goo.gl/Gkiba] || [http://biocache.ala.org.au/occurrences/search?fq=data_resource_uid:dr340#] ||
 || ALA institution page || [http://goo.gl/8Pxbk] || [http://collections.ala.org.au/public/show/in4] ||
@@ -16,7 +19,7 @@
 || Reports directory || [http://goo.gl/x9Yo1] || [https://docs.google.com/folder/d/0ByNWJFdh4pHZYlJWaGxLWENuZDA/edit] ||
 || Completeness model || [http://goo.gl/dB4W6] ||  ||
 </td>
-
+</tr>
 </table>
 
 <table>
