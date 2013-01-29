@@ -1,0 +1,93 @@
+#summary ANFC's primary DwC exporter
+
+= Australian National Fish Collection: primary collection management system darwincore export =
+
+== Introduction ==
+This is an implementation of a darwincore export, for one of the [FcigDM FCIG-OZCAM participants].
+
+== Artefacts and synopsis ==
+
+<table cellpadding="4" cellspacing="0" border="1" width="90%">
+
+<tr>
+<td>*Item*</td>
+<td>*Short URL*</td>
+<td>*Details (or long URL)*</td>
+</tr>
+
+<tr>
+<td>*This wiki page*</td>
+<td>[http://goo.gl/XfgHU]</td>
+<td>[http://code.google.com/p/ala-datamob/wiki/FcigDM_ANFC]</td>
+</tr>
+
+<tr>
+<td valign="top">*Source data system*</td>
+<td colspan="2" cellpadding="0">
+
+|| Collection management software || bespoke ||
+|| Database backend || texpress ||
+|| Exporter's execution environment || ?sh (linux command shell) ||
+|| Adhoc query ||  ||
+|| Bulk export method ||  ||
+|| Schema reporting ||  ||
+|| [DataStandardsDwC DwC] mapping || perl script ||
+|| Compression, transmission || gzip, sftp to upload.ala.org.au ||
+
+</td>
+</tr>
+
+
+<tr>
+<td valign="top">*Output data*</td>
+<td colspan="2">[DataStandardsDwC Darwincore csv (simple-dwc) format] with non-standard FCIG extensions
+
+|| institutionCode || "CSIRO" ||
+|| dcterms:type || "!PhysicalObject" ||
+|| basisOfRecord || "!PreservedSpecimen" ||
+
+Data availability:
+|| ANFC data before export ||  ||
+|| ANFC data at export || not generally available - contact data manager ||
+|| ANFC data after atlas (biocache) ingest || [http://biocache.ala.org.au/occurrences/search?fq=data_resource_uid:dr349# http://goo.gl/Rh3Je] ||
+
+</td>
+</tr>
+
+
+<tr>
+<td valign="top">*[http://code.google.com/p/ala-dataquality/wiki/CompletenessModel Completeness model]*</td>
+<td>[http://goo.gl/Yv6k9]</td>
+<td>[https://docs.google.com/folder/d/0ByNWJFdh4pHZZTExOTU5ZTMtNjE4Yy00ODk0LWIxNzktOGRhZTczZDgxMmUz/edit Google docs -> Data management -> CompletenessDwC -> anfc.dwccm.26]</td>
+</tr>
+
+<tr>
+<td valign="top">*Source code*</td>
+<td>[http://goo.gl/yzV59]</td>
+<td>[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anfc]</td>
+</tr>
+
+<tr>
+<td valign="top">*Usage doco*</td>
+<td>[http://goo.gl/Cn4H6]</td>
+<td>[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anfc/anfc%20cms%20doco.20130103.pdf]</td>
+</tr>
+
+<tr>
+<td valign="top" rowspan="2">*Final status report*</td>
+<td>[]</td>
+<td>[http://goo.gl/x9Yo1 Google docs ➢ Communications ➢ Data management ➢ Mobilisation reports] ➢ N/A</td>
+</tr>
+<tr>
+<td>[]</td>
+<td>N/A (under the same directory)</td>
+</tr>
+
+</table>
+
+
+== Behavioural diagrams ==
+
+_From usage documentation [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anfc/anfc%20cms%20doco.20130103.pdf]..._
+
+N/A at this stage (jan 2013)
