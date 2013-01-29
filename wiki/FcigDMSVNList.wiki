@@ -51,7 +51,7 @@
 </tr>
 <tr>
 <td>
-|| Wiki page || [http://goo.gl/XfgHU] || [http://code.google.com/p/ala-datamob/wiki/FcigDM_ANFC] ||
+|| Wiki page || [http://goo.gl/kbSG4] || [http://code.google.com/p/ala-datamob/wiki/FcigDM_ANWC] ||
 || Source code || [http://goo.gl/00wSg] || [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anwc] ||
 || Source code || anwc_dwc.bat || [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anwc/anwc_dwc.bat] ||
 || Source code || anwc_dwc.sql || [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anwc/anwc_dwc.sql] ||
