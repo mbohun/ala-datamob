@@ -104,7 +104,7 @@ for each non-comment line (no leading #), bundles the export on completion and s
 sftp.
 
 The second export component is the text file, /amexport/disciplines-list, which controls the behaviour of the main
-script dwdm2.sh. Disciplines matching the !CatDiscipline field should be entered here, one per line. Comment
+script dwdm2.sh. Disciplines matching the !SecDepartment field should be entered here, one per line. Comment
 lines (beginning with #) and blank lines are ignored. Comment out disciplines to do a partial export. If you delete or
 rename this file, dwcdm2.sh will rebuild it from the database.
 Note: this is a costly operation (roughly 2 hours) and no subsequent exports will occur, to allow for any unwanted

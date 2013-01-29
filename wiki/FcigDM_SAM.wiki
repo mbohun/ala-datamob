@@ -1,0 +1,132 @@
+#summary SAM's primary DwC exporter
+
+= South Australian Museum Australia: primary collection management system darwincore export =
+
+== Introduction ==
+This is an implementation of a darwincore export, for one of the [FcigDM FCIG-OZCAM participants].
+
+== Artefacts and synopsis ==
+
+<table cellpadding="4" cellspacing="0" border="1" width="90%">
+
+<tr>
+<td>*Item*</td>
+<td>*Short URL*</td>
+<td>*Details (or long URL)*</td>
+</tr>
+
+<tr>
+<td>*This wiki page*</td>
+<td>[http://goo.gl/paUZ9]</td>
+<td>[http://code.google.com/p/ala-datamob/wiki/FcigDM_SAM]</td>
+</tr>
+
+<tr>
+<td valign="top">*Source data system*</td>
+<td colspan="2" cellpadding="0">
+
+|| Collection management software || [http://www.kesoftware.com/emu KE EMu on Linux] ||
+|| Database backend || texpress ||
+|| Exporter's execution environment || bash (linux command shell) ||
+|| Adhoc query || texql ||
+|| Bulk export method || texkfdump, texexport ||
+|| Schema reporting || texdescribe ||
+|| [DataStandardsDwC DwC] mapping || awk script ||
+|| Compression, transmission || gzip, sftp to upload.ala.org.au ||
+
+</td>
+</tr>
+
+
+<tr>
+<td valign="top">*Output data*</td>
+<td colspan="2">[DataStandardsDwC Darwincore csv (simple-dwc) format] with non-standard FCIG extensions
+
+|| institutionCode || "SAM" ||
+|| dcterms:type || "!PhysicalObject" ||
+|| basisOfRecord || "!PreservedSpecimen" ||
+
+Data availability:
+|| AM data before export || [] ||
+|| AM data at export || not generally available - contact data manager ||
+|| AM data after atlas (biocache) ingest || [http://biocache.ala.org.au/occurrences/search?fq=data_resource_uid:dr346 http://goo.gl/7tVs6] ||
+
+</td>
+</tr>
+
+
+<tr>
+<td valign="top">*[http://code.google.com/p/ala-dataquality/wiki/CompletenessModel Completeness model]*</td>
+<td>[http://goo.gl/Qm8lT]</td>
+<td>[https://docs.google.com/folder/d/0ByNWJFdh4pHZZTExOTU5ZTMtNjE4Yy00ODk0LWIxNzktOGRhZTczZDgxMmUz/edit Google docs -> Data management -> CompletenessDwC -> sam.dwccm-26]</td>
+</tr>
+
+<tr>
+<td valign="top">*Source code*</td>
+<td>[http://goo.gl/uOhTK]</td>
+<td>[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/sam]</td>
+</tr>
+
+<tr>
+<td valign="top">*Usage doco*</td>
+<td>[http://goo.gl/9Ugfh]</td>
+<td>[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/sam/sam%20cms%20doco.20130103.pdf]</td>
+</tr>
+
+<tr>
+<td valign="top" rowspan="2">*Final status report*</td>
+<td>[]</td>
+<td>[http://goo.gl/x9Yo1 Google docs ➢ Communications ➢ Data management ➢ Mobilisation reports] ➢ finalreport.sam.odt</td>
+</tr>
+<tr>
+<td>[]</td>
+<td>finalreport.sam.pdf (under the same directory)</td>
+</tr>
+
+</table>
+
+
+== Behavioural diagrams ==
+
+_From usage documentation [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/sam/sam%20cms%20doco.20130103.pdf]..._
+
+There are five parts to the exporter:
+  * the main script ([http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/sam/dwc_spc.sh dwc_spc.sh]), 
+  * the disciplines-list ([http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/sam/disciplines-list disciplines-list]), 
+  * the sub-script ([http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/sam/dwc_spsub.sh dwc_spsub.sh]), 
+  * the data mapping scripts ([http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/sam/ozdc_full.awk ozdc_full.awk], [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/sam/ozdc_id.awk ozdc_id.awk]), and
+  * the update script (samupdate.sh).
+
+=== dwc_spc.sh ===
+The first export component is a bash shell script, dwc_spc.sh, which is the entry point for running an
+export – this script prepares the export directory, reads in disciplines-list and calls the sub-script dwcdm2dsx.sh
+for each non-comment line (no leading #), bundles the export on completion and sends to specified servers using
+sftp.
+
+The second export component is the text file, disciplines-list, which controls the behaviour of the main
+script dwdm2.sh. Disciplines matching the !CatCollectionName field should be entered here, one per line. 
+Comment lines (beginning with #) and blank lines are ignored. Comment out disciplines to do a partial export. If
+you delete or rename this file, dwc_spc.sh will rebuild it from the database.
+Note: this is a costly operation (roughly 2 hours) and no subsequent exports will occur, to allow for any unwanted 
+disciplines to be excluded by deletion or comment.
+
+[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/sam/dwc_spsub.sh http://ala-datamob.googlecode.com/svn/wiki/FcigDM/sam-dwc_spc.sh.png]<br>
+_Activity diagram for [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/sam/dwc_spc.sh]_
+
+=== dwc_spsub.sh ===
+The third export component is a bash shell script, dwc_spsub.sh, which is called by dwc_spc.sh for
+each line in the disciplines-list, and handles exporting the full list of current id's, as well as the partial or full export
+depending. Scripts ozdc_full.awk and ozdc_id.awk are called by dwc_spsub.sh, and handle mapping between
+an emu export and a darwincore csv. The output file DISCIPLINE-dwcid.csv is converted by ozdc_id.awk while
+DISCIPLINE-dwcdata.csv is converted by ozdc_full.awk.
+
+[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/sam/dwc_spsub.sh http://ala-datamob.googlecode.com/svn/wiki/FcigDM/sam-dwc_spsub.sh.png]<br>
+_Activity diagram for [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/sam/dwc_spsub.sh]_
+
+=== ozdc_full.awk, ozdc_id.awk ===
+The fourth export component are the awk scripts, ozdc_full.awk and ozdc_id.awk. These
+scripts handle the mapping between an emu export and a darwincore csv – they are called on by dwc_spsub.sh
+to convert data inline before output csv files are written by dwc_spc.sh.
+
+[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/sam/ozdc_full.awk http://ala-datamob.googlecode.com/svn/wiki/FcigDM/sam-ozdwc_full.awk.png]<br>
+_Activity diagram for [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/sam/ozdc_full.awk] and [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/sam/ozdc_id.awk]_
