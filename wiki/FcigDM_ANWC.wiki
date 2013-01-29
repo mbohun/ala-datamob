@@ -1,0 +1,108 @@
+#summary ANWC's primary DwC exporter
+
+= Australian National Wildlife Collection: primary collection management system darwincore export =
+
+== Introduction ==
+This is an implementation of a darwincore export, for one of the [FcigDM FCIG-OZCAM participants].
+
+== Artefacts and synopsis ==
+
+<table cellpadding="4" cellspacing="0" border="1" width="90%">
+
+<tr>
+<td>*Item*</td>
+<td>*Short URL*</td>
+<td>*Details (or long URL)*</td>
+</tr>
+
+<tr>
+<td>*This wiki page*</td>
+<td>[]</td>
+<td>[http://code.google.com/p/ala-datamob/wiki/FcigDM_ANWC]</td>
+</tr>
+
+<tr>
+<td valign="top">*Source data system*</td>
+<td colspan="2" cellpadding="0">
+
+|| Collection management software || bespoke ||
+|| Database backend || sql server ||
+|| Exporter's execution environment || windows command line and sql-server powershell ||
+|| Adhoc query ||  ||
+|| Bulk export method ||  ||
+|| Schema reporting ||  ||
+|| [DataStandardsDwC DwC] mapping ||  ||
+|| Compression, transmission || 7zip, sftp to upload.ala.org.au ||
+
+</td>
+</tr>
+
+
+<tr>
+<td valign="top">*Output data*</td>
+<td colspan="2">[DataStandardsDwC Darwincore csv (simple-dwc) format] with non-standard FCIG extensions
+
+|| institutionCode || "ANWC" ||
+|| dcterms:type || "!PhysicalObject" ||
+|| basisOfRecord || "!PreservedSpecimen" ||
+
+Data availability:
+|| ANWC data before export ||  ||
+|| ANWC data at export ||  ||
+|| ANWC data after atlas (biocache) ingest || [http://biocache.ala.org.au/occurrences/search?q=*:*&fq=data_resource_uid:dr341 http://goo.gl/bDRLn] ||
+
+</td>
+</tr>
+
+
+<tr>
+<td valign="top">*[http://code.google.com/p/ala-dataquality/wiki/CompletenessModel Completeness model]*</td>
+<td>[http://goo.gl/kIhG0]</td>
+<td>[https://docs.google.com/folder/d/0ByNWJFdh4pHZZTExOTU5ZTMtNjE4Yy00ODk0LWIxNzktOGRhZTczZDgxMmUz/edit Google docs -> Data management -> CompletenessDwC -> anwc.dwccm.26]</td>
+</tr>
+
+<tr>
+<td valign="top">*Source code*</td>
+<td>[http://goo.gl/00wSg]</td>
+<td>[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anwc]</td>
+</tr>
+
+<tr>
+<td valign="top">*Usage doco*</td>
+<td>[http://goo.gl/jXIYd]</td>
+<td>[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anwc/anwc%20cms%20doco.20130103.pdf]</td>
+</tr>
+
+<tr>
+<td valign="top" rowspan="2">*Final status report*</td>
+<td>[]</td>
+<td>[http://goo.gl/x9Yo1 Google docs ➢ Communications ➢ Data management ➢ Mobilisation reports] ➢ finalreport.anwc.odt</td>
+</tr>
+<tr>
+<td>[]</td>
+<td>finalreport.anwc.pdf (under the same directory)</td>
+</tr>
+
+</table>
+
+
+== Behavioural diagrams ==
+
+_From usage documentation [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anwc/anwc%20cms%20doco.20130103.pdf]..._
+
+There are two parts to the exporter:
+  * the batch file ([http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anwc/anwc_dwc.bat anwc_dwc.bat]), 
+  * the sql query ([http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anwc/anwc_dwc.sql anwc_dwc.sql])
+
+=== anwc_dwc.bat ===
+The first export component is a bash shell script, anwc_dwc.bat, which is the entry point for running an export. This batch script encourages powershell.exe to connect to the sqlserver database and obtain the result of the query (see anwc_dwc.sql) into darwincore-csv format; it then compresses the data using 7zip.exe and uploads the file to the upload.ala.org.au sftp server using psftp.exe.
+
+[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anwc/anwc_dwc.bat http://ala-datamob.googlecode.com/svn/wiki/FcigDM/anwc-anwc_dwc.bat.png]<br>
+_Activity diagram for [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anwc/anwc_dwc.bat]_
+
+===anwc_dwc.sql===
+The second export component is the sqlsvr query, anwc_dwc.sql, which is called by the batch file and powershell.exe. This must reside in the same directory as the batch file. It will extract data, joining source tables and introducing constants where necessary. Output is to anwc-dwcdata.csv in the same directory as the batch file.
+
+[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anwc/anwc_dwc.sql http://ala-datamob.googlecode.com/svn/wiki/FcigDM/anwc-anwc_dwc.sql.png]<br>
+[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anwc/anwc_dwc.sql http://ala-datamob.googlecode.com/svn/wiki/FcigDM/anwc-anwc_dwc.sql-ddconv.png]<br>
+_Activity diagrams for [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anwc/anwc_dwc.sql]_
