@@ -42,14 +42,14 @@ This is an implementation of a darwincore export, for one of the [FcigDM FCIG-OZ
 <td valign="top">*Output data*</td>
 <td colspan="2">[DataStandardsDwC Darwincore csv (simple-dwc) format] with non-standard FCIG extensions
 
-|| institutionCode || "SAM" ||
+|| institutionCode || "SAMA" ||
 || dcterms:type || "!PhysicalObject" ||
 || basisOfRecord || "!PreservedSpecimen" ||
 
 Data availability:
-|| AM data before export || [] ||
-|| AM data at export || not generally available - contact data manager ||
-|| AM data after atlas (biocache) ingest || [http://biocache.ala.org.au/occurrences/search?fq=data_resource_uid:dr346 http://goo.gl/7tVs6] ||
+|| SAM data before export || some metadata at [http://www.samuseum.sa.gov.au/science], but most complete record via biocache ||
+|| SAM data at export || not generally available - contact data manager ||
+|| SAM data after atlas (biocache) ingest || [http://biocache.ala.org.au/occurrences/search?fq=data_resource_uid:dr346 http://goo.gl/7tVs6] ||
 
 </td>
 </tr>
@@ -110,7 +110,7 @@ you delete or rename this file, dwc_spc.sh will rebuild it from the database.
 Note: this is a costly operation (roughly 2 hours) and no subsequent exports will occur, to allow for any unwanted 
 disciplines to be excluded by deletion or comment.
 
-[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/sam/dwc_spsub.sh http://ala-datamob.googlecode.com/svn/wiki/FcigDM/sam-dwc_spc.sh.png]<br>
+[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/sam/dwc_spc.sh http://ala-datamob.googlecode.com/svn/wiki/FcigDM/sam-dwc_spc.sh.png]<br>
 _Activity diagram for [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/sam/dwc_spc.sh]_
 
 === dwc_spsub.sh ===
@@ -128,5 +128,5 @@ The fourth export component are the awk scripts, ozdc_full.awk and ozdc_id.awk. 
 scripts handle the mapping between an emu export and a darwincore csv – they are called on by dwc_spsub.sh
 to convert data inline before output csv files are written by dwc_spc.sh.
 
-[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/sam/ozdc_full.awk http://ala-datamob.googlecode.com/svn/wiki/FcigDM/sam-ozdwc_full.awk.png]<br>
+[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/sam/ozdc_full.awk http://ala-datamob.googlecode.com/svn/wiki/FcigDM/sam-ozdc_full.awk.png]<br>
 _Activity diagram for [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/sam/ozdc_full.awk] and [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/sam/ozdc_id.awk]_
