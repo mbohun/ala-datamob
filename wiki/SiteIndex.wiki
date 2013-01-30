@@ -1,24 +1,20 @@
-
 <table><tr><td>
 || [BioDomains Domains in biodiversity] - arbitrary boxing of groups (either core data-gathering or supplementary _aka derived,secondary,satellite,..._ data-generating) ||
 || [Status Status of the partner institutions] ||
 || Domain-specific data standards: [DataStandardsDwC Darwincore] for faunal collections and [DataStandardsHISPID HISPID] for herbaria ||
 || Specific implementations of DM (coupled to their source systems) for [FcigDM faunal collections] and [HerbariaDM herbaria] ||
 </td></tr></table>
-
 <table><tr><td>
 || *Relevant Atlas sub-systems*, particularly the [AtlasSubsysBiocache biocache], [AtlasSubsysIngest ingest] and [AtlasSubsysQuality quality] subsystems ||
 || [RelatedRecords Identifying relationships] (derived collection items, inferred records, ...) [RelatedRecords and communicating those relationships] ||
 </td></tr></table>
-
 <table><tr><td>
 || [DataClasses *Classes of data* and how they surface in the Atlas] ||
 || [RelatedRecords Identifying relationships] (derived collection items, inferred records, ...) [RelatedRecords and communicating those relationships] ||
 || [SpatialData Spatial data] and some of its considerations ||
 </td></tr></table>
-
 <table><tr><td>
 || *A logical, more [LogicalProcess abstract DM process]* ||
-|| *[http://code.google.com/p/ala-dataquality/wiki/CompletenessModel DM completeness*] - external link - (fitness for use, quality at source, ...) ||
+|| *[http://code.google.com/p/ala-dataquality/wiki/CompletenessModel DM completeness]* - external link - (fitness for use, quality at source, ...) ||
 || Algorithms, analyses, processes for DM ||
 </td></tr></table>
