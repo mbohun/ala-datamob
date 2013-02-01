@@ -6,7 +6,7 @@
 </td></tr></table>
 
 <table><tr><td>
-|| *Relevant Atlas sub-systems*, particularly the [AtlasSubsysBiocache biocache], [AtlasSubsysIngest ingest] and [AtlasSubsysQuality quality] subsystems ||
+|| Relevant Atlas sub-systems, particularly the *[AtlasSubsysBiocache Biocache]*, *[AtlasSubsysIngest Ingest]* and *[AtlasSubsysQuality Quality]* subsystems ||
 || *[RelatedRecords Identifying relationships]* (derived collection items, inferred records, ...) [RelatedRecords and communicating those relationships] ||
 </td></tr></table>
 
