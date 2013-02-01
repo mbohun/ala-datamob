@@ -3,6 +3,12 @@
 == Introduction ==
 This is not an attempt to document the quality sub-system - merely a pointer for the reader to the volume of information on this many-faceted beast (based on the understanding of someone who has developed some of these tools, and actively uses most of them for quality content analysis)
 
+=== Quality completeness (or just completeness)… ===
+is the 'plentitude' of data available to the consumer. A sparse record may have limited fitness for use, where as more complete data will offer a firmer foundation to draw conclusions from.
+
+=== Quality or content analysis === 
+is distinct from completeness analysis ... it is the result of an effort to correct, enhance, or otherwise cross-reference individual properties within the source data, in the context of a wider dataset. It involves structural or statistical machine algorithms, and/or human analysis - the more complete the data being analysed, the more algorithms can be applied.
+
 Quality analysis performed by this subsystem :
   * is domain-specific; a lot of the tests performed make sense in the broader domains of taxonomy, biodiversity and geospatial analysis
   * is statistical; many tests are founded on logic and maths, e.g: _XXX_
