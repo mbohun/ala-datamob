@@ -1,18 +1,17 @@
 <table><tr><td>
-|| *[BioDomains Domains in biodiversity]* - arbitrary boxing of groups (either core data-gathering or supplementary _aka derived,secondary,satellite,..._ data-generating) ||
+|| Specific implementations of DM (coupled to their source systems) for *[FcigDM faunal collections]* and *[HerbariaDM herbaria]* ||
 || *[Status]* of the partner institutions ||
 || Domain-specific data standards: *[DataStandardsDwC Darwincore]* for faunal collections and *[DataStandardsHISPID HISPID]* for herbaria ||
-|| Specific implementations of DM (coupled to their source systems) for *[FcigDM faunal collections]* and *[HerbariaDM herbaria]* ||
+|| *[BioDomains Domains in biodiversity]* - arbitrary boxing of groups (either core data-gathering or supplementary _aka derived,secondary,satellite,..._ data-generating) ||
 </td></tr></table>
 
 <table><tr><td>
 || Relevant Atlas sub-systems, particularly the *[AtlasSubsysBiocache Biocache]*, *[AtlasSubsysIngest Ingest]* and *[AtlasSubsysQuality Quality]* subsystems ||
-|| *[RelatedRecords Identifying relationships]* (derived collection items, inferred records, ...) [RelatedRecords and communicating those relationships] ||
 </td></tr></table>
 
 <table><tr><td>
 || *[DataClasses Classes of data]* and how they surface in the Atlas] ||
-|| *[RelatedRecords Identifying and communicating relationships]* (derived collection items, inferred records, ...) ||
+|| *[RelatedRecords Identifying and communicating relationships]* (derived collection items, inferred records, duplicates ...) ||
 || *[SpatialData Spatial data]* and some of its considerations ||
 </td></tr></table>
 
