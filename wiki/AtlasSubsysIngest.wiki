@@ -1,6 +1,36 @@
 #summary the ALA data ingest sub-system (... pretty important!)
 
+
+== Introduction ==
+
 This is not an attempt to document the ingest sub-system - merely a pointer to the code base, along with high-level descriptions (based on the understanding of someone who hasn't developed or used these tools, merely relied on their outcomes)
+
+
+== The overall data provision process ==
+
+This wiki page is concerned only with the *`*`bold steps in the process* applied to occurrence records; preliminary steps are included for context:
+  # data provider and the atlas establish new system account, creating a new data resource for each discrete source-system, eg: a collection's specimen-record management system, or species profile database ... [http://collections.ala.org.au/datasets]
+  # the atlas generates a SFTP upload account on the upload server
+  # *`*`data provider generates an export in [DataStandardsDwC simple-dwc] csv format*
+  # *`*`data provider uploads the compressed export*
+  # *`*`ingest subsystem periodically checks the sftp server for new files*
+  # *`*`a new file is found, downloaded, unpacked and a record loading process triggered*
+  # _(note: planned behaviour only at feb 2013)_ *`*`a log of the overall ingest process is left on the sftp server*
+
+=== Requirements for data files presented to ingest ===
+This document lives at: [http://goo.gl/qzioQ] or ‘Automated ingest: file naming conventions’ under <br>
+Google docs➢Communications➢Data management➢[http://goo.gl/bJfJr Mobilisation - public]
+
+=== Loading into the Biocache ===
+Records are loaded into the biocache per each data resource 
+  # a search for an existing record,
+  # an attempt to match a taxon,
+  # [AtlasSubsysQuality a series of quality-tests],
+  # a test for taxonomic sensitivity against state and commonwealth legislation, and 
+  # a search for duplicate or associate records.
+
+
+== More detail ==
 
   * google code project [http://code.google.com/p/ala-portal/source/browse/#svn%2Ftrunk%2Fbiocache-store%2Fsrc%2Fmain%2Fscala%2Fau%2Forg%2Fala%2Fbiocache ala-portal], rooted at the ingest (importer) source-code
   * the main entrypoint for loading new records for a data resource, [http://code.google.com/p/ala-portal/source/browse/trunk/biocache-store/src/main/scala/au/org/ala/biocache/dataimport.scala dataimport.scala]
