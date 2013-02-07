@@ -6,4 +6,7 @@
 
 _from google docs [https://docs.google.com/spreadsheet/ccc?key=0AiNWJFdh4pHZdFlCY20wbnBVdUZoZk5mS1lUU0Nzb3c&hl=en_US#gid=4 DM Status] ([http://goo.gl/78L46])_
 
-for a schedule of guilty parties, please contact us using the details [http://code.google.com/p/ala-datamob/#Contact_us... on the main page]... 
+for a schedule of guilty parties, please contact us using the details [http://code.google.com/p/ala-datamob/#Contact_us... on the main page]...
+
+== Implementations ==
+Analyses and code are found at [FcigDM], while analyses only at [HerbariaDM].
