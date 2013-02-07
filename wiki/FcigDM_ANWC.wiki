@@ -25,14 +25,13 @@ This is an implementation of a darwincore export, for one of the [FcigDM FCIG-OZ
 <td valign="top">*Source data system*</td>
 <td colspan="2" cellpadding="0">
 
-|| Collection management software || bespoke ||
-|| Database backend || sql server ||
+|| Collection management software || bespoke SQL Server data store with MS-Access user interface ||
 || Exporter's execution environment || windows command line and sql-server powershell ||
-|| Adhoc query ||  ||
-|| Bulk export method ||  ||
-|| Schema reporting ||  ||
-|| [DataStandardsDwC DwC] mapping ||  ||
-|| Compression, transmission || 7zip, sftp to upload.ala.org.au ||
+|| Adhoc query || t-sql ||
+|| Bulk export method || _powershell's_ 'Export-CSV' instruction ||
+|| Schema reporting || _SQL Server Management Studio's_ 'Database tasks>Generate scripts' function ||
+|| [DataStandardsDwC DwC] mapping || t-sql query ||
+|| Compression, transmission || [http://www.7-zip.org/ 7zip], _[http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html Putty's]_ psftp to upload.ala.org.au ||
 
 </td>
 </tr>
