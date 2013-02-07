@@ -74,11 +74,11 @@ Data availability:
 
 <tr>
 <td valign="top" rowspan="2">*Final status report*</td>
-<td>[]</td>
+<td>[http://goo.gl/kA6Dm]</td>
 <td>[http://goo.gl/x9Yo1 Google docs ➢ Communications ➢ Data management ➢ Mobilisation reports] ➢ finalreport.anwc.odt</td>
 </tr>
 <tr>
-<td>[]</td>
+<td>[http://goo.gl/iT25T]</td>
 <td>finalreport.anwc.pdf (under the same directory)</td>
 </tr>
 
