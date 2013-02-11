@@ -1,0 +1,1 @@
+#summary a nearest-named placed implementation for the ga.gazeteer dataset, as loaded into postgis
