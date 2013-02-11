@@ -1,0 +1,1 @@
+#summary awk software to tear a tabular dataset apart and load into postgresql as tuples
