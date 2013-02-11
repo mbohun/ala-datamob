@@ -1,0 +1,1 @@
+#summary a feasibility study in nlp chunking × controlled vocab. lookup, to aid in metadata gathering for data export
