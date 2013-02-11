@@ -1,1 +1,1 @@
-#summary regex's for chunking scientific names (without controlled vocab lookups)
+#summary regex's for chunking scientific names (no initial vocab. lookup), with subsequent cross ref. to web-service-based lookup
