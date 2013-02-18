@@ -7,16 +7,16 @@ This area of the wiki attempts to give the reader a central point for dm efforts
 == Data mobilisations ==
 
 === Institution-specific pages ===
-|| || _Mobilisation_<br>_(if applicable)_ || _Final report pdf_ ||
-|| Australian Museum || [FcigDM_AM] || [http://goo.gl/tEioQ] ||
-|| Australian National Fish Collection || [FcigDM_ANFC] || ||
-|| Australian National Insect Collection || || [http://goo.gl/iOAEh] ||
-|| Australian National Wildlife Collection || [FcigDM_ANWC] || [http://goo.gl/iT25T] ||
-|| Museum Victoria || || ||
+|| || _Mobilisation_<br>_(if applicable)_ || _Final report pdf_ || _Technology_<br>_(if applicable)_ ||
+|| Australian Museum || [FcigDM_AM] || [http://goo.gl/tEioQ] || _linux, ke-emu, texpress, bash, awk_ ||
+|| Australian National Fish Collection || [FcigDM_ANFC] || || _linux, texpress, bash, perl_ ||
+|| Australian National Insect Collection || || [http://goo.gl/iOAEh] || _windows, biolink, sql server_ ||
+|| Australian National Wildlife Collection || [FcigDM_ANWC] || [http://goo.gl/iT25T] || _windows, sql server, powershell, t-sql_ ||
+|| Museum Victoria || || [http://goo.gl/RdJ54] || _linux, ke-emu_ ||
 || Northern Territory Museum and Art Gallery || || ||
-|| Queen Victoria Museum Art Gallery || || ||
-|| Queensland Museum || [FcigDM_QM] || ||
-|| South Australian Museum Australia || [FcigDM_SAM] || [http://goo.gl/cKOlj] ||
+|| Queen Victoria Museum Art Gallery || || [http://goo.gl/DF4YO] ||
+|| Queensland Museum || [FcigDM_QM] || || _linux, vernon, mysql, bash, sql_ ||
+|| South Australian Museum Australia || [FcigDM_SAM] || [http://goo.gl/cKOlj] || _linux, ke-emu, texpress, bash, awk_ ||
 || Tasmanian Museum and Art Gallery ||  || ||
 || Western Australia Museum || || ||
 
