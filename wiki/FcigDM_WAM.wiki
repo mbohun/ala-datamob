@@ -1,7 +1,59 @@
-#summary WAM's dm page
+#summary WAM's data mobilisation
 
-= Completeness models = 
+= Western Australia Museum =
 
+== Introduction ==
+This page is for one of the [FcigDM FCIG-OZCAM participants].
+
+== Artefacts and synopsis ==
+
+<table cellpadding="4" cellspacing="0" border="1" width="90%">
+
+<tr>
+<td>*Item*</td>
+<td>*Short URL*</td>
+<td>*Details (or long URL)*</td>
+</tr>
+
+<tr>
+<td>*This wiki page*</td>
+<td>[http://goo.gl/]</td>
+<td>[http://code.google.com/p/ala-datamob/wiki/FcigDM_WAM]</td>
+</tr>
+
+<tr>
+<td valign="top">*Source data system*</td>
+<td colspan="2" cellpadding="0">
+
+|| Collection management software || bespoke SQL Server data store ||
+|| Exporter's execution environment || windows, sql-server, mysql? and pentaho ||
+|| Bulk export method || [http://sourceforge.net/projects/pentaho/files/Data%20Integration/ pentaho d.i.] ||
+
+</td>
+</tr>
+
+
+<tr>
+<td valign="top">*Output data*</td>
+<td colspan="2">[DataStandardsDwC Darwincore csv (simple-dwc) format] with non-standard FCIG extensions
+
+|| institutionCode || "WAM" ||
+|| dcterms:type || "!PhysicalObject" ||
+|| basisOfRecord || "!PreservedSpecimen" ||
+
+Data availability:
+|| WAM data before export ||  ||
+|| WAM data at export ||  ||
+|| WAM data after atlas (biocache) ingest || [http://biocache.ala.org.au/occurrences/search?q=*:*&fq=data_resource_uid:dr348 http://goo.gl/WRiRa] ||
+
+</td>
+</tr>
+
+
+<tr>
+<td valign="top">*[http://code.google.com/p/ala-dataquality/wiki/CompletenessModel Completeness model]*</td>
+<td valign="top">[http://goo.gl/Y96tz]</td>
+<td>
 || arachnida || http://goo.gl/hlxJ9 || https://docs.google.com/spreadsheet/ccc?key=0AiNWJFdh4pHZdDFDRW1Xc1RwUmFNcXo2a1RxbnRtLXc&hl=en_GB#gid=0 ||
 || arachnida.1 || http://goo.gl/LM0YQ || https://docs.google.com/spreadsheet/ccc?key=0AoWP-ucVqvGxdHV2WHlGaVhFdU93Q0dJc1EtUC1PT3c ||
 || birds     || http://goo.gl/tTUSx || https://docs.google.com/spreadsheet/ccc?key=0AoWP-ucVqvGxdDRFZmU4QVZ5X3VwNVR0TnhnXzlmOXc&authkey=CKj6vv4B&authkey=CKj6vv4B ||
@@ -10,3 +62,29 @@
 || mammals   || http://goo.gl/Tnk6i || https://docs.google.com/spreadsheet/ccc?key=0AoWP-ucVqvGxdFZ2X2hnXy0zckljU1U4UnJsWktrQ3c&authkey=CIG9hLYG&authkey=CIG9hLYG ||
 || reptiles  || http://goo.gl/Atdlh || https://docs.google.com/spreadsheet/ccc?key=0AoWP-ucVqvGxdEwzMDJfN2NsbkpJOHhocU56NHNSV0E&authkey=CKi0xocM&authkey=CKi0xocM ||
 || more ?    || http://goo.gl/Y96tz || https://drive.google.com/?authuser=0#search/wam+dwccm26 ||
+</td>
+</tr>
+
+<tr>
+<td valign="top">*Source code*</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td valign="top">*Usage doco*</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td valign="top" rowspan="2">*Final status report*</td>
+<td>[http://goo.gl/]</td>
+<td>[http://goo.gl/x9Yo1 Google docs ? Communications ? Data management ? Mobilisation reports] ? finalreport.wam.odt</td>
+</tr>
+<tr>
+<td>[http://goo.gl/]</td>
+<td>finalreport.wam.pdf (under the same directory)</td>
+</tr>
+
+</table>
