@@ -1,0 +1,12 @@
+#summary WAM's dm page
+
+= Completeness models = 
+
+|| arachnida || http://goo.gl/hlxJ9 || https://docs.google.com/spreadsheet/ccc?key=0AiNWJFdh4pHZdDFDRW1Xc1RwUmFNcXo2a1RxbnRtLXc&hl=en_GB#gid=0 ||
+|| arachnida.1 || http://goo.gl/LM0YQ || https://docs.google.com/spreadsheet/ccc?key=0AoWP-ucVqvGxdHV2WHlGaVhFdU93Q0dJc1EtUC1PT3c ||
+|| birds     || http://goo.gl/tTUSx || https://docs.google.com/spreadsheet/ccc?key=0AoWP-ucVqvGxdDRFZmU4QVZ5X3VwNVR0TnhnXzlmOXc&authkey=CKj6vv4B&authkey=CKj6vv4B ||
+|| crustacea || http://goo.gl/lAtpQ || https://docs.google.com/spreadsheet/ccc?key=0AoWP-ucVqvGxdDlXbXhJYTJKeHNueEdpcjR6c1ZqTnc ||
+|| fishes    || http://goo.gl/CW3k2 || https://docs.google.com/spreadsheet/ccc?key=0AoWP-ucVqvGxdFlYcEliUGNEZi1fcGI2T1gtRjNpTnc&authkey=CNGaq-cN&authkey=CNGaq-cN ||
+|| mammals   || http://goo.gl/Tnk6i || https://docs.google.com/spreadsheet/ccc?key=0AoWP-ucVqvGxdFZ2X2hnXy0zckljU1U4UnJsWktrQ3c&authkey=CIG9hLYG&authkey=CIG9hLYG ||
+|| reptiles  || http://goo.gl/Atdlh || https://docs.google.com/spreadsheet/ccc?key=0AoWP-ucVqvGxdEwzMDJfN2NsbkpJOHhocU56NHNSV0E&authkey=CKi0xocM&authkey=CKi0xocM ||
+|| more ?    || http://goo.gl/Y96tz || https://drive.google.com/?authuser=0#search/wam+dwccm26 ||
