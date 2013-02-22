@@ -18,7 +18,7 @@ This area of the wiki attempts to give the reader a central point for dm efforts
 || Queensland Museum || [FcigDM_QM] || [http://goo.gl/YW444] || _linux, vernon, mysql, bash, sql_ ||
 || South Australian Museum Australia || [FcigDM_SAM] || [http://goo.gl/cKOlj] || _linux, ke-emu, texpress, bash, awk_ ||
 || Tasmanian Museum and Art Gallery ||  || ||
-|| Western Australia Museum || || ||
+|| Western Australia Museum || [FcigDM_WAM]<br>_(only completeness)_ || || _windows, sql server, mysql?, pentaho ||
 
 === All source-code in this wiki ===
 
