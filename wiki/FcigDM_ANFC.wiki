@@ -90,17 +90,20 @@ Data availability:
 
 == Behaviour ==
 
-There are three parts to the exporter:
+There are three parts to the mapping:
   * the main script ([http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anfc/anfc_dwc.run.pl anfc_dwc.run.pl]), 
   * main mapping script ([http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anfc/anfc_dwc.map.pl anfc_dwc.map.pl]), 
-  * country/state/ocean values ([http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anfc/anfc_dwc.map-cntryocn.pl anfc_dwc.map-cntryocn.pl]).
+  * country/state/ocean values mapping ([http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anfc/anfc_dwc.map-cntryocn.pl anfc_dwc.map-cntryocn.pl]).
+
+This document doesn't cover (_refer to the data manager_):
+  * method used to extract data from the _texpress_ database
+  * method used to send data to the atlas
 
 === anfc_dwc.run.pl ===
 The first export component is a perl script, anfc_dwc.run.pl, which is the entry point for mapping a previously generated
 report to the [DataStandardsDwC simple-dwc] format – this script takes instruction through the command line for various 
 input/output options:
 {{{
-parse command line arguments
 usage: anfc_dwc.run.pl <IN> <OUT> <ERROR> <LOG>
  - all 4 arguments:  input file (or 'STDIN'), output file (or 'STDOUT'), error file, log file
  - 3 arguments:      input file, output file, error file (run log to stdout)
@@ -109,18 +112,20 @@ usage: anfc_dwc.run.pl <IN> <OUT> <ERROR> <LOG>
  - no arguments:     (input stdin, output stdout, errors stderr, no run log)
 }}}
 
-After establishing a valid environment it reads from the input stream and expects to find a header row, followed by data rows, delimited with the sequence `+|` ("plus pipe") - this is defined in the script variable `$reDelim` and used by the `split()` function to separate rows into fields for  processing by calls to functions defined in the mapping scripts.
+After establishing a valid environment it reads from the input stream and expects to find a header row followed by data rows. The field delimiter is defined in the script variable `$reDelim` (currently the sequence `+|` "plus pipe") and is used by the perl `split()` function to separate rows into fields for processing in the mapping scripts.
 
-After each row is mapped, the row itself is printed to the output stream (if possible) and any warnings or errors encountered during the mapping are stored in the `%hErrors` buffer. The script also prints periodically to the log stream under successful conditions, with any error rows being specifically marked as well. At the end of input processing, the contents of the error buffer are flushed to the error stream in a structured format.
+Each row is mapped individually, as it is encountered in the source file, via the `map_record()` function defined in _anfc_dwc.map.pl_. Mapping results - stored in a temporary variable `@arr_output` - are printed to the output stream (if possible) and any warnings or errors encountered during the mapping are stored in the `%hErrors` buffer. Under successful conditions the script also prints periodically to the log stream, with any error rows being specifically marked as well. At the end of input processing, the contents of the error buffer are flushed to the error stream in a structured format.
 
 [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anfc/anfc_dwc.run.pl http://ala-datamob.googlecode.com/svn/wiki/FcigDM/anfc_dwc.run.png]<br>
 _Activity diagram for [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anfc/anfc_dwc.run.pl]_
 
 === anfc_dwc.map.pl ===
-This script defines the logic to transform ANFC source data to the target model; `map_dwc_header()` and `map_record()` are called by _anfc_dwc.run.pl_. The other functions are helpers.
+This script defines the logic to transform ANFC source data to the target model; `map_dwc_header()` and `map_record()` are called by _anfc_dwc.run.pl_; the other functions - `map_coords()`, `dPrecisionDDM()`, `isNum()` and `sConvertDDM()` - are helpers.
 
 ==== map_dwc_header() ====
-This function is called by _anfc_dwc.run.pl_ to establish the output darwincore terms and their order in the output file, with the results stored in `%hDwcHdrInd` and subsequently passed to `map_record()` every time it is called. The order in which darwincore terms appear in the output file can be affected by adjusting this code. Any new terms being added in the future should also be placed in here.
+This function is called by _anfc_dwc.run.pl_ to establish the output darwincore terms and their order in the output file. Results are stored in a hash `%hDwcHdrInd` (defined in _anfc_dwc.run.pl_) which is passed to `map_record()` every time it is called. This allows `map_record()` to store output values in corresponding indices without knowing the order in which darwincore terms appear in the output file.
+
+*Important note:* any new dwc terms being added and referenced in mapping functions must be placed in here also, otherwise output behaviour is undefined. Also, the order in which dwc terms appear in the output can be affected by adjusting `map_dwc_header()` code.
 
 ==== map_record() ====
 This function is called by _anfc_dwc.run.pl_ for each valid data row. All of the system-specific logic for converting ANFC source data to simple-dwc should live here, or in helper functions called by `map_record()`.
@@ -128,7 +133,7 @@ This function is called by _anfc_dwc.run.pl_ for each valid data row. All of the
 [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anfc/anfc_dwc.map.pl http://ala-datamob.googlecode.com/svn/wiki/FcigDM/anfc_dwc.map.png]<br>
 _Activity diagram for [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anfc/anfc_dwc.map.pl]_ `map_record()` _function_
 
-Details on the steps in the previous diagram correspond with numbered sections in _anfc_dwc.map.pl_:
+Details on the steps in the previous diagram correspond with activity in _anfc_dwc.map.pl_:
   * 5.1 - map constants and 1:1 fields - 
     * dwc.typestatus, (dwc.typename, dwc.typeauthor, dwc.typeyear)
     * dwc.basisOfRecord, dcterms:type
@@ -137,9 +142,12 @@ Details on the steps in the previous diagram correspond with numbered sections i
     * dwc.family, dwc.genus, dwc.specificEpithet, dwc.infraspecificName, dwc.scientificName
     * dwc.minimumdepth, dwc.maximumdepth
 
-  * 5.2 - map `dwc.country`, `dwc.stateProvince`, `dwc.waterBody` and `dwc.verbatimLocality` :
+  * 5.2 - map `dwc.country`, `dwc.stateProvince`, `dwc.waterBody` and `dwc.verbatimLocality`:<br>    (see _anfc_dwc.map-cntryocn.pl_ for `map_find_*`)
+    * if country doesn't equal 'yes', 'no' or 'unknown'
+      # warning is logged
+      # `dwc.verbatimLocality`, `dwc.country`, `dwc.stateProvince` and `dwc.waterBody` unpopulated
     * if country equals 'yes' :
-      # `dwc.country` set to "Australia"
+      # `dwc.country` set to 'Australia'
       # test state_territory against `map_find_state()`: success to `dwc.stateProvince`
       # `dwc.verbatimLocality` populated with source data
       # `dwc.waterBody` unpopulated
@@ -160,6 +168,11 @@ Details on the steps in the previous diagram correspond with numbered sections i
 
 
 ==== map_coords() ====
+Called from `map_record()` to handle populating -
+  * `dwc.decimalLatitude`, `dwc.decimalLongitude`
+  * `dwc.footprintWKT`
+  * `dwc.coordinatePrecision`
+  * *note:* `dwc.verbatimLatitude` and `dwc.verbatimLongitude` are populated with source data by `map_record()` regardless of result
 
 [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anfc/anfc_dwc.map.pl http://ala-datamob.googlecode.com/svn/wiki/FcigDM/anfc_dwc.map.coords.png]<br>
 _Activity diagram for [http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anfc/anfc_dwc.map.pl]_ `map_coords()` _function_
@@ -171,13 +184,12 @@ values, converting them to new values if required. This function has been separa
 for ease of update and to help improve readability within _anfc_dwc.map.pl_.
 
 Functions `map_find_country()`, `map_find_ocean()` and `map_find_state()` are called all from 
-`anfc_dwc.map.pl->map_record()` during a broader validation routine described in the 
-section above.
+`map_record()` (defined in _anfc_dwc.map.pl_) during a broader validation routine described previously.
 
 Value mappings found in this script indicate a valid source-value, and if requred, dictate a new
 target value. If new candidate source values are required for these target fields then this script
 should be updated to reflect the new values, however, if new logic is required to determine _how_ 
-values are populated, the reader is referred to 
+values are populated, the reader is referred back to 
 _[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anfc/anfc_dwc.map.pl anfc_dwc.map.pl]_.
 
 
