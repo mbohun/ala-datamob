@@ -67,13 +67,12 @@ Data availability:
 <td>[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anfc]</td>
 </tr>
 
-<tr>
+<wiki:comment>
+<!--tr>
 <td valign="top">*Usage doco*</td>
 <td>[http://goo.gl/Cn4H6]</td>
 <td>[http://ala-datamob.googlecode.com/svn/trunk/biodomains/fcig-ozcam/anfc/anfc%20cms%20doco.20130103.pdf]</td>
-</tr>
-
-<wiki:comment>
+</tr-->
 <!--tr>
 <td valign="top" rowspan="2">*Final status report*</td>
 <td>[]</td>
