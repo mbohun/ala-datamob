@@ -1,0 +1,52 @@
+#summary more info on spatial data in the Atlas
+
+= Introduction =
+2013/14 - _i rescued this from the old sites portal, which is behind a closed door - maybe one day i'll revise it to read a little easier_
+
+=== Regarding quality of spatial locations ===
+[https://sites.google.com/site/atlaslivingoz/ala-data/geospatial/quality]
+
+=== Regarding geospatial location conversions ===
+For a primer on this whole topic, see the file attached to the main ALA data page -
+[http://ala-datamob.googlecode.com/svn/wiki/02/0204%20ALAhandlingspatiallocationdata.pdf]
+
+There are two kinds of conversions to make on geospatial data:
+  # converting between grid-coord's (cartesian - zone, eastings, northings) and geographic coord's (latitude/longitude pairs)
+  # converting between one datum (eg, agd66) and another (currently gda94)
+    psuedo-code... [http://ala-datamob.googlecode.com/svn/wiki/02/0206%20GeospatialConversionPseudoCode.pdf]
+    detailed information on this topic... [DataClassesSpatialConversions]
+
+
+=== Regarding spatial generalisation (location blurring / obfuscation) ===
+[DataClassesSpatialConversions]
+
+
+=== Regarding co-ordinates in degrees ° (arc)minutes ' (arc)seconds " (DMS) vs. decimal degrees (DD) ===
+these are two ways of displaying the same information - geographical (spatial) co-ordinates.
+
+there is a mathematical relationship between the two the algorithm is as follows:
+{{{
+    decimal degrees = degrees + (minutes / 60) + (seconds / 3600)
+}}}
+
+some considerations when performing this conversion:
+  # be wary of floating point arithmetic and ambiguities: calculate once and store the value in a string to avoid inconsistent references to the same value; more info: http://www.validlab.com/goldberg/paper.pdf
+  # if your smallest unit is minutes, truncate DD to three decimal places (hundreds of metres) to avoiding giving a false sense of precision; if seconds, truncate DD to five decimal places (metres)
+  # [DataClassesSpatialQuality] for more info. on accuracy & precision
+
+
+=== Regarding Lambert Conformal Conic projection (a grid projection in use in some? rural areas) ===
+the extent to which this grid projection is used is currently not known - research continues to discover this information - no data sets have been encountered to date that use this form of projection.
+
+it is expected that the above logic (psuedo-code) and such will need to be modified to handle lcc if it proves to be widely used. it may be that the prototype mobilisation utility will wind up using the geotrans libraries to handle conversions in a more robust fashion, although my gut feeling at this stage is that the complexity is better handled here within ala servers (maybe called up as a web-service?); in any case the utility should include a switch to enter a test-mode, to ensure that the version of the geotrans native code library that winds up being installed can be accessed from the jvm & performs correct conversions:
+  * [http://earth-info.nga.mil/GandG/geotrans/index.html]
+  * [http://www.google.com.au/search?hl=en&q=%22lambert+conformal+conic%22+data+samples+%2Bsite%3A.au&aq=f&aqi=&aql=&oq=&gs_rfai=]
+
+
+
+|| Measure || Degrees || Decimal degrees || Metres (lat/long) (roughly, equator) || Metres (lat) (roughly, poles) || Metres (long) (roughly, poles) ||
+|| 1° || One || 1.00 ° || 111,000 || 111,000 || 85,000 || 
+|| 1’ (arcmin) || 1/60 ° || 0.01666… ° || 1,700 || 1,700 || 1,300 ||
+|| 1” (arcsec) || 1/3600 ° || 0.0002777… ° || 30 || 30 || 22 ||
+|| 0.01° || 1/100 ° || 0.01 ° || 1,000 || 1,000 || 760 || 0.001° ||
+|| 1/1000 ° || 0.001 ° || 100 || 100 || 76 ||
