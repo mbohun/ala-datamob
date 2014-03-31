@@ -23,7 +23,7 @@ There are two kinds of conversions to make on geospatial data:
 [DataClassesSpatialConversions]
 
 
-=== Regarding co-ordinates in degrees &#186 (arc)minutes ' (arc)seconds " (DMS) vs. decimal degrees (DD) ===
+=== Regarding co-ordinates in degrees ° (arc)minutes ' (arc)seconds " (DMS) vs. decimal degrees (DD) ===
 these are two ways of displaying the same information - geographical (spatial) co-ordinates.
 
 there is a mathematical relationship between the two the algorithm is as follows:
