@@ -23,7 +23,7 @@ There are two kinds of conversions to make on geospatial data:
 [DataClassesSpatialConversions]
 
 
-=== Regarding co-ordinates in degrees ° (arc)minutes ' (arc)seconds " (DMS) vs. decimal degrees (DD) ===
+=== Regarding co-ordinates in degrees &#186 (arc)minutes ' (arc)seconds " (DMS) vs. decimal degrees (DD) ===
 these are two ways of displaying the same information - geographical (spatial) co-ordinates.
 
 there is a mathematical relationship between the two the algorithm is as follows:
@@ -32,7 +32,7 @@ there is a mathematical relationship between the two the algorithm is as follows
 }}}
 
 some considerations when performing this conversion:
-  # be wary of floating point arithmetic and ambiguities: calculate once and store the value in a string to avoid inconsistent references to the same value; more info: http://www.validlab.com/goldberg/paper.pdf
+  # be wary of floating point arithmetic and ambiguities: calculate once and store the value in a string to avoid inconsistent references to the same value; more info: [http://www.validlab.com/goldberg/paper.pdf]
   # if your smallest unit is minutes, truncate DD to three decimal places (hundreds of metres) to avoiding giving a false sense of precision; if seconds, truncate DD to five decimal places (metres)
   # [DataClassesSpatialQuality] for more info. on accuracy & precision
 
@@ -40,17 +40,19 @@ some considerations when performing this conversion:
 === Regarding Lambert Conformal Conic projection (a grid projection in use in some? rural areas) ===
 the extent to which this grid projection is used is currently not known - research continues to discover this information - no data sets have been encountered to date that use this form of projection.
 
-it is expected that the above logic (psuedo-code) and such will need to be modified to handle lcc if it proves to be widely used. it may be that the prototype mobilisation utility will wind up using the geotrans libraries to handle conversions in a more robust fashion, although my gut feeling at this stage is that the complexity is better handled here within ala servers (maybe called up as a web-service?); in any case the utility should include a switch to enter a test-mode, to ensure that the version of the geotrans native code library that winds up being installed can be accessed from the jvm & performs correct conversions:
+it is expected that the above logic (psuedo-code) and such will need to be modified to handle lcc if it proves to be widely used. 
+
+it may be that the prototype mobilisation utility will wind up using the geotrans libraries to handle conversions in a more robust fashion, although my gut feeling at this stage is that the complexity is better handled here within ala servers (maybe called up as a web-service?); in any case the utility should include a switch to enter a test-mode, to ensure that the version of the geotrans native code library that winds up being installed can be accessed from the jvm & performs correct conversions:
   * [http://earth-info.nga.mil/GandG/geotrans/index.html]
   * [http://www.google.com.au/search?hl=en&q=%22lambert+conformal+conic%22+data+samples+%2Bsite%3A.au&aq=f&aqi=&aql=&oq=&gs_rfai=]
 
 
 === Table of rough conversions ===
 || Measure || Degrees || Decimal degrees || Metres (lat/long) (roughly, equator) || Metres (lat) (roughly, poles) || Metres (long) (roughly, poles) ||
-|| 1° || One || 1.00 ° || 111,000 || 111,000 || 85,000 || 
-|| 1’ (arcmin) || 1/60 ° || 0.01666… ° || 1,700 || 1,700 || 1,300 ||
-|| 1” (arcsec) || 1/3600 ° || 0.0002777… ° || 30 || 30 || 22 ||
-|| 0.01° || 1/100 ° || 0.01 ° || 1,000 || 1,000 || 760 ||
-|| 0.001° || 1/1000 ° || 0.001 ° || 100 || 100 || 76 ||
+|| 1&#186 || One || 1.00&#186 || 111,000 || 111,000 || 85,000 || 
+|| 1’ (arcmin) || 1/60&#186 || 0.01666…&#186 || 1,700 || 1,700 || 1,300 ||
+|| 1” (arcsec) || 1/3600&#186 || 0.0002777…&#186 || 30 || 30 || 22 ||
+|| 0.01&#186 || 1/100&#186 || 0.01&#186 || 1,000 || 1,000 || 760 ||
+|| 0.001&#186 || 1/1000&#186 || 0.001&#186 || 100 || 100 || 76 ||
 
 Comparison between the different types of measurement – something to note: degrees of latitude are parallel so the distance between each degree remains almost constant, but since degrees of longitude are farthest apart at the equator and converge at the poles, their distance varies greatly.
