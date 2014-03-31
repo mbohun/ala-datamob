@@ -10,9 +10,9 @@
 </td></tr></table>
 
 <table><tr><td>
-|| *[DataClasses Classes of data]* and how they surface in the Atlas] ||
+|| *[DataClasses Classes of data]* and how they surface in the Atlas ||
 || *[RelatedRecords Identifying and communicating relationships]* (derived collection items, inferred records, duplicates ...) ||
-|| *[SpatialData Spatial data]* and some of its considerations ||
+|| *[DataClassesSpatial Spatial data]* and some of its considerations ||
 </td></tr></table>
 
 <table><tr><td>
