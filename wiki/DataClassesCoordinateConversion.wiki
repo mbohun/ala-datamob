@@ -1,28 +1,62 @@
 #summary more info on coordinate location data (and datum) conversions and obfuscation (denaturing / blurring)
 
-== Introduction ==
+= Introduction =
 2013/14 - _i rescued this from the old sites portal, which is behind a closed door - maybe one day i'll revise it to read a little easier_
 
-== Conversions and blurring ==
-Note: truncating is (potentially) a more robust method for denaturing/blurring locations, as its results are consistent - if a random method is applied, the output result for a given input should be consistent, otherwise potential exists for statistical analysis of the result
+This page sits within the broader context of [DataClassesSpatial spatial data], and applies to converting or obfuscating (denaturing / blurring) coordinate locations.
 
-see below for a simple truncating algorithm
-
-=== For conversion between degrees minutes seconds & decimal degrees, see: ===
-[http://code.google.com/p/ala-datamob/wiki/DataClassesSpatial#Regarding_co-ordinates_in_degrees_%C2%B0_(arc)minutes_%27_(arc)se]
-
-=== For a primer on the whole topic of geospatial data, see: ===
+=== For a primer on some important fundamentals of coordinate location data, see: ===
 [http://ala-datamob.googlecode.com/svn/wiki/02/0204%20ALAhandlingspatiallocationdata.pdf]
 
-=== For psuedo-code to convert + blur ===
-[http://ala-datamob.googlecode.com/svn/wiki/02/0206%20GeospatialConversionPseudoCode.pdf] - 
-*note:* _potentially flawed method of blurring referred to in this pdf ..._
-  # if a large number of sensitive records come from one point and are given a different (blurred) location each,
-  # then statistically, the distribution of blurred locations around the point is of a smaller than expected area - 
-  # this could make it easier to determine the actual point shared by all records
 
-A more complex, better distributed method of choosing random spots on a disc - [http://mathworld.wolfram.com/DiskPointPicking.html]
 
+= Conversion =
+Depending on how data are presented, some (mathematical) conversion may be called for:
+  # [DataStandardsDwC Darwincore] would like decimal degrees.
+  # ...
+  # ...
+  # ...
+
+== Regarding co-ordinates in degrees ° (arc)minutes ' (arc)seconds " (DMS) vs. decimal degrees (DD) ==
+these are two ways of displaying the same information - geographical (spatial) co-ordinates.
+
+there is a mathematical relationship between the two the algorithm is as follows:
+{{{
+    decimal degrees = degrees + (minutes / 60) + (seconds / 3600)
+}}}
+
+some considerations when performing this conversion:
+  # be wary of floating point arithmetic and ambiguities: calculate once and store the value in a string to avoid inconsistent references to the same value; more info: [http://www.validlab.com/goldberg/paper.pdf]
+  # if your smallest unit is minutes, truncate DD to three decimal places (hundreds of metres) to avoiding giving a false sense of precision; if seconds, truncate DD to five decimal places (metres)
+  # [DataClassesCoordinateQuality] for more info. on accuracy & precision
+
+== For conversion between geoco ==
+There are a further two kinds of conversions to make on coordinate data:
+  # converting between grid-coord's (cartesian - zone, eastings, northings) and geographic coord's (latitude/longitude pairs)
+  # converting between one datum (eg, agd66) and another (currently gda94)
+
+
+=== Table of rough conversions ===
+|| Measure || Degrees || Decimal degrees || Metres (lat/long) (roughly, equator) || Metres (lat) (roughly, poles) || Metres (long) (roughly, poles) ||
+|| 1° || One || 1.00° || 111,000 || 111,000 || 85,000 || 
+|| 1' (arcmin) || 1/60° || 0.01666…° || 1,700 || 1,700 || 1,300 ||
+|| 1" (arcsec) || 1/3600° || 0.0002777…° || 30 || 30 || 22 ||
+|| 0.01° || 1/100° || 0.01° || 1,000 || 1,000 || 760 ||
+|| 0.001° || 1/1000° || 0.001° || 100 || 100 || 76 ||
+
+Comparison between the different types of measurement - something to note: degrees of latitude are parallel so the distance between each degree remains almost constant, but since degrees of longitude are farthest apart at the equator and converge at the poles, their distance varies greatly.
+
+= Obfuscation =
+Despite being a contentious topic there will always remain reasons for people to prefer recording a less precise location, especially as the tools for a more precise one become ever-nearer ubiquitous.
+
+This section covers two methods for achieving this goal, truncating, and blurring.
+
+Truncating is (potentially) a more robust method for denaturing/blurring locations, as its results are consistent. 
+
+If a randomisation is applied, the output result for a given input should be consistent, otherwise potential exists for statistical analysis of the result.
+
+
+== Truncating ==
 A simplified method of denaturing locations can be truncating the number of digits after the decimal point; here's a visual basic algorithm that will truncate lat/long's to 3 decimal places (~100m) -
 
 {{{ (fix(LAT_OR_LONG * 1000) / 1000) }}}
@@ -42,14 +76,12 @@ these will wind up looking like a grid of dots on the map - here is an interesti
 [http://spatial.ala.org.au/?q=*%3A*&fq=%28state_conservation%3AEndangered%29&fq=sensitive%3A%22alreadyGeneralised%22# http://ala-datamob.googlecode.com/svn/wiki/02/0207%20gridofpoints.jpg] All biocache records with: 'State conservation = endangered' AND 'Sensitive = alreadyGeneralised'
 
 
+== Blurring ==
 
-=== A rough guide to the scale of measurements: ===
-|| Measure || Degrees || Decimal degrees || Metres (lat/long) (roughly, equator) || Metres (lat) (roughly, poles) || Metres (long) (roughly, poles) ||
-|| 1° || One || 1.00 ° || 111,000 || 111,000 || 85,000 || 
-|| 1’ (arcmin) || 1/60 ° || 0.01666… ° || 1,700 || 1,700 || 1,300 ||
-|| 1” (arcsec) || 1/3600 ° || 0.0002777… ° || 30 || 30 || 22 ||
-|| 0.01° || 1/100 ° || 0.01 ° || 1,000 || 1,000 || 760 ||
-|| 0.001° || 1/1000 ° || 0.001 ° || 100 || 100 || 76 ||
+For psuedo-code to convert + blur: [http://ala-datamob.googlecode.com/svn/wiki/02/0206%20GeospatialConversionPseudoCode.pdf] - 
+*note:* _potentially flawed method of blurring referred to in this pdf link:_
+  # if a large number of sensitive records come from one point and are given a different (blurred) location each,
+  # then statistically, the distribution of blurred locations around the point is of a smaller than expected area - 
+  # this could make it easier to determine the actual point shared by all records
 
-
-Comparison between the different types of measurement - something to note: degrees of latitude are parallel so the distance between each degree remains almost constant, but since degrees of longitude are farthest apart at the equator and converge at the poles, their distance varies greatly.
+A more complex, better distributed method of choosing random spots on a disc - [http://mathworld.wolfram.com/DiskPointPicking.html]
