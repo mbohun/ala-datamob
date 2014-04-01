@@ -12,7 +12,7 @@
 For a primer on this whole topic, see the file attached to the main ALA data page -
 [http://ala-datamob.googlecode.com/svn/wiki/02/0204%20ALAhandlingspatiallocationdata.pdf]
 
-More detailed information on this topic... [DataClassesCoordinateConversions]
+More detailed information on this topic... [DataClassesCoordinateConversion]
 
 There are two kinds of conversions to make on geospatial data:
   # converting between grid-coord's (cartesian - zone, eastings, northings) and geographic coord's (latitude/longitude pairs)
@@ -20,7 +20,7 @@ There are two kinds of conversions to make on geospatial data:
 
 
 === Regarding spatial generalisation (location blurring / obfuscation) ===
-[DataClassesCoordinateConversions]
+[DataClassesCoordinateConversion]
 
 
 === Regarding co-ordinates in degrees ° (arc)minutes ' (arc)seconds " (DMS) vs. decimal degrees (DD) ===
