@@ -1,0 +1,48 @@
+#summary more info on the quality of a coordinate location associated with an observation
+
+== Introduction ==
+2013/14 - _i rescued this from the old sites portal, which is behind a closed door - maybe one day i'll revise it to read a little easier_
+
+== Attributes of a quality coordinate location ==
+Quality coordinate information has these attributes; without all of them, certainty is lost and the quality of the position is reduced:
+  # latitude or eastings
+  # longitude or northings
+  # datum(s) and method(s) of projection, if applicable
+  # time of recording
+  # method used to determine location	 
+  # indication of conversions performed, if applicable
+  # precision
+  # accuracy (uncertainty) judgement of measurement
+
+In the case of coordinate locations, *accuracy (uncertainty) should not be inferred from precision*.
+
+
+=== Occurrence data attribute – precision of coordinate locations ===
+Coordinate data stored in the Atlas has often passed through a conversion process en route to the database. The conversion process to decimal degrees may well result in 5 or more digits after the decimal point, representing ~1 metre or less at the equator.
+
+This implied precision is not warranted if we look at some common methods of determining location. When using GPS an error of +/- 10m must be allowed for, or, a location may have been recorded as a 6-figure grid reference; assuming skilled map-reading, this puts the location within a 100m x 100m square. These are the true numerical precision (or resolution) of the measurements, and should be kept in mind.
+
+
+=== Occurrence data attribute – accuracy (uncertainty, error) of coordinate locations ===
+Accuracy (uncertainty, error) of the measurements represents a judgement of the method used to obtain location information, and would generally be recorded by the observer as a distance. This accuracy judgement could also be made after the fact if the method of determining location is recorded, for e.g. the use of a GPS, the make & model, and the datum.
+
+Accuracy would include any errors inherent in the method used to determine location; it is also affected by any conversions or manipulation of the data that has occurred downstream; any such adjustments to the accuracy should be recorded.
+
+Here are metadata on two locations recorded using different methods (absent are the actual locations themselves). Note that both require knowledge of the method used to obtain the location: 
+
+|| GPS used for location || Precision 10m || Accuracy is 20m (+/- 10m) on each axis || Notes: Garmin used on WGS84 datum || Taken dd/mm/yyyy ||
+|| Map read for 6-figure grid reference || Precision 100m || Accuracy is 300m (+/- 150m) or 1/10th of a grid either side || Notes: map GDA94 – 8628-4 Binalong || Taken dd/mm/yyyy ||
+
+
+== Further reading ==
+
+Chapman, A. D. 2005. Principles of Data Quality, version 1.0; pp 3–5 [http://www2.gbif.org/DataQuality.pdf]
+
+Bennett, S. 2011. Darwin Core Key Spatial Concepts
+[https://docs.google.com/file/d/0B7rqu1P0r1N0MmU0ZjE2YzUtNTYwZS00ZTI4LTllMmUtNzFmMTYwZjdmYjc4/edit?pli=1&hl=en_US]
+
+For a primer on coordinate locations, see: [http://ala-datamob.googlecode.com/svn/wiki/02/0204%20ALAhandlingspatiallocationdata.pdf]
+
+One discussion around how to handle uncertainty when it isn't provided as metadata, see: [http://code.google.com/p/ala-dataquality/wiki/UNCERTAINTY_NOT_SPECIFIED]
+
+*TODO*: _link to A. Tindall's doco on georeferencing..._
