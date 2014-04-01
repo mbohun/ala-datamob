@@ -18,7 +18,7 @@ In the case of coordinate locations, *accuracy (uncertainty) should not be infer
 
 
 === Occurrence data attribute – precision of coordinate locations ===
-Coordinate data stored in the Atlas has often passed through a conversion process en route to the database. The conversion process to decimal degrees may well result in 5 or more digits after the decimal point, representing ~1 metre or less at the equator.
+Coordinate data stored in the Atlas has often passed through [DataClassesCoordinateConversion a conversion process en route to the database]. The conversion process to decimal degrees may well result in 5 or more digits after the decimal point, representing ~1 metre or less at the equator.
 
 This implied precision is not warranted if we look at some common methods of determining location. When using GPS an error of +/- 10m must be allowed for, or, a location may have been recorded as a 6-figure grid reference; assuming skilled map-reading, this puts the location within a 100m x 100m square. These are the true numerical precision (or resolution) of the measurements, and should be kept in mind.
 
