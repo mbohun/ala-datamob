@@ -39,7 +39,7 @@ this method would also work in excel, but you would need to use the 'trunc' func
 
 these will wind up looking like a grid of dots on the map - here is an interesting example of this behaviour... _*note:* if you click on the picture to load this dataset in the spatial portal, you'll need to zoom in on an area of interest_
 
-[[http://spatial.ala.org.au/?q=*%3A*&fq=%28state_conservation%3AEndangered%29&fq=sensitive%3A%22alreadyGeneralised%22# http://ala-datamob.googlecode.com/svn/wiki/02/0207%20gridofpoints.jpg] All biocache records with: 'State conservation = endangered' AND 'Sensitive = alreadyGeneralised'
+[http://spatial.ala.org.au/?q=*%3A*&fq=%28state_conservation%3AEndangered%29&fq=sensitive%3A%22alreadyGeneralised%22# http://ala-datamob.googlecode.com/svn/wiki/02/0207%20gridofpoints.jpg] All biocache records with: 'State conservation = endangered' AND 'Sensitive = alreadyGeneralised'
 
 
 
