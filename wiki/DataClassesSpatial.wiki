@@ -3,28 +3,31 @@
 = Introduction =
 2013/14 - _i rescued this from the old sites portal, which is behind a closed door - maybe one day i'll revise it to read a little easier_
 
-== Fundamentals of geospatial coordinates and datums ==
-[http://ala-datamob.googlecode.com/svn/wiki/02/0204%20ALAhandlingspatiallocationdata.pdf]
+== "Spatial Data" distinction ==
+In the context of the Atlas there appear to be many forms of spatial data. Generally speaking, the notion relates a _fact_ to a point in space. The fact may be one of a number of concepts that surface (_i.e. appear, or are made accessible_) in various sub-systems:
+
+|| *Fact* || *Details* || *Data _surface_* || *Notes* ||
+|| Occurrence || specimen/species observation || as points in: biocache, spatial portal || see [DataStandardsDwC darwincore] terms  _dwc.[http://rs.tdwg.org/dwc/terms/#decimalLatitude decimalLatitude]_, _dwc.[http://rs.tdwg.org/dwc/terms/#decimalLongitude decimalLongitude]_ <br>also, review [DataClassesCoordinateQuality] ||
+|| Site || collecting event || as shapes in: biocache?, spatial portal || _dwc.[http://rs.tdwg.org/dwc/terms/#footprintWKT footprintWKT]_ ||
+|| Environmental (gridded) || gridded data are usually (/can be) environmental properties within a particular space <p>properties might be 'rainfall for summer months' or 'primary soil classification' || 'add to map->layers' in spatial portal, <p>biocache also stores a matrix of all environmental data at any given point - somewhat of an 'inverted index' for analysis purposes - visible as 'property-value' pairs within an occurrence record that has been ingested completely <p>(section 'Environmental sampling for this location' at time of writing, example: [http://biocache.ala.org.au/occurrences/2f2cb5b5-819b-4bd3-854b-59849cd13622]) || the spaces are usually normalised to allow easy comparison of variables between data sets (eg: grids of 1km^2^ or 1 degree^2^) ||
+|| Contextual (polygonal) || _shape_ data are more complex than simple points <p>they can be defined as lines, eg: a trawl, or specified as closed boundaries such as a state or territory || 'add to map->areas' in spatial portal, <p>as for gridded environmental properties (samples), areas defined by polygons or other shapes are also stored against occurrences <p>although in this case area 'membership' is noted as a property, or more likely,  <p>(section 'Additional political boundaries information' at time of writing, see previous biocache occurrence example) ||  ||
+|| Descriptive locations || often found against specimen records, an example might be '13 km NW of dry creek' || sometimes as standardised locations (as verbatim data/quality caveats) for records that have been georeferenced ||  ||
 
 
 = Coordinates =
 Distinction - 
+
+== Fundamentals of geospatial coordinates and datums ==
+[http://ala-datamob.googlecode.com/svn/wiki/02/0204%20ALAhandlingspatiallocationdata.pdf]
+
+== Key terminology ==
+Coordinates (aka. _geocodes, latitude/longitude, lat/long, grid reference, ..._) - effectively an x,y pair 
 
 == Regarding quality of coordinate locations ==
 [DataClassesCoordinateQuality]
 
 == Regarding coordinate conversions ==
 [DataClassesCoordinateConversion#Conversion]
-
-=== Table of rough conversions ===
-|| Measure || Degrees || Decimal degrees || Metres (lat/long) (roughly, equator) || Metres (lat) (roughly, poles) || Metres (long) (roughly, poles) ||
-|| 1° || One || 1.00° || 111,000 || 111,000 || 85,000 || 
-|| 1' (arcmin) || 1/60° || 0.01666…° || 1,700 || 1,700 || 1,300 ||
-|| 1" (arcsec) || 1/3600° || 0.0002777…° || 30 || 30 || 22 ||
-|| 0.01° || 1/100° || 0.01° || 1,000 || 1,000 || 760 ||
-|| 0.001° || 1/1000° || 0.001° || 100 || 100 || 76 ||
-
-Comparison between the different types of measurement - something to note: degrees of latitude are parallel so the distance between each degree remains almost constant, but since degrees of longitude are farthest apart at the equator and converge at the poles, their distance varies greatly.
 
 == Regarding spatial generalisation (location blurring / obfuscation) ==
 [DataClassesCoordinateConversion#Obfuscation]
