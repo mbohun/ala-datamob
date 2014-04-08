@@ -3,25 +3,8 @@
 = Introduction =
 2013/14 - _i rescued this from the old sites portal, which is behind a closed door - maybe one day i'll revise it to read a little easier_
 
-== "Spatial Data" distinction ==
-In the context of the Atlas there appear to be many forms of spatial data. Generally speaking, the notion relates a _fact_ to a point in space. The fact may be one of a number of concepts that _surface_ (_i.e._ appear, or are made accessible) in various sub-systems:
-
-|| *Context*|| *Fact type* || *Details* || *Where data surface* || *Notes* ||
-|| Occurrence || point-location || specimen/species observation || as points in: biocache, spatial portal || see [DataStandardsDwC darwincore] terms  _dwc.[http://rs.tdwg.org/dwc/terms/#decimalLatitude decimalLatitude]_, _dwc.[http://rs.tdwg.org/dwc/terms/#decimalLongitude decimalLongitude]_ and associated metadata; <p>also, review [DataClassesCoordinateQuality] ||
-|| Site || point & radius, line, simple or complex boundary || collecting event <p>can be defined as lines, eg: a trawl, or specified as closed boundaries such as a paddock or catchment boundary || as shapes in: biocache?, spatial portal || _dwc.[http://rs.tdwg.org/dwc/terms/#footprintWKT footprintWKT]_ <p>_shape_ data define boundaries and are more complex than simple points, or point & radius ||
-|| Environmental (gridded) || sample at point <p>or more likely a _'smoothed'_ or averaged value across a defined area || gridded data are usually (/can be) environmental properties within a particular space <p>properties might be 'rainfall for summer months' or 'primary soil classification' || 'add to map->layers' in spatial portal, <p>biocache also stores a matrix of all environmental data at any given point - somewhat of an 'inverted index' for analysis purposes - visible as 'property-value' pairs within an occurrence record that has been ingested completely <p>(section 'Environmental sampling for this location' at time of writing, example: [http://biocache.ala.org.au/occurrences/2f2cb5b5-819b-4bd3-854b-59849cd13622]) || the spaces are usually normalised to allow easy comparison of variables between data sets (eg: grids of 1km^2^ or 1 degree^2^) ||
-|| Contextual (polygonal) || simple or complex boundary || a defined area, and usually some sort of associated classification/value, stored against a specific property <p>eg: property='state/territory', value='NSW'; or <p>[http://spatial.ala.org.au/layers/more/lith_geologicalunitpolygons1m property='soil classification', value='Pfry']; || 'add to map->areas' in spatial portal, <p>as for gridded environmental properties (samples), placement within areas/classifications are also stored against occurrences <p>(section 'Additional political boundaries information' at time of writing, see previous biocache occurrence example) ||  ||
-|| Descriptive locations || textual || often found against specimen records, an example might be '13 mi NW dry ck' || sometimes as as verbatim data/quality caveats for records || _dwc.[http://rs.tdwg.org/dwc/terms/#verbatimLocality verbatimLocality]_ <p>may also be used as evidence to georeference or standardise locations ||
-
-
-= Coordinates =
-Distinction - 
-
 == Fundamentals of geospatial coordinates and datums ==
 [http://ala-datamob.googlecode.com/svn/wiki/02/0204%20ALAhandlingspatiallocationdata.pdf]
-
-== Key terminology ==
-Coordinates (aka. _geocodes, latitude/longitude, lat/long, grid reference, ..._) - effectively an x,y pair 
 
 == Regarding quality of coordinate locations ==
 [DataClassesCoordinateQuality]
@@ -33,11 +16,64 @@ Coordinates (aka. _geocodes, latitude/longitude, lat/long, grid reference, ..._)
 [DataClassesCoordinateConversion#Obfuscation]
 
 
+= "Spatial Data" distinction =
+In the context of the Atlas there appear to be many forms of spatial data. Generally speaking, the notion relates a _fact_ to a point in space. The fact may be one of a number of concepts that _surface_ (_i.e._ appear, or are made accessible) in various sub-systems:
+
+|| *Context*               || *Fact type*                                      || *Notes* ||
+|| Occurrence              || point-location                                   || specimen/species observation <p>see [DataStandardsDwC darwincore] terms  _dwc.[http://rs.tdwg.org/dwc/terms/#decimalLatitude decimalLatitude]_, _dwc.[http://rs.tdwg.org/dwc/terms/#decimalLongitude decimalLongitude]_ and associated metadata; <p>also, review [DataClassesCoordinateQuality] ||
+|| Site                    || point & radius, line, simple or complex boundary || collecting event <p>can be defined as lines, eg: a trawl, or specified as closed boundaries such as a paddock or catchment boundary <p>_dwc.[http://rs.tdwg.org/dwc/terms/#footprintWKT footprintWKT]_ <p>_shape_ data define boundaries and are more complex than simple points, or point & radius ||
+|| Environmental (gridded) || sample at point <p>or more likely a _'smoothed'_ or averaged value across a defined area || gridded data are usually (/can be) environmental properties within a particular space <p>properties might be 'rainfall for summer months' or 'primary soil classification' <p>the areas are usually normalised to allow easy comparison of variables between data sets (eg: grids of 1km^2^ or 1 degree^2^), hence the name 'gridded' ||
+|| Contextual (polygonal)  || simple or complex boundary                       || a defined area, and usually some sort of associated classification/value, stored against a specific property <p>eg: property='state/territory', value='NSW'; or <p>[http://spatial.ala.org.au/layers/more/lith_geologicalunitpolygons1m property='soil classification', value='Pfry']; ||
+|| Descriptive locations   || textual                                          || often found against specimen records as verbatim data/quality caveats, an example might be '13 mi NW dry ck' <p>_dwc.[http://rs.tdwg.org/dwc/terms/#verbatimLocality verbatimLocality]_ <p>may also be used as evidence to georeference or standardise locations ||
+
+== Occurrence ==
+
+=== Key terminology ===
+Coordinates (aka. _geocodes, latitude/longitude, lat/long, grid reference, ..._) - effectively an x,y pair 
+
+=== Where data surface ===
+as points in: biocache, spatial portal
+
+=== Where data come from ===
 
 
-= Spatial layer data =
-Distinction - _*TODO:* add info on spatial layers_
+== Site ==
 
+=== Key terminology ===
+
+=== Where data surface ===
+as shapes in: biocache?, spatial portal
+
+=== Where data come from ===
+
+
+
+== Environmental (gridded) ==
+
+=== Key terminology ===
+
+=== Where data surface ===
+'add to map->layers' in spatial portal, <p>biocache also stores a matrix of all environmental data at any given point - somewhat of an 'inverted index' for analysis purposes - visible as 'property-value' pairs within an occurrence record that has been ingested completely
+
+(section 'Environmental sampling for this location' at time of writing, example: [http://biocache.ala.org.au/occurrences/2f2cb5b5-819b-4bd3-854b-59849cd13622])
+
+=== Where data come from ===
+
+
+
+== Contextual (polygonal) ==
+
+=== Key terminology ===
+
+=== Where data surface ===
+'add to map->areas' in spatial portal, <p>as for gridded environmental properties (samples), placement within areas/classifications are also stored against occurrences
+
+(section 'Additional political boundaries information' at time of writing, see previous biocache occurrence example)
+
+=== Where data come from ===
+
+
+= Other information =
 == Regarding Lambert Conformal Conic projection (a grid projection in use in some? rural areas) ==
 the extent to which this grid projection is used is currently not known - research continues to discover this information - no data sets have been encountered to date that use this form of projection.
 
